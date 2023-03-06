@@ -34,21 +34,21 @@ export default {
     return {
       slides: [
         {
-          src: '../public/window1.jpg',
+          src: '/window1.jpg',
           alt: '',
           title: 'Fenster',
           description:
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
         },
         {
-          src: '../public/window2.jpg',
+          src: '/window2.jpg',
           alt: '',
           title: 'Turen',
           description:
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
         },
         {
-          src: '../public/window3.jpg',
+          src: '/window3.jpg',
           alt: '',
           title: 'rollen',
           description:
