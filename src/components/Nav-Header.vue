@@ -97,9 +97,9 @@
       <ul :class="{ active: menuActive }">
         <li><a href="#">Home</a></li>
         <li><a href="#">Uber uns</a></li>
-        <li><a href="#">Contact Us</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Service</a></li>
+        <li><a href="#">Produkte</a></li>
+        <li><a href="#">Kontakt</a></li>
       </ul>
       <div class="contact" :class="{ active: menuActive }">
         <span>Tel: <a href="/">+54124124</a></span>

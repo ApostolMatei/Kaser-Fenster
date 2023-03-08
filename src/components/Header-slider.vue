@@ -14,17 +14,18 @@
       <div class="info">
         <h2>{{ slide.title }}</h2>
         <p>{{ slide.description }}</p>
+        <a>View Produkt</a>
       </div>
     </div>
 
-    <div class="navigation-visibility">
+    <!-- <div class="navigation-visibility">
       <div
         v-for="(slide, index) in slides"
         :key="index"
         class="slide-icon"
         :class="{ active: currentIndex === index }"
       ></div>
-    </div>
+    </div>-->
   </div>
 </template>
 
@@ -50,7 +51,7 @@ export default {
         {
           src: '/window3.jpg',
           alt: '',
-          title: 'rollen',
+          title: 'Rollen',
           description:
             'Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
         }
@@ -81,11 +82,11 @@ export default {
   mounted() {
     setInterval(() => {
       this.goToNextSlide()
-    }, 4000)
+    }, 5600)
   }
 }
 </script>
-<style>
+<style lang="scss">
 .slider {
   position: relative;
   /* background: #000116; */
@@ -103,7 +104,7 @@ export default {
   height: 100%;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
-  background-color: black;
+  // background-color: black;
 }
 
 .slider .slide.active {
@@ -115,24 +116,60 @@ export default {
   height: 100%;
   object-fit: cover;
 }
+.slide.active {
+  .info {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    transition: transform 1s;
 
-.slider .slide .info {
+    h2 {
+      opacity: 1;
+      transition: 2s;
+    }
+    p,
+    a {
+      opacity: 1;
+      transition: 2s;
+      transition-delay: 0.3s;
+    }
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  top: 50%;
+  left: 40%;
+  font-family: sans-serif;
+  transform: translate(-50%, 100%);
+  opacity: 0;
+  // width: 100%;
   padding: 20px;
-  background: rgba(0, 0, 0, 0.7);
+  // background: rgba(0, 0, 0, 0.7);
   color: #fff;
-}
+  h2 {
+    opacity: 0;
+    font-size: 2rem;
+    // margin-bottom: 10px;
+  }
+  p {
+    line-height: 30px;
+    opacity: 0;
+    font-size: 1.2rem;
+  }
+  a {
+    opacity: 0;
+    background: #fed991;
+    color: black;
+    max-width: 184px;
+    text-align: center;
 
-.slider .slide .info h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-.slider .slide .info p {
-  font-size: 1.2rem;
+    padding: 10px 0;
+    font-weight: 600;
+    font-size: 18px;
+  }
 }
 
 .slider .navigation {
