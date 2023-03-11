@@ -232,6 +232,7 @@ export default {
 
   @media screen and (max-width: 1000px) {
     flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
   p {
