@@ -99,7 +99,7 @@
 .footer-contact {
   display: flex;
   color: white;
-  background-image: url(contactus.jpg);
+  background-image: url(/contactus.jpg);
   background-position: center;
   background-size: cover;
   justify-content: center;
