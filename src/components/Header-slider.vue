@@ -92,7 +92,7 @@ export default {
   /* background: #000116; */
 
   height: 85vh;
-  margin: 0 20px;
+  // margin: 0 20px;
   /* padding: 20px; */
   overflow: hidden;
   /* border-radius: 10px; */

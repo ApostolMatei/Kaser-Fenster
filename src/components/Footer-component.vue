@@ -1,10 +1,17 @@
 <template>
-  <header>
-    <nav>
+  <footer>
+    <div class="footer-contact">
+      <h2>LET`S WORK TOGHETER</h2>
+      <p>
+        Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed do eiusmod temporLorem ipsum
+        dolo sit amet, consectetur adipisicing .
+      </p>
+      <a href="/">CONTACT US</a>
+    </div>
+    <div class="footer-nav">
       <svg
         class="logo"
-        width="315"
-        height="113"
+        width="115"
         viewBox="0 0 315 113"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -77,97 +84,65 @@
           fill="#FFD93E"
         />
       </svg>
-      <svg
-        @click.prevent="menuActive = !this.menuActive"
-        class="hamburger"
-        xmlns="http://www.w3.org/2000/svg"
-        width="32"
-        height="32"
-        viewBox="0 0 24 24"
-      >
-        <path
-          fill="none"
-          stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16"
-        />
-      </svg>
-      <ul :class="{ active: menuActive }">
-        <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="/about">Uber uns</router-link></li>
-        <li><a href="#">Service</a></li>
-        <li><a href="#">Produkte</a></li>
-        <li><a href="#">Kontakt</a></li>
-      </ul>
-      <div class="contact" :class="{ active: menuActive }">
-        <span>Tel: <a href="/">+54124124</a></span>
+      <span>@ 2023, copyright reserved</span>
+
+      <div class="contact">
+        <div class="tel">Tel: <a href="/">+54124124</a></div>
         <a class="contact-email" href="/">kaserfenster@office.ro</a>
       </div>
-    </nav>
-  </header>
+    </div>
+  </footer>
 </template>
+<script></script>
 
-<script scoped>
-export default {
-  name: 'Nav-Header',
-
-  data() {
-    return {
-      menuActive: false
-    }
+<style scoped lang="scss">
+.footer-contact {
+  display: flex;
+  color: white;
+  background-image: url(/public/contactus.jpg);
+  background-position: center;
+  background-size: cover;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  flex-direction: column;
+  padding: 100px;
+  background-color: rgb(54, 56, 56);
+  p {
+    max-width: 600px;
+    text-align: center;
+  }
+  a {
+    padding: 10px 25px;
+    border-radius: 2px;
+    text-decoration: none;
+    color: white;
+    border: 1.5px solid rgb(212, 206, 206);
   }
 }
-</script>
-
-<style lang="scss">
-header {
-  // height: 100vh;
-}
-
-nav {
+.footer-nav {
   display: grid;
-  grid-template-columns: 20% 1fr 40%;
+  grid-template-columns: 30% 1fr 30%;
+  background-color: black;
   align-items: center;
-  padding: 20px 20px;
-
-  .logo {
-    height: 48px;
-    width: 152px;
+  color: white;
+  padding: 25px;
+  @media (width <= 1000px) {
+    grid-template-columns: none;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+  }
+  svg {
     justify-self: center;
   }
-  .hamburger {
-    display: none;
-  }
-}
 
-li {
-  all: unset;
-  a {
-    /* list-style: none; */
-    text-decoration: none;
-    cursor: pointer;
-    font-family: sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    /* padding: 0 15px; */
-    color: black;
-    justify-content: center;
-    width: 100%;
-    &:hover {
-      color: rgb(215, 165, 28);
-    }
+  span {
+    justify-self: center;
   }
 }
-ul {
+.tel {
   display: flex;
-  gap: 15px;
-  padding: 0;
-  margin: 0;
-}
-
-span {
+  gap: 10px;
   font-size: 14px;
   font-family: sans-serif;
   font-weight: 600;
@@ -176,12 +151,14 @@ span {
     color: rgb(215, 165, 28);
   }
 }
-
 .contact {
-  justify-self: center;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  //   justify-self: center;
   a {
     text-decoration: none;
-    color: black;
+    color: white;
 
     font-size: 14px;
     font-family: sans-serif;
@@ -191,66 +168,6 @@ span {
   .contact-email {
     border-left: 1px solid grey;
     padding: 7px 20px;
-  }
-}
-
-.main-navigation {
-  display: flex;
-}
-
-/* Ensuring that if the hamburger menu is active but
-  the screen becomes larger, the display will
-  change to display items in a row instead of a column*/
-
-@media screen and (max-width: 1000px) {
-  nav {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    position: sticky;
-    .hamburger {
-      display: block;
-    }
-  }
-
-  ul {
-    display: none;
-    width: 100%;
-    flex-direction: column;
-    padding: 30px 0;
-    &.active {
-      display: flex;
-    }
-    li {
-      list-style-type: none;
-      /* margin: 15px auto; */
-      /* text-align: center; */
-      width: 100%;
-      border-bottom: 2px solid gray;
-    }
-    a {
-      padding: 5px 7px;
-      color: #222222;
-      margin: 0px 2px 0px 2px;
-      text-decoration: none;
-      display: inline-block;
-    }
-  }
-
-  .contact {
-    display: none;
-    &.active {
-      display: flex;
-      flex-direction: column;
-      a {
-        padding: 30px 0;
-        border: 0;
-      }
-    }
-  }
-  .contact-email {
-    border: none;
-    padding: 0;
   }
 }
 </style>

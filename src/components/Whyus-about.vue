@@ -1,7 +1,29 @@
 <template>
+  <div class="service-section">
+    <div class="services">
+      <div class="service" v-for="(service, index) in services" :key="index">
+        {{ service.service }}
+      </div>
+    </div>
+    <div class="ourservice">
+      <div class="title">
+        <span>Why We/Us</span>
+        <h2>ABOUT US</h2>
+      </div>
+      <p>
+        Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua.Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed
+        do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolo sit amet,
+        consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua.
+      </p>
+      <a href="/">More</a>
+    </div>
+  </div>
+
   <div class="aboutus-section">
     <div class="aboutus">
-      <div class="title">
+      <div>
         <span>Why We/Us</span>
         <h2>ABOUT US</h2>
       </div>
@@ -36,6 +58,7 @@
       </div>
     </div>
   </div>
+
   <div class="whyus-section">
     <div class="whyus">
       <h2>WHY CHOOSE US</h2>
@@ -172,17 +195,103 @@
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  name: 'Whyus-about',
+  data() {
+    return {
+      services: [
+        { service: 'Persönliche Beratung' },
+        { service: 'Planung' },
+        { service: 'Angebotsvergleich' },
+        { service: 'Vermessung' },
+
+        { service: 'Reparaturservice' },
+        { service: 'Montageservice' },
+        { service: 'Endbearbeitungen' },
+        { service: 'Wartungsarbeiten' },
+        { service: 'Saisonabhängige Arbeiten' }
+      ]
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 @function clampReversed($max, $val, $min) {
   @return calc((clamp($min, $val, $max) * -1) + ($min + $max));
 }
+.service-section {
+  display: flex;
+  // grid-template-columns: 50% 50%;
+  // background-color: rgb(183, 179, 179);
+  align-items: center;
+  justify-content: space-around;
+  padding: 150px 50px;
+  gap: 70px;
+
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+    align-items: center;
+  }
+  p {
+    max-width: 500px;
+    @media screen and (max-width: 1000px) {
+      // max-width: 800px;
+    }
+  }
+  .services {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: 490px;
+    flex-wrap: wrap;
+
+    @media (width < 550px) {
+      flex-direction: column;
+      width: 100%;
+    }
+    .service {
+      border: 2px solid black;
+      padding: 10px;
+      max-height: 20px;
+      @media (width < 550px) {
+        display: flex;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.ourservice {
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  gap: 30px;
+
+  span {
+    color: rgb(160, 155, 155);
+  }
+  h2 {
+    font-weight: 800;
+  }
+  a {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    padding: 8px 0;
+    max-width: 90px;
+    border: 2px solid black;
+  }
+}
+
 .aboutus-section {
   display: flex;
   //   align-items: center;
   justify-content: space-around;
-  padding: 150px 50px;
+  padding: 0 50px;
   gap: 70px;
   @media screen and (max-width: 770px) {
     flex-direction: column;
@@ -280,7 +389,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 30px;
-    padding: 60px;
+    padding: 0px;
 
     h2 {
       font-weight: 800;
@@ -326,6 +435,10 @@
     }
     .border {
       border-right: 1.5px solid rgb(214, 210, 210);
+      @media screen and (max-width: 1000px) {
+        border-right: 0;
+        border-bottom: 1.5px solid rgb(214, 210, 210);
+      }
     }
 
     .text {

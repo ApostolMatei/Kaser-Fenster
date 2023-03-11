@@ -1,14 +1,17 @@
 <script setup>
-// import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 import Header from './components/Nav-Header.vue'
-import Slider from './components/Header-slider.vue'
-import Whyus from './components/Whyus-about.vue'
+// import Slider from './components/Header-slider.vue'
+// import Whyus from './components/Whyus-about.vue'
+import Footer from './components/Footer-component.vue'
 </script>
 
 <template>
   <Header></Header>
-  <Slider></Slider>
-  <Whyus></Whyus>
+  <router-view></router-view>
+  <!-- <Slider></Slider>
+  <Whyus></Whyus> -->
+  <Footer></Footer>
 </template>
 
 <style>
@@ -24,5 +27,6 @@ h3,
 p,
 a {
   margin: 0;
+  text-decoration: none;
 }
 </style>
