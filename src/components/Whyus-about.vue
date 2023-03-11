@@ -242,7 +242,7 @@ export default {
     }
   }
   .services {
-    display: flex;
+    display: none;
     gap: 20px;
     justify-content: center;
     align-items: center;
@@ -250,17 +250,17 @@ export default {
     width: 490px;
     flex-wrap: wrap;
 
-    @media (width < 550px) {
+    @media screen and (max-width: 550px) {
       flex-direction: column;
+
       width: 100%;
     }
     .service {
       border: 2px solid black;
       padding: 10px;
       max-height: 20px;
-      @media (width < 550px) {
-        display: flex;
-        width: 100%;
+      @media screen and (max-width: 550px) {
+        // width: 100%;
       }
     }
   }
@@ -454,7 +454,7 @@ export default {
 }
 
 .brands {
-  display: flex;
+  display: none;
   justify-content: center;
   flex-wrap: wrap;
   background-color: #f5f5dc;

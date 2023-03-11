@@ -127,7 +127,7 @@
   align-items: center;
   color: white;
   padding: 25px;
-  @media (width <= 1000px) {
+  @media screen and (max-width: 1000px) {
     grid-template-columns: none;
     grid-template-rows: repeat(3, 1fr);
     gap: 10px;
