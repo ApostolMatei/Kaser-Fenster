@@ -1,5 +1,10 @@
+<script setup>
+import Aboutus from '@/components/About-us.vue'
+</script>
 <template>
-  <main></main>
+  <main>
+    <Aboutus></Aboutus>
+  </main>
 </template>
 
 <style></style>

@@ -242,7 +242,7 @@ export default {
     }
   }
   .services {
-    display: none;
+    display: flex;
     gap: 20px;
     justify-content: center;
     align-items: center;
@@ -270,6 +270,7 @@ export default {
   display: flex;
   flex-direction: column;
   // justify-content: center;
+
   gap: 30px;
 
   span {
