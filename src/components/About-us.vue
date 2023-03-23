@@ -62,18 +62,30 @@ a {
 
   img {
     padding: 0 20px;
-    // height: 250px;
+    height: 550px;
     width: 100%;
   }
   .quote {
     display: flex;
     flex-direction: column;
+    
     padding: 50px 0;
+    span {
+      
+      color: gray;
+    }
     // gap: 15px;
     .quote-text {
       padding: 25px 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      
+      
+      
       p {
         font-size: 20px;
+        font-weight: 800;
         letter-spacing: 1px;
         max-width: 280px;
       }

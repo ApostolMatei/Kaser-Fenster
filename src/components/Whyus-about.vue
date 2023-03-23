@@ -133,7 +133,7 @@
     </div>
   </div>
   <div class="testimonials-section">
-    <div class="testimonials">
+    
       <div class="title">
         <span>Testimonials</span>
         <h2>What our clients say about us</h2>
@@ -145,7 +145,7 @@
           </div>
         </div>
       </div>
-    </div>
+    
   </div>
 </template>
 
@@ -498,75 +498,47 @@ export default {
   justify-content: center;
   align-items: center;
   background-color: aliceblue;
-
-  .testimonials {
-    display: flex;
-    flex-direction: column;
+  flex-direction: column;
     justify-content: center;
     gap: 30px;
     padding: 60px;
-    .title {
-      text-align: center;
-    }
-    h2 {
-      font-weight: 800;
-      text-align: center;
-    }
-    p {
-      // max-height: 56px;
-      text-align: center;
-    }
-    .svg {
-      display: flex;
-      padding: 10px;
 
-      background-color: rgb(87, 85, 85);
-      border-radius: 50%;
-    }
-    .line {
-      height: 2.5px;
-      width: 25px;
-      background-color: gray;
-    }
-    img {
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      vertical-align: middle;
-    }
-    svg {
-      min-width: 26px;
-      color: orange;
-    }
-    .reviews {
+  
+}
+.reviewsbox {
+  display: flex;
+ justify-content: center; 
+  .reviews {
+    display: flex;
+    // justify-content: center;
+    overflow: hidden;
+    background-color: rgb(249, 251, 251);
+    width: 800px;
+    padding: 200px 0;
+   
+
+  }
+  .inner-reviews{
+    display: flex;
+    justify-content: space-around;
+    gap: 50px;
+    padding: 0 20px;
+  
+  }
+  .review {
+      // max-width: 390px;
+      // background-color: rgb(215, 35, 35);
       display: flex;
-      gap: 20px;
-      @media screen and (max-width: 1000px) {
-        flex-direction: column;
-      }
-    }
-    .review {
-      max-width: 390px;
-      background-color: white;
-      display: flex;
-      flex-direction: column;
+      border: 20px solid rgb(168, 167, 167);
+      // flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 50px;
-      height: 250px;
+      padding: 150px 300px;
+      // height: 250px;
       // width: 250px;
 
-      gap: 20px;
+      // gap: 20px;
       //   align-items: center;
     }
-    .text {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      gap: 10px;
-      // padding: 20px 50px;
-    }
-  }
 }
 </style>
