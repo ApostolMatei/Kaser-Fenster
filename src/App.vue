@@ -3,6 +3,7 @@ import { RouterView } from 'vue-router'
 import Header from './components/Nav-Header.vue'
 // import Slider from './components/Header-slider.vue'
 // import Whyus from './components/Whyus-about.vue'
+
 import Footer from './components/Footer-component.vue'
 </script>
 
@@ -15,6 +16,8 @@ import Footer from './components/Footer-component.vue'
 </template>
 
 <style>
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Roboto&display=swap'); */
+
 body,
 #app {
   margin: 0;

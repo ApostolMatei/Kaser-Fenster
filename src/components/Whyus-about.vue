@@ -123,27 +123,28 @@
       </div>
     </div>
   </div>
-  <div class="brandsbox" @click="muian">
+  <div class="brandsbox" ref="brandbox" @click="muian">
     <div class="brands">
-      <div class="inner" ref="inner">
-        <div class="brand" v-for="brand in brands" :key="brand">
-          <img :src="brand.src" />
-        </div>
+      <div class="inner"   ref="inner">
+        
+          <img class="brand" :style="{width: brandsWidth}" ref="brand" v-for="brand in brands" :key="brand" :src="brand.src" />
+        
       </div>
     </div>
   </div>
-  <div class="testimonials-section">
+  <div class="testimonials-section" ref="testimonials">
     
       <div class="title">
         <span>Testimonials</span>
         <h2>What our clients say about us</h2>
       </div>
-      <div class="reviewsbox">
-        <div class="reviews">
-          <div class="inner-reviews">
-            <div class="review" v-for="review in reviews"></div>
+      <div class="reviewsbox" :style="{'--transform' : -reviewDistance + 'px'}"  ref="reviews">
+        <div class="reviews" ref="review" :class="{'reviewmoving': reviewMoving}"  v-for="(reviewObj, index) in reviews" :key="index" >
+         
+            <div class="review" v-for="(review, key) in reviewObj" :key="key" >
+            <p>{{ review.name }}</p></div>
           </div>
-        </div>
+        
       </div>
     
   </div>
@@ -155,6 +156,18 @@ export default {
 
   data() {
     return {
+
+        reviewDistance: 0,
+      reviewMoving: false , 
+     reviewsWidth: 200 + "px",
+      reviewsGap: 20 +"px",
+      brandsWidth: 200 + "px",
+      brandsGap: 20 +"px",
+      brandsSpeed: 0 ,
+      innerWidth: 0 ,
+
+      
+
       services: [
         { service: 'Persönliche Beratung' },
         { service: 'Planung' },
@@ -176,20 +189,107 @@ export default {
         { src: '/roto.svg' },
         { src: '/velux.svg' },
         { src: '/wink.svg' },
-        { src: '/abus.svg' }
+        { src: '/abus.svg' },
+        
       ],
       reviews: [
-        { name: 'Jane Smith' },
-        { name: 'Jane Smith' },
-        { name: 'Jane Smith' },
-        { name: 'Jane Smith' }
+        { review1:
+           {
+             name: '1', quote: "Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt utdat dolore magna aliqua.Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed"
+        },
+
+        review2: {name: '2', quote: "Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt utdat dolore magna aliqua.Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed"}
+      },
+        { review1:
+           { 
+            name: '3', quote: "Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt utdat dolore magna aliqua.Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed"
+        },
+        review2: {name: '4 ', quote: "Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt utdat dolore magna aliqua.Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed"}
+      
+      },
+        { review1: 
+          {
+             name: '5', quote: "Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt utdat dolore magna aliqua.Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed"
+        },
+        review2: {name: '6', quote: "Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt utdat dolore magna aliqua.Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed"}
+      },
+        
       ]
     }
   },
 
+  mounted() {
+   
+    this.moveReviews()
+    this.moveSlider()
+  },
+
   methods: {
     muian() {
-      console.log(this.$refs.inner.offsetWidth)
+      // let reviews = this.$refs.reviews.querySelectorAll(".review");
+      // let reviewSize = reviews[1].getBoundingClientRect().width;
+     let slider = this.$refs.reviews.style.setProperty('--transform', '0');
+    //   var gap = parseInt(getComputedStyle(slider).getPropertyValue("--transform"));
+     console.log(slider)
+    
+   
+      
+},
+    
+
+    moveReviews() {
+      let reviews = this.$refs.reviews.querySelectorAll(".review");
+        let reviewSize = reviews[1].getBoundingClientRect().width;
+      let distance = reviewSize * 2 + 38 * 2 ;
+      this.reviewMoving = !this.reviewMoving
+     this.reviewDistance = distance;
+      
+      setTimeout(() => {
+        this.$refs.reviews.classList.remove("reviewmoving")
+        let item = this.reviews.shift()
+     this.reviews.push(item)
+      
+       
+      this.$refs.reviews.offsetHeight
+    this.moveReviews()
+    
+    
+  },  5000);
+
+
+         
+    
+  
+    },
+    
+
+    moveSlider() { 
+      
+      let distance = parseInt(this.brandsWidth) + parseInt(this.brandsGap);
+      this.$refs.inner.classList.add("moving")
+      this.$refs.inner.style.transform = `translateX(-${distance}px)`;
+      
+ 
+
+      console.log(this.speed)
+      setTimeout(() => {
+        let item = document.querySelector(".brand");
+
+        item.remove();
+        this.$refs.inner.style.transform = `translateX(0px)`;
+        this.$refs.inner.append(item);
+        this.$refs.offsetHeight;
+        this.$refs.inner.classList.remove("moving")
+        this.moveSlider()
+        
+        
+    
+    
+    
+  }, 5000);
+      
+      
+   
     }
   }
 }
@@ -453,6 +553,8 @@ export default {
   }
 }
 .brandsbox {
+  $gap: 20px;
+  $speed: 5s;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -460,82 +562,117 @@ export default {
   background-color: rgb(44, 41, 41);
 
   .brands {
-    display: flex;
-    justify-content: center;
+    // display: flex;
+    // justify-content: center;
     overflow: hidden;
     background-color: rgb(44, 41, 41);
-    padding: 40px;
+    padding: 40px 0;
 
-    width: 800px;
+    // width: 800px;
   }
+  
   // justify-content: space-evenly;
-  img {
-    height: 100px;
-    width: 120px;
+  img{
+    // flex-shrink: 0;
+  margin-right: $gap;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  // width: 200px;
+  height: 100%;
+  aspect-ratio: 4/3;
+  // background-color: #5d5dcd;
+  font-size: 30px;
+  font-weight: bold;
+   
   }
+  .moving {
+  transition: transform 5s linear;
+}
 
   .inner {
     display: flex;
-    justify-content: space-around;
-    gap: 60px;
-    // transform: translatex(-360px);
-    animation: scroll 5s linear infinite;
-    // transition: transform 10s ease;
+    
+    
 
-    @keyframes scroll {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-325px);
-      }
-    }
+    
   }
 }
 
 .testimonials-section {
   display: flex;
-  justify-content: center;
+  // justify-content: spac;
   align-items: center;
+  
   background-color: aliceblue;
   flex-direction: column;
-    justify-content: center;
+    // justify-content: center;
     gap: 30px;
     padding: 60px;
-
+ 
   
 }
 .reviewsbox {
+
+
   display: flex;
- justify-content: center; 
+  overflow: hidden;
+ padding: 20px ;
+ gap: 40px;
+ width: 1080px;
+ 
+//  height: 100%;
+.reviewmoving
+{
+  transform: translateX(var(--transform));
+
+}
+
   .reviews {
     display: flex;
-    // justify-content: center;
-    overflow: hidden;
+    justify-content: center;
+    // flex-wrap: wrap;
+    gap: 40px;
+
+transition: transform 5s ease;
     background-color: rgb(249, 251, 251);
-    width: 800px;
-    padding: 200px 0;
+  
+    // width: 1100px;
    
 
   }
-  .inner-reviews{
-    display: flex;
-    justify-content: space-around;
-    gap: 50px;
-    padding: 0 20px;
+  // .inner-reviews{
+  //   display: flex;
+  // // transform: translate(-850px);
+  //   justify-content: space-around;
+  //   gap: 70px;
+  //   // transform: translateX(-20%);
+  //   // padding: 0 20px;
   
-  }
+  // }
   .review {
+    display: flex;
       // max-width: 390px;
+     
       // background-color: rgb(215, 35, 35);
-      display: flex;
+      // display: flex;
+      gap: 50px;
       border: 20px solid rgb(168, 167, 167);
       // flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 150px 300px;
-      // height: 250px;
-      // width: 250px;
+      // align-items: center;
+      // justify-content: center;
+      padding: 105px 230px ;
+     
+      
+     p {
+      font-family: roboto;
+     
+      font-size: 25px;
+      max-width: 383px;
+      line-height: 30px;
+      
+     }
+      
 
       // gap: 20px;
       //   align-items: center;
