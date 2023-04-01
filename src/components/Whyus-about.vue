@@ -123,23 +123,23 @@
       </div>
     </div>
   </div>
-  <div class="brandsbox" ref="brandbox" @click="muian">
-    <div class="brands">
+  
+    <div class="brands" ref="slider" @click="muian">
       <div class="inner"   ref="inner">
         
-          <img class="brand" :style="{width: brandsWidth}" ref="brand" v-for="brand in brands" :key="brand" :src="brand.src" />
+          <img class="brand"   v-for="brand in brands" :key="brand" :src="brand.src" />
         
       </div>
     </div>
-  </div>
+  
   <div class="testimonials-section" ref="testimonials">
     
       <div class="title">
         <span>Testimonials</span>
         <h2>What our clients say about us</h2>
       </div>
-      <div class="reviewsbox" :style="{'--transform' : -reviewDistance + 'px'}"  ref="reviews">
-        <div class="reviews" ref="review" :class="{'reviewmoving': reviewMoving}"  v-for="(reviewObj, index) in reviews" :key="index" >
+      <div class="reviewsbox"   ref="reviews">
+        <div class="reviews" ref="review" :style="{transform: 'translateX('+ -reviewDistance +'px'}"  v-for="(reviewObj, index) in reviews" :key="index" >
          
             <div class="review" v-for="(review, key) in reviewObj" :key="key" >
             <p>{{ review.name }}</p></div>
@@ -162,8 +162,8 @@ export default {
      reviewsWidth: 200 + "px",
       reviewsGap: 20 +"px",
       brandsWidth: 200 + "px",
-      brandsGap: 20 +"px",
-      brandsSpeed: 0 ,
+      brandsGap: "20px",
+      brandsSpeed: "5s" ,
       innerWidth: 0 ,
 
       
@@ -219,9 +219,21 @@ export default {
   },
 
   mounted() {
-   
-    this.moveReviews()
-    this.moveSlider()
+    this.$nextTick(() => {
+    //Vars
+    this.slider = this.$refs.slider;
+    this.slider_inner = this.$refs.inner;
+    this.slides = this.$refs.inner.querySelectorAll(".brand");
+
+    //Slider
+    this.slide_count = this.slides.length;
+    this.slide_width = this.slides[0].getBoundingClientRect().width;
+    this.slide_distance = this.slide_width + parseInt(this.brandsGap);
+
+    //Start Moving Bitch
+    this.moveSlider();
+    this.moveReviews();
+  });
   },
 
   methods: {
@@ -238,19 +250,26 @@ export default {
     
 
     moveReviews() {
-      let reviews = this.$refs.reviews.querySelectorAll(".review");
+      let reviews = this.$refs.reviews.querySelectorAll(".reviews");
         let reviewSize = reviews[1].getBoundingClientRect().width;
       let distance = reviewSize * 2 + 38 * 2 ;
-      this.reviewMoving = !this.reviewMoving
+      // this.reviewMoving = !this.reviewMoving
      this.reviewDistance = distance;
+    // this.$refs.reviews.style.transform = `translateX(-${this.distance})`;
+    
       
       setTimeout(() => {
-        this.$refs.reviews.classList.remove("reviewmoving")
+        // this.$refs.reviews.classList.remove("reviewmoving")
+        // this.$refs.reviews.style.transform = 'translateX(0)';
+        reviews.forEach((reviews) => {
+    reviews.style.transform = 'translateX(0)';
+  });
         let item = this.reviews.shift()
+        this.reviewDistance = 0
      this.reviews.push(item)
-      
+        this.$refs.reviews.offsetHeight
        
-      this.$refs.reviews.offsetHeight
+     
     this.moveReviews()
     
     
@@ -265,28 +284,26 @@ export default {
 
     moveSlider() { 
       
-      let distance = parseInt(this.brandsWidth) + parseInt(this.brandsGap);
-      this.$refs.inner.classList.add("moving")
-      this.$refs.inner.style.transform = `translateX(-${distance}px)`;
-      
- 
+      console.log(parseInt(this.speed));
 
-      console.log(this.speed)
+      this.slider_inner.style.transform =
+        "translateX(-" + this.slide_distance + "px)";
       setTimeout(() => {
-        let item = document.querySelector(".brand");
-
+        var item = this.$refs.inner.querySelector(".brand");
         item.remove();
-        this.$refs.inner.style.transform = `translateX(0px)`;
-        this.$refs.inner.append(item);
-        this.$refs.offsetHeight;
-        this.$refs.inner.classList.remove("moving")
-        this.moveSlider()
+        this.slider_inner.style.transform = "translateX(0px)";
+        this.slider_inner.append(item);
+        this.slider_inner.style.transition = "none";
+        this.slider_inner.offsetHeight;
+        this.slider_inner.style.transition = null;
+        this.moveSlider();
+      },   5000);
         
         
     
     
     
-  }, 5000);
+  
       
       
    
@@ -552,29 +569,25 @@ export default {
     }
   }
 }
-.brandsbox {
-  $gap: 20px;
-  $speed: 5s;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  background-color: rgb(44, 41, 41);
 
   .brands {
-    // display: flex;
-    // justify-content: center;
+    $gap: 20px;
+  $speed: 5s;
+  
+
+  background-color: rgb(44, 41, 41);
     overflow: hidden;
-    background-color: rgb(44, 41, 41);
+    
     padding: 40px 0;
 
     // width: 800px;
-  }
+  
   
   // justify-content: space-evenly;
   img{
     // flex-shrink: 0;
-  margin-right: $gap;
+  margin-right: 20px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -586,16 +599,17 @@ export default {
   font-weight: bold;
    
   }
-  .moving {
-  transition: transform 5s linear;
-}
+ 
 
   .inner {
     display: flex;
-    
+    transition: transform 5s linear;
     
 
     
+  }
+  .brand {
+    width: 200px;
   }
 }
 
@@ -622,11 +636,8 @@ export default {
  width: 1080px;
  
 //  height: 100%;
-.reviewmoving
-{
-  transform: translateX(var(--transform));
 
-}
+
 
   .reviews {
     display: flex;
@@ -634,7 +645,7 @@ export default {
     // flex-wrap: wrap;
     gap: 40px;
 
-transition: transform 5s ease;
+transition: transform 1s ease;
     background-color: rgb(249, 251, 251);
   
     // width: 1100px;

@@ -124,6 +124,7 @@ export default {
 <style lang="scss">
 header {
   // height: 100vh;
+ 
 }
 
 nav {
@@ -131,11 +132,13 @@ nav {
   grid-template-columns: 20% 1fr 40%;
   align-items: center;
   padding: 20px 20px;
+  max-width: 1460px;
+  margin: 0 auto;
 
   .logo {
     height: 48px;
     width: 152px;
-    justify-self: center;
+    // justify-self: center;
   }
   .hamburger {
     display: none;
@@ -178,7 +181,7 @@ span {
 }
 
 .contact {
-  justify-self: center;
+  justify-self: end;
   a {
     text-decoration: none;
     color: black;
