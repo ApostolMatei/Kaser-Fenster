@@ -97,9 +97,9 @@
       <ul :class="{ active: menuActive }">
         <li><router-link to="/">Home</router-link></li>
         <li><router-link to="/about">Uber uns</router-link></li>
-        <li><a href="#">Service</a></li>
-        <li><a href="#">Produkte</a></li>
-        <li><a href="#">Kontakt</a></li>
+        <li><router-link to="/services">Services</router-link></li>
+        <li><router-link to="/produkte">Produkte</router-link></li>
+        <li><router-link to="/kontact">Kontact</router-link></li>
       </ul>
       <div class="contact" :class="{ active: menuActive }">
         <span>Tel: <a href="/">+54124124</a></span>
@@ -121,7 +121,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 header {
   // height: 100vh;
  
@@ -132,7 +132,7 @@ nav {
   grid-template-columns: 20% 1fr 40%;
   align-items: center;
   padding: 20px 20px;
-  max-width: 1460px;
+  max-width: 1260px;
   margin: 0 auto;
 
   .logo {

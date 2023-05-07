@@ -1,17 +1,18 @@
 <template>
-  <div class="aboutus-section">
-    <div class="about-image"></div>
+  <div class="aboutus-section" ref="about">
+    <img src="/window1.jpg" alt="windows " width="500">
     <div class="aboutus">
       <div>
         <span>Why We/Us</span>
         <h2>ABOUT US</h2>
       </div>
       <p>
-        Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua.Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed
-        do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolo sit amet,
-        consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-        aliqua.
+        Seit über 15 Jahren sind wir im Bereich Fenster-, Tür-, Sonnenschutzsysteme sowie
+Einbruchschutz etabliert. Profitieren Sie somit von unserer langjährigen Erfahrung und
+dem direkten Kontakt zu allen gängigen Herstellern. Unser Slogan ist für uns Programm.
+Unser Wissen ist Ihr Vorteil. Wir planen für Sie und mit Ihnen.
+Somit ermöglichen wir Ihnen freies Gestalten und setzen Ihre Wünsche mit qualitativ
+hochwertigen Produkten für Ihr Zuhause um.
       </p>
       <a href="/">More</a>
     </div>
@@ -75,8 +76,8 @@
             </svg>
           </div>
           <div class="text">
-            <h3>Reliability</h3>
-            <p>Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+            <h3>Erfahren und Professionell</h3>
+            <p>Unser Team von Experten verfügt über jahrelange Erfahrung in der Reparatur und Installation von Fenstern, Türen und Rollen. Wir legen Wert auf Professionalität und eine akkurate Arbeitsweise.</p>
           </div>
         </div>
         <div class="talent">
@@ -100,8 +101,8 @@
           </div>
 
           <div class="text">
-            <h3>Reliability</h3>
-            <p>Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+            <h3>Qualitätsprodukte</h3>
+            <p>Wir verwenden ausschließlich hochwertige Materialien und Produkte für unsere Reparaturen und Installationen. Sie können sicher sein, dass Ihr Zuhause oder Ihr Unternehmen mit erstklassigen Produkten ausgestattet wird, die jahrelang halten werden.</p>
           </div>
         </div>
         <div class="talent">
@@ -116,8 +117,8 @@
             </svg>
           </div>
           <div class="text">
-            <h3>Reliability</h3>
-            <p>Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+            <h3>Kundenzufriedenheit</h3>
+            <p>Wir sind bestrebt, sicherzustellen, dass unsere Kunden zu 100% mit unseren Dienstleistungen zufrieden sind. Vom Anfang bis zum Ende bemühen wir uns, Erwartungen zu übertreffen und sicherzustellen, dass jeder Auftrag perfekt abgeschlossen wird.</p>
           </div>
         </div>
       </div>
@@ -127,7 +128,7 @@
     <div class="brands" ref="slider" @click="muian">
       <div class="inner"   ref="inner">
         
-          <img class="brand"   v-for="brand in brands" :key="brand" :src="brand.src" />
+          <img width="200" height="150" class="brand"   v-for="brand in brands" :key="brand" :src="brand.src" />
         
       </div>
     </div>
@@ -138,13 +139,29 @@
         <span>Testimonials</span>
         <h2>What our clients say about us</h2>
       </div>
-      <div class="reviewsbox"   ref="reviews">
-        <div class="reviews" ref="review" :style="{transform: 'translateX('+ -reviewDistance +'px'}"  v-for="(reviewObj, index) in reviews" :key="index" >
-         
-            <div class="review" v-for="(review, key) in reviewObj" :key="key" >
-            <p>{{ review.name }}</p></div>
-          </div>
+      <div class="reviewsbox"  ref="reviewbox" >
+        <div class="review-inner" ref="review" >
+       
         
+             
+            <div class="review"  v-for="(review, key) in reviews"    :key="key" >
+              <span class="quote">
+              <img src="/quote.svg" alt="quote">
+             </span>
+             
+            <p>{{ review.quote }}</p>
+         
+            <div class="customer">
+              <img :src="review.image" alt="customer-image">
+              <div class="customer-info">
+                <h3>{{ review.name }}</h3>
+                <span>Kaser Customer</span>
+              </div>
+            </div>
+          </div>
+          
+          
+        </div>
       </div>
     
   </div>
@@ -156,20 +173,21 @@ export default {
 
   data() {
     return {
-
-        reviewDistance: 0,
-      reviewMoving: false , 
-     reviewsWidth: 200 + "px",
-      reviewsGap: 20 +"px",
-      brandsWidth: 200 + "px",
-      brandsGap: "20px",
+      // Sliders data
+      reviewsGap: "40px",
+      brandsGap: "20px" ,
       brandsSpeed: "5s" ,
-      innerWidth: 0 ,
+     
+
+      // Scroll-Animation data 
+      aboutAnimated: false,
+
+     
 
       
 
       services: [
-        { service: 'Persönliche Beratung' },
+        { service: 'Einzelberatung' },
         { service: 'Planung' },
         { service: 'Angebotsvergleich' },
         { service: 'Vermessung' },
@@ -178,116 +196,112 @@ export default {
         { service: 'Montageservice' },
         { service: 'Endbearbeitungen' },
         { service: 'Wartungsarbeiten' },
-        { service: 'Saisonabhängige Arbeiten' }
+        { service: 'Saisontätigkeiten' }
       ],
       brands: [
-        { src: '/shuco.svg' },
+        // { src: '/shuco.svg' },
         { src: '/saint.svg' },
-        { src: '/trocal.svg' },
+        // { src: '/trocal.svg' },
         { src: '/siegenia.svg' },
-        { src: '/veka.svg' },
-        { src: '/roto.svg' },
+        { src: '/siegenia.svg' },
+        { src: '/siegenia.svg' },
+        { src: '/siegenia.svg' },
+        { src: '/siegenia.svg' },
+        { src: '/siegenia.svg' },
+        { src: '/siegenia.svg' },
+        { src: '/siegenia.svg' },
+        { src: '/siegenia.svg' },
+        { src: '/siegenia.svg' },
+        { src: '/siegenia.svg' },
+        // { src: '/veka.svg' },
+        // { src: '/roto.svg' },
         { src: '/velux.svg' },
-        { src: '/wink.svg' },
+        // { src: '/wink.svg' },
         { src: '/abus.svg' },
         
       ],
       reviews: [
-        { review1:
            {
-             name: '1', quote: "Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt utdat dolore magna aliqua.Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed"
+             name: 'Sabine Schmidt', 
+             quote: "Ich bin sehr zufrieden mit dem Service von dieser Firma. Die Reparatur meiner Fenster wurde schnell und professionell durchgeführt."
+             ,image: '/dani.jpg' , 
         },
 
-        review2: {name: '2', quote: "Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt utdat dolore magna aliqua.Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed"}
-      },
-        { review1:
+       {name: 'Thomas Mayer',
+         quote: "Ich hatte Probleme mit meinen Türen und war beeindruckt von der schnellen und effizienten Reparatur durch das Team. Sehr empfehlenswert!"
+        ,image: '/dani.jpg' , }
+  
+  ,
            { 
-            name: '3', quote: "Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt utdat dolore magna aliqua.Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed"
+            name: 'Sandra Weber',
+             quote: "Die Rollen meiner Schiebetür waren schon lange defekt, aber das Team von dieser Firma konnte das Problem schnell beheben. Vielen Dank!"
+             ,image: '/dani.jpg' , 
         },
-        review2: {name: '4 ', quote: "Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt utdat dolore magna aliqua.Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed"}
-      
-      },
-        { review1: 
+       {name: 'Stefan Müller',
+         quote: "Ich war begeistert von der Qualität der Produkte, die für die Installation meiner neuen Fenster verwendet wurden. Sie sehen toll aus und sind auch energieeffizient."
+      , image: '/dani.jpg'},
+  
+    
           {
-             name: '5', quote: "Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt utdat dolore magna aliqua.Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed"
+             name: 'Julia Bauer',
+              quote: "Der Kundenservice war ausgezeichnet und das Team war sehr freundlich und hilfsbereit bei allen Fragen, die ich hatte. Ich würde sie jedem empfehlen!"
+              , image: '/dani.jpg'
         },
-        review2: {name: '6', quote: "Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt utdat dolore magna aliqua.Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed"}
-      },
+       {name: 'Michaela Fischer',
+         quote: "Ich hatte eine Notfallsituation mit meinen Türen und das Team von dieser Firma kam sofort zur Hilfe. Sie waren professionell, zuverlässig und haben das Problem schnell gelöst."
+        ,image: '/dani.jpg'  },
+
+        
         
       ]
     }
   },
 
   mounted() {
-    this.$nextTick(() => {
+
     //Vars
-    this.slider = this.$refs.slider;
     this.slider_inner = this.$refs.inner;
     this.slides = this.$refs.inner.querySelectorAll(".brand");
 
     //Slider
-    this.slide_count = this.slides.length;
     this.slide_width = this.slides[0].getBoundingClientRect().width;
-    this.slide_distance = this.slide_width + parseInt(this.brandsGap);
-
-    //Start Moving Bitch
+    this.slide_distance = this.slide_width + parseInt(this.brandsGap)
+    
+    
+    //Start Moving 
     this.moveSlider();
+
+                   // Reviews //
+    //Vars
+    this.reviews_inner = this.$refs.review;
+     
+    this.reviewbox_width = this.$refs.reviewbox.getBoundingClientRect().width;
+    // Add an event listener to the window resize event
+
+  window.addEventListener('resize', this.handleResize);
+
+
+   console.log(  this.reviewbox_width);
+    
+    //Start Moving 
     this.moveReviews();
-  });
+  
   },
+  beforeUnmount() {
+  window.removeEventListener('resize', this.handleResize);
+},
+ 
 
   methods: {
-    muian() {
-      // let reviews = this.$refs.reviews.querySelectorAll(".review");
-      // let reviewSize = reviews[1].getBoundingClientRect().width;
-     let slider = this.$refs.reviews.style.setProperty('--transform', '0');
-    //   var gap = parseInt(getComputedStyle(slider).getPropertyValue("--transform"));
-     console.log(slider)
-    
-   
-      
-},
-    
-
-    moveReviews() {
-      let reviews = this.$refs.reviews.querySelectorAll(".reviews");
-        let reviewSize = reviews[1].getBoundingClientRect().width;
-      let distance = reviewSize * 2 + 38 * 2 ;
-      // this.reviewMoving = !this.reviewMoving
-     this.reviewDistance = distance;
-    // this.$refs.reviews.style.transform = `translateX(-${this.distance})`;
-    
-      
-      setTimeout(() => {
-        // this.$refs.reviews.classList.remove("reviewmoving")
-        // this.$refs.reviews.style.transform = 'translateX(0)';
-        reviews.forEach((reviews) => {
-    reviews.style.transform = 'translateX(0)';
-  });
-        let item = this.reviews.shift()
-        this.reviewDistance = 0
-     this.reviews.push(item)
-        this.$refs.reviews.offsetHeight
-       
-     
-    this.moveReviews()
-    
-    
-  },  5000);
-
-
-         
-    
-  
+    handleResize() {
+      this.reviewbox_width = this.$refs.reviewbox.getBoundingClientRect().width;
+      this.reviews_inner.style.transform = "translateX(0px)";
     },
-    
-
-    moveSlider() { 
-      
-      console.log(parseInt(this.speed));
-
+   
+     moveSlider() { 
+     
       this.slider_inner.style.transform =
-        "translateX(-" + this.slide_distance + "px)";
+        "translateX(-150px)";
       setTimeout(() => {
         var item = this.$refs.inner.querySelector(".brand");
         item.remove();
@@ -296,23 +310,45 @@ export default {
         this.slider_inner.style.transition = "none";
         this.slider_inner.offsetHeight;
         this.slider_inner.style.transition = null;
-        this.moveSlider();
+        this.moveSlider()
       },   5000);
+    
         
+    },
+     moveReviews() { 
+    if (this.reviewbox_width < 900) {
+         this.reviews_inner.style.transform = `translateX(-${this.reviewbox_width + 10}px)`;
+
+        } else {
+          this.reviews_inner.style.transform = `translateX(-${this.reviewbox_width + 30}px)`;
+        }
+ 
+      setTimeout(() => {
         
+        var thing = this.$refs.review.querySelector(".review");
+        thing.remove();
+         this.reviews_inner.append(thing);
+       
+
+  this.reviews_inner.style.transform = "translateX(0px)";
+
+       
+        this.reviews_inner.style.transition = "none";
+        this.reviews_inner.offsetHeight;
+        this.reviews_inner.style.transition = null;
+        this.moveReviews()
+      },   5000);
     
-    
-    
-  
-      
-      
-   
+        
+    },
     }
   }
-}
+
 </script>
 
 <style lang="scss" scoped>
+
+
 @function clampReversed($max, $val, $min) {
   @return calc((clamp($min, $val, $max) * -1) + ($min + $max));
 }
@@ -321,15 +357,17 @@ export default {
   // grid-template-columns: 50% 50%;
   background-color: rgb(226, 226, 221);
   align-items: center;
-  justify-content: space-around;
-  padding: 75px 50px;
+  justify-content: space-evenly;
+  padding: 170px 25px;
   gap: 70px;
+ 
 
   @media screen and (max-width: 1000px) {
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
+
   p {
     max-width: 500px;
     @media screen and (max-width: 1000px) {
@@ -342,8 +380,10 @@ export default {
     gap: 20px;
     justify-content: center;
     align-items: center;
-
-    width: 490px;
+    font-size: 22px;
+    max-width: 590px;
+    width: 100%;
+    
     flex-wrap: wrap;
 
     @media screen and (max-width: 550px) {
@@ -351,12 +391,15 @@ export default {
       //  width: 100%;
     }
     .service {
+      display: flex;
       border: 2px solid black;
       box-shadow: 5px 5px 0px 0px rgba(51, 51, 51, 1);
       padding: 10px;
+    //  width: 100%;
       max-height: 20px;
-      @media screen and (max-width: 550px) {
-        // width: 100%;
+      @media screen and (max-width: 1000px) {
+        width: 90%;
+        justify-content: center;
       }
     }
   }
@@ -365,7 +408,9 @@ export default {
 .ourservice {
   display: flex;
   flex-direction: column;
+  font-size: 24px;
   // justify-content: center;
+  // padding: 170px 0;
 
   gap: 30px;
 
@@ -391,11 +436,18 @@ export default {
 
 .aboutus-section {
   display: flex;
-  //   align-items: center;
-  justify-content: space-around;
-  padding: 75px 50px;
+    align-items: center;
+  justify-content: space-evenly;
+  padding: 170px 25px;
+  // box-sizing: border-box;
   gap: 70px;
-  @media screen and (max-width: 770px) {
+  img {
+   height: auto;
+   max-width: 100%;
+   
+   
+  }
+  @media screen and (max-width: 1000px) {
     flex-direction: column;
     align-items: center;
   }
@@ -409,7 +461,9 @@ export default {
   .aboutus {
     display: flex;
     flex-direction: column;
+   
     gap: 30px;
+    font-size: 24px;
 
     span {
       color: rgb(160, 155, 155);
@@ -425,16 +479,12 @@ export default {
       max-width: 90px;
       border: 2px solid black;
     }
+    p{
+      // font-weight: 400;
+      
+    }
   }
-  .about-image {
-    background-image: url(/window1.jpg);
-    height: 400px;
-    width: 450px;
-    background-size: cover;
-    background-position: center;
-
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  }
+  
 
   //   .quote {
   //     // width: clampReversed(550px, 10%, 350px);
@@ -495,17 +545,18 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 80px 35px;
+  padding: 80px 25px;
+  
 
   .whyus {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 50px;
-    padding: 20px;
+    // padding: 20px;
 
     h2 {
-      font-weight: 800;
+      font-weight: 00;
       text-align: center;
     }
     h3 {
@@ -576,7 +627,7 @@ export default {
   $speed: 5s;
   
 
-  background-color: rgb(44, 41, 41);
+  background-color: rgb(240, 232, 8);
     overflow: hidden;
     
     padding: 40px 0;
@@ -587,6 +638,7 @@ export default {
   // justify-content: space-evenly;
   img{
     // flex-shrink: 0;
+    color: white;
   margin-right: 20px;
   display: inline-flex;
   justify-content: center;
@@ -603,90 +655,162 @@ export default {
 
   .inner {
     display: flex;
+    
     transition: transform 5s linear;
-    
-
-    
+  
   }
   .brand {
-    width: 200px;
+    width: 130px;
   }
 }
 
 .testimonials-section {
   display: flex;
-  // justify-content: spac;
   align-items: center;
-  
-  background-color: aliceblue;
   flex-direction: column;
-    // justify-content: center;
     gap: 30px;
     padding: 60px;
- 
-  
 }
 .reviewsbox {
-
-
-  display: flex;
-  overflow: hidden;
- padding: 20px ;
- gap: 40px;
- width: 1080px;
  
-//  height: 100%;
-
-
-
-  .reviews {
-    display: flex;
-    justify-content: center;
-    // flex-wrap: wrap;
-    gap: 40px;
-
-transition: transform 1s ease;
-    background-color: rgb(249, 251, 251);
+  display: flex;
+  // flex-wrap: wrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  // padding: 50px;
+  width: 1150px;
   
-    // width: 1100px;
-   
+
+  @media screen and (max-width: 1170px) {
+    width: 900px;
+  }
+  @media screen and (max-width: 1000px) {
+    width: clamp(270px ,90% ,900px);
+  }
+ 
+
+  .review-inner {
+    display: flex;
+    // grid-template-columns: repeat(6 , 1fr);
+    width: 100%;
+    // overflow: hidden;
+    gap: 40px;
+    padding: 150px 10px;
+    @media screen and (max-width: 1000px) {
+      padding: 60px 10px 120px 10px;
+  }
+    // transform: translateX(-200px);
+    
+    transition: transform 2s ease;
 
   }
-  // .inner-reviews{
-  //   display: flex;
-  // // transform: translate(-850px);
-  //   justify-content: space-around;
-  //   gap: 70px;
-  //   // transform: translateX(-20%);
-  //   // padding: 0 20px;
   
-  // }
+  
   .review {
-    display: flex;
-      // max-width: 390px;
      
-      // background-color: rgb(215, 35, 35);
-      // display: flex;
-      gap: 50px;
-      border: 20px solid rgb(168, 167, 167);
-      // flex-direction: column;
-      // align-items: center;
-      // justify-content: center;
-      padding: 105px 230px ;
-     
-      
-     p {
-      font-family: roboto;
-     
-      font-size: 25px;
-      max-width: 383px;
-      line-height: 30px;
-      
-     }
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   flex-shrink: 0;
+  
+   box-sizing: border-box;
+   width: calc(100% - 25px);
+  //  align-items: center;
+  
+  position: relative;
+      border: 10px solid #e8eaed;
+      // height: 250px;
+      // width: 490px;
+      padding: 0 18px;
+      z-index: 2;
+
+      @media  screen and (min-width:1000px) {
+        width: calc(50% - 25px );
+      }
       
 
-      // gap: 20px;
-      //   align-items: center;
+      &::before {
+       
+    // display: block;
+    content: "";
+    position: absolute;
+    bottom: -38px;
+    left: 18%;
+    z-index: 0;
+    // border-radius: 500px;
+    // width: 50px;
+    // height: 50px;
+    border-top: 35px solid #e8eaed;
+      border-right: 35px solid transparent;
+    // background-color: #e8eaed;
+    // transform: skew(50deg);
+        
+      }
+      
+      
+     p {
+      color: black;
+      font-family: roboto;
+      padding: 50px 20px;
+      font-size: 22px;
+      line-height: 30px;
+    
+      @media screen and (max-width: 1000px) {
+        padding: 50px 20px;
+  }
+  //  @media screen and (max-width: 1000px) {
+    
+  // //  width:  clamp(450px ,90% ,900px);
+  
+  // }
+  
+      
+     }
+     .quote {
+      
+      position: absolute;
+      top: -35px;
+      right: 6%;
+      width: 13%;
+      z-index: 2;
+      padding: 0 10px ;
+      background-color: white;
+      text-align: center;
+      @media screen and (max-width: 1000px) {
+        width: 50px;
+      }
+      img {
+        width: 100%;
+        max-width: 50px;
+        height: auto;
+        @media screen and (max-width: 1000px) {
+        max-width: 50px;
+       
+      }
+      }
+     }
+     .customer {
+      
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      
+      transform: translateY(115px);
+      // padding-left:6px ;
+      gap: 30px;
+      img {
+        height: 65px;
+        width: 65px;
+        border-radius: 50%;
+      }
+      .customer-info {
+        display: grid;
+        gap: 7px;
+      }
+     }
+
     }
 }
 </style>

@@ -10,7 +10,9 @@
         next: nextIndex === index
       }"
     >
+    
       <img :src="slide.src" :alt="slide.alt" />
+    
       <div class="info">
         <h2>{{ slide.title }}</h2>
         <p>{{ slide.description }}</p>
@@ -29,7 +31,7 @@
   </div>
 </template>
 
-<script>
+<script >
 export default {
   data() {
     return {
@@ -39,21 +41,21 @@ export default {
           alt: '',
           title: 'Fenster',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+            'Unsere Fenster sind von höchster Qualität und werden von unseren erfahrenen Handwerkern fachgerecht eingebaut.'
         },
         {
           src: '/window2.jpg',
           alt: '',
           title: 'Turen',
           description:
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+            'Mit unseren hochwertigen Türen und professioneller Installation schützen Sie Ihr Zuhause und steigern den Wert Ihrer Immobilie.'
         },
         {
           src: '/window3.jpg',
           alt: '',
           title: 'Rollen',
           description:
-            'Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+            'Our rollers meet the highest standards and ensure a smooth and quiet movement of your doors and windows.'
         }
       ],
       currentIndex: 0,
@@ -91,11 +93,23 @@ export default {
   position: relative;
   /* background: #000116; */
 
-  height: 85vh;
+  height: 80vh;
   // margin: 0 20px;
   /* padding: 20px; */
   overflow: hidden;
   /* border-radius: 10px; */
+  &::after {
+   
+   content: "";
+   position: absolute;
+   display: block;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.6) 100%) repeat 0 0;
+   z-index: 1;
+   }
 }
 
 .slider .slide {
@@ -116,6 +130,24 @@ export default {
   height: 100%;
   object-fit: cover;
 }
+
+// .image-wrapper {
+//   position: relative;
+
+//   &::after {
+   
+// content: "";
+// position: absolute;
+// display: block;
+// left: 0;
+// top: 0;
+// width: 100%;
+// height: 100%;
+// background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.6) 100%) repeat 0 0;
+// z-index: 1;
+// }
+//   }
+
 .slide.active {
   .info {
     transform: translate(-50%, -50%);
@@ -141,23 +173,25 @@ export default {
   gap: 25px;
   position: absolute;
   top: 50%;
-  left: 40%;
+  left: 45%;
+  max-width: 1260px;
   font-family: sans-serif;
   transform: translate(-50%, 100%);
   opacity: 0;
   // width: 100%;
   padding: 20px;
+  z-index: 2;
   // background: rgba(0, 0, 0, 0.7);
-  color: #fff;
+  color: #fbf6f6;
   h2 {
     opacity: 0;
-    font-size: 2rem;
+    font-size: 70px;
     // margin-bottom: 10px;
   }
   p {
     line-height: 30px;
     opacity: 0;
-    font-size: 1.2rem;
+    font-size: 30px;
   }
   a {
     opacity: 0;
