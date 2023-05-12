@@ -140,6 +140,8 @@ hochwertigen Produkten für Ihr Zuhause um.
         <h2>What our clients say about us</h2>
       </div>
       <div class="reviewsbox"  ref="reviewbox" >
+        <button type="button" class="prev">1</button>
+       <button type="button" class="next">2</button>
         <div class="review-inner" ref="review" >
        
         
@@ -485,61 +487,6 @@ export default {
     }
   }
   
-
-  //   .quote {
-  //     // width: clampReversed(550px, 10%, 350px);
-  //     width: 350px;
-  //     @media screen and (max-width: 770px) {
-  //       width: 100%;
-  //       max-width: 400px;
-  //     }
-  //   }
-  //   .headerbox {
-  //     display: flex;
-  //     align-items: center;
-  //     // justify-content: center;
-  //     color: rgb(7, 6, 6);
-  //     gap: 10px;
-  //     background-color: rgb(229, 190, 118);
-  //     padding: 12px;
-  //   }
-  //   .inputbox {
-  //     display: flex;
-  //     flex-direction: column;
-  //     background-color: rgb(248, 248, 248);
-  //     padding: 20px 20px;
-  //     // width: 300px;
-  //     gap: 20px;
-  //     // justify-content: space-around;
-  //     // justify-content: center;
-  //     // align-items: center;
-  //     // transform: translateY(-66%);
-  //     button {
-  //       border: none;
-  //       background-color: black;
-  //       width: 200px;
-  //       padding: 15px 0;
-  //       color: white;
-  //       align-self: center;
-  //       justify-self: center;
-  //     }
-  //     .inputs {
-  //       border-bottom: 1px solid gray;
-  //       padding-bottom: 5px;
-  //       input {
-  //         border: 0;
-  //         background-color: rgb(248, 248, 248);
-  //       }
-  //     }
-  //     textarea {
-  //       border: 1px solid gray;
-  //       resize: none;
-  //       box-sizing: border-box;
-  //       padding: 5px;
-  //       outline: none;
-  //       background-color: rgb(248, 248, 248);
-  //     }
-  //   }
 }
 .whyus-section {
   display: flex;
@@ -666,6 +613,7 @@ export default {
 
 .testimonials-section {
   display: flex;
+  position: relative;
   align-items: center;
   flex-direction: column;
     gap: 30px;
@@ -680,6 +628,34 @@ export default {
   // padding: 50px;
   width: 1150px;
   
+  .prev {
+    border: none;
+    position: absolute;
+    top: 54%;
+    left: 5%;
+    z-index: 3;
+    padding: 10px 20px;
+    transform: translateX(-20px);
+    cursor: pointer;
+
+
+  }
+  .next {
+    position: absolute;
+    top: 54%;
+    z-index: 3;
+    right: 3%;
+    border: none;
+    padding: 10px 20px;
+    background-image: url(path/to/your/arrow.svg);
+    cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center right 10px;
+  background-size: 10px;
+  background-origin: content-box;
+
+
+  }
 
   @media screen and (max-width: 1170px) {
     width: 900px;
@@ -701,7 +677,7 @@ export default {
   }
     // transform: translateX(-200px);
     
-    transition: transform 2s ease;
+    transition: transform 1.5s ease;
 
   }
   

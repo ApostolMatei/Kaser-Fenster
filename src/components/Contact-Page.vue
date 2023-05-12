@@ -32,16 +32,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    // flex-wrap: wrap;
      padding: 150px 0;
     //  max-width: 1260px;
     //  margin: 0 auto;
-     gap: 100px;
+     gap: 80px;
 
-     @media screen and (max-width: 1000px) {
+     @media screen and (max-width: 1050px) {
        flex-direction: column;
        padding: 150px;
+       .ornament { 
+        display: none;
+        }
      }
      .ornament {
+        
         padding: 25px;
         background-color: rgb(237, 154, 12);
      }
@@ -92,12 +97,18 @@
     position: relative;
     flex-direction: column;
     justify-content: space-between;
-    padding: 60px 650px 60px 40px;
+    // padding: 60px 650px 60px 40px;
+    padding: 40px 0 40px 40px;
+    width: 935px;
+    
+   
     background-color: rgb(36, 36, 36);
     color: white;
     gap: 75px;
     font-size: 22px;
-    
+    // @media screen and (max-width: 1000px) { 
+    //      padding: 50px 120px;
+    // }
     &::after {
     display: block;
     content: "";
