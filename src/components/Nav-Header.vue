@@ -1,7 +1,10 @@
 <template>
   <header :class="{ 'sticky-nav': isSticky }">
     <nav >
-      <div class="logo"></div>
+      <div class="logo">
+        <img src="/logo3.png" alt="logo1">
+      
+      </div>
       <svg
         @click.prevent="menuActive = !this.menuActive"
         class="hamburger"
@@ -69,7 +72,7 @@ export default {
 header {
   // height: 100vh;
   background-color: white; 
-  padding: 15px 20px;
+  padding: 10px 20px;
 }
 
 nav {
@@ -86,9 +89,15 @@ nav {
   margin: 0 auto;
 
   .logo {
-    height: 48px;
-    width: 152px;
-    // justify-self: center;
+ 
+    img {
+    height: 58px;
+    
+    // width: 152px;
+    // background-color: #222222;
+    // justify-self: center
+   
+  }
   }
   .hamburger {
     display: none;

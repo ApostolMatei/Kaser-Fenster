@@ -1,6 +1,18 @@
 <template>
+  <div class="brands" ref="slider" @click="muian">
+    <div class="inner" ref="inner">
+      <img
+        width="130"
+        height="97"
+        class="brand"
+        v-for="brand in brands"
+        :key="brand"
+        :src="brand.src"
+      />
+    </div>
+  </div>
   <div class="aboutus-section" ref="about">
-    <img src="/window1.jpg" alt="windows " width="500">
+    <img src="/window.png" alt="windows " width="500" />
     <div class="aboutus">
       <div>
         <span>Why We/Us</span>
@@ -8,36 +20,13 @@
       </div>
       <p>
         Seit über 15 Jahren sind wir im Bereich Fenster-, Tür-, Sonnenschutzsysteme sowie
-Einbruchschutz etabliert. Profitieren Sie somit von unserer langjährigen Erfahrung und
-dem direkten Kontakt zu allen gängigen Herstellern. Unser Slogan ist für uns Programm.
-Unser Wissen ist Ihr Vorteil. Wir planen für Sie und mit Ihnen.
-Somit ermöglichen wir Ihnen freies Gestalten und setzen Ihre Wünsche mit qualitativ
-hochwertigen Produkten für Ihr Zuhause um.
+        Einbruchschutz etabliert. Profitieren Sie somit von unserer langjährigen Erfahrung und dem
+        direkten Kontakt zu allen gängigen Herstellern. Unser Slogan ist für uns Programm. Unser
+        Wissen ist Ihr Vorteil. Wir planen für Sie und mit Ihnen. Somit ermöglichen wir Ihnen freies
+        Gestalten und setzen Ihre Wünsche mit qualitativ hochwertigen Produkten für Ihr Zuhause um.
       </p>
       <a href="/">More</a>
     </div>
-
-    <!-- <div class="quote">
-      <div class="headerbox">
-        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24">
-          <path fill="currentColor" d="m15 17l2-4h-4V6h7v7l-2 4h-3Zm-9 0l2-4H4V6h7v7l-2 4H6Z" />
-        </svg>
-        <span>REQUEST A QUOTE</span>
-      </div>
-      <div class="inputbox">
-        <div class="inputs"><input type="text" placeholder="Your Name" /></div>
-        <div class="inputs"><input type="text" placeholder="Email" /></div>
-        <div class="inputs"><input type="text" placeholder="Phone number" /></div>
-        <textarea
-          name="The job"
-          id="thejobtextarea"
-          cols="20"
-          rows="4"
-          placeholder="The job"
-        ></textarea>
-        <button>SUBMIT ENQUIRY</button>
-      </div>
-    </div> -->
   </div>
   <div class="service-section">
     <div class="ourservice">
@@ -77,7 +66,11 @@ hochwertigen Produkten für Ihr Zuhause um.
           </div>
           <div class="text">
             <h3>Erfahren und Professionell</h3>
-            <p>Unser Team von Experten verfügt über jahrelange Erfahrung in der Reparatur und Installation von Fenstern, Türen und Rollen. Wir legen Wert auf Professionalität und eine akkurate Arbeitsweise.</p>
+            <p>
+              Unser Team von Experten verfügt über jahrelange Erfahrung in der Reparatur und
+              Installation von Fenstern, Türen und Rollen. Wir legen Wert auf Professionalität und
+              eine akkurate Arbeitsweise.
+            </p>
           </div>
         </div>
         <div class="talent">
@@ -102,7 +95,12 @@ hochwertigen Produkten für Ihr Zuhause um.
 
           <div class="text">
             <h3>Qualitätsprodukte</h3>
-            <p>Wir verwenden ausschließlich hochwertige Materialien und Produkte für unsere Reparaturen und Installationen. Sie können sicher sein, dass Ihr Zuhause oder Ihr Unternehmen mit erstklassigen Produkten ausgestattet wird, die jahrelang halten werden.</p>
+            <p>
+              Wir verwenden ausschließlich hochwertige Materialien und Produkte für unsere
+              Reparaturen und Installationen. Sie können sicher sein, dass Ihr Zuhause oder Ihr
+              Unternehmen mit erstklassigen Produkten ausgestattet wird, die jahrelang halten
+              werden.
+            </p>
           </div>
         </div>
         <div class="talent">
@@ -118,54 +116,46 @@ hochwertigen Produkten für Ihr Zuhause um.
           </div>
           <div class="text">
             <h3>Kundenzufriedenheit</h3>
-            <p>Wir sind bestrebt, sicherzustellen, dass unsere Kunden zu 100% mit unseren Dienstleistungen zufrieden sind. Vom Anfang bis zum Ende bemühen wir uns, Erwartungen zu übertreffen und sicherzustellen, dass jeder Auftrag perfekt abgeschlossen wird.</p>
+            <p>
+              Wir sind bestrebt, sicherzustellen, dass unsere Kunden zu 100% mit unseren
+              Dienstleistungen zufrieden sind. Vom Anfang bis zum Ende bemühen wir uns, Erwartungen
+              zu übertreffen und sicherzustellen, dass jeder Auftrag perfekt abgeschlossen wird.
+            </p>
           </div>
         </div>
       </div>
     </div>
   </div>
-  
-    <div class="brands" ref="slider" @click="muian">
-      <div class="inner"   ref="inner">
-        
-          <img width="200" height="150" class="brand"   v-for="brand in brands" :key="brand" :src="brand.src" />
-        
-      </div>
-    </div>
-  
+
   <div class="testimonials-section" ref="testimonials">
-    
-      <div class="title">
-        <span>Testimonials</span>
-        <h2>What our clients say about us</h2>
-      </div>
-      <div class="reviewsbox"  ref="reviewbox" >
-        <button type="button" class="prev">1</button>
-       <button type="button" class="next">2</button>
-        <div class="review-inner" ref="review" >
-       
-        
-             
-            <div class="review"  v-for="(review, key) in reviews"    :key="key" >
-              <span class="quote">
-              <img src="/quote.svg" alt="quote">
-             </span>
-             
+    <div class="title">
+      <span>Testimonials</span>
+      <h2>What our clients say about us</h2>
+    </div>
+
+    <div class="reviewbox-wrapper">
+      <button type="button" class="prev">1</button>
+      <button type="button" class="next">2</button>
+      <div class="reviewsbox" ref="reviewbox">
+        <div class="review-inner" ref="review">
+          <div class="review" v-for="(review, key) in reviews" :key="key">
+            <span class="quote">
+              <img src="/quote.svg" alt="quote" />
+            </span>
+
             <p>{{ review.quote }}</p>
-         
+
             <div class="customer">
-              <img :src="review.image" alt="customer-image">
+              <img :src="review.image" alt="customer-image" />
               <div class="customer-info">
                 <h3>{{ review.name }}</h3>
                 <span>Kaser Customer</span>
               </div>
             </div>
           </div>
-          
-          
         </div>
       </div>
-    
+    </div>
   </div>
 </template>
 
@@ -176,17 +166,12 @@ export default {
   data() {
     return {
       // Sliders data
-      reviewsGap: "40px",
-      brandsGap: "20px" ,
-      brandsSpeed: "5s" ,
-     
+      reviewsGap: '40px',
+      brandsGap: '20px',
+      brandsSpeed: '5s',
 
-      // Scroll-Animation data 
+      // Scroll-Animation data
       aboutAnimated: false,
-
-     
-
-      
 
       services: [
         { service: 'Einzelberatung' },
@@ -201,156 +186,144 @@ export default {
         { service: 'Saisontätigkeiten' }
       ],
       brands: [
-        // { src: '/shuco.svg' },
-        { src: '/saint.svg' },
-        // { src: '/trocal.svg' },
-        { src: '/siegenia.svg' },
-        { src: '/siegenia.svg' },
-        { src: '/siegenia.svg' },
-        { src: '/siegenia.svg' },
-        { src: '/siegenia.svg' },
-        { src: '/siegenia.svg' },
-        { src: '/siegenia.svg' },
-        { src: '/siegenia.svg' },
-        { src: '/siegenia.svg' },
-        { src: '/siegenia.svg' },
-        { src: '/siegenia.svg' },
-        // { src: '/veka.svg' },
-        // { src: '/roto.svg' },
-        { src: '/velux.svg' },
-        // { src: '/wink.svg' },
-        { src: '/abus.svg' },
+        { src: '/schuco.png' },
+        { src: '/saint.png' },
+        { src: '/trocal.png' },
+        { src: '/abus.png' },
+        { src: '/roto.png' },
+        { src: '/siegenia.png' },
+        { src: '/veka.png' },
+        { src: '/velux.png' },
+        { src: '/wink.png' },
+        { src: '/schuco.png' },
+        { src: '/saint.png' },
+        { src: '/trocal.png' },
+        { src: '/abus.png' },
+        { src: '/roto.png' },
+        { src: '/siegenia.png' },
+        { src: '/veka.png' },
+        { src: '/velux.png' },
+        { src: '/wink.png' },
         
       ],
       reviews: [
-           {
-             name: 'Sabine Schmidt', 
-             quote: "Ich bin sehr zufrieden mit dem Service von dieser Firma. Die Reparatur meiner Fenster wurde schnell und professionell durchgeführt."
-             ,image: '/dani.jpg' , 
+        {
+          name: 'Sabine Schmidt',
+          quote:
+            'Ich bin sehr zufrieden mit dem Service von dieser Firma. Die Reparatur meiner Fenster wurde schnell und professionell durchgeführt.',
+          image: '/dani.jpg'
         },
 
-       {name: 'Thomas Mayer',
-         quote: "Ich hatte Probleme mit meinen Türen und war beeindruckt von der schnellen und effizienten Reparatur durch das Team. Sehr empfehlenswert!"
-        ,image: '/dani.jpg' , }
-  
-  ,
-           { 
-            name: 'Sandra Weber',
-             quote: "Die Rollen meiner Schiebetür waren schon lange defekt, aber das Team von dieser Firma konnte das Problem schnell beheben. Vielen Dank!"
-             ,image: '/dani.jpg' , 
+        {
+          name: 'Thomas Mayer',
+          quote:
+            'Ich hatte Probleme mit meinen Türen und war beeindruckt von der schnellen und effizienten Reparatur durch das Team. Sehr empfehlenswert!',
+          image: '/dani.jpg'
         },
-       {name: 'Stefan Müller',
-         quote: "Ich war begeistert von der Qualität der Produkte, die für die Installation meiner neuen Fenster verwendet wurden. Sie sehen toll aus und sind auch energieeffizient."
-      , image: '/dani.jpg'},
-  
-    
-          {
-             name: 'Julia Bauer',
-              quote: "Der Kundenservice war ausgezeichnet und das Team war sehr freundlich und hilfsbereit bei allen Fragen, die ich hatte. Ich würde sie jedem empfehlen!"
-              , image: '/dani.jpg'
-        },
-       {name: 'Michaela Fischer',
-         quote: "Ich hatte eine Notfallsituation mit meinen Türen und das Team von dieser Firma kam sofort zur Hilfe. Sie waren professionell, zuverlässig und haben das Problem schnell gelöst."
-        ,image: '/dani.jpg'  },
 
-        
-        
+        {
+          name: 'Sandra Weber',
+          quote:
+            'Die Rollen meiner Schiebetür waren schon lange defekt, aber das Team von dieser Firma konnte das Problem schnell beheben. Vielen Dank!',
+          image: '/dani.jpg'
+        },
+        {
+          name: 'Stefan Müller',
+          quote:
+            'Ich war begeistert von der Qualität der Produkte, die für die Installation meiner neuen Fenster verwendet wurden. Sie sehen toll aus und sind auch energieeffizient.',
+          image: '/dani.jpg'
+        },
+
+        {
+          name: 'Julia Bauer',
+          quote:
+            'Der Kundenservice war ausgezeichnet und das Team war sehr freundlich und hilfsbereit bei allen Fragen, die ich hatte. Ich würde sie jedem empfehlen!',
+          image: '/dani.jpg'
+        },
+        {
+          name: 'Michaela Fischer',
+          quote:
+            'Ich hatte eine Notfallsituation mit meinen Türen und das Team von dieser Firma kam sofort zur Hilfe. Sie waren professionell, zuverlässig und haben das Problem schnell gelöst.',
+          image: '/dani.jpg'
+        }
       ]
     }
   },
 
   mounted() {
-
     //Vars
-    this.slider_inner = this.$refs.inner;
-    this.slides = this.$refs.inner.querySelectorAll(".brand");
+    this.slider_inner = this.$refs.inner
+    this.slides = this.$refs.inner.querySelectorAll('.brand')
 
     //Slider
-    this.slide_width = this.slides[0].getBoundingClientRect().width;
+    this.slide_width = this.slides[0].getBoundingClientRect().width
     this.slide_distance = this.slide_width + parseInt(this.brandsGap)
-    
-    
-    //Start Moving 
-    this.moveSlider();
 
-                   // Reviews //
+    //Start Moving
+    this.moveSlider()
+
+    // Reviews //
     //Vars
-    this.reviews_inner = this.$refs.review;
-     
-    this.reviewbox_width = this.$refs.reviewbox.getBoundingClientRect().width;
+    this.reviews_inner = this.$refs.review
+
+    this.reviewbox_width = this.$refs.reviewbox.getBoundingClientRect().width
     // Add an event listener to the window resize event
 
-  window.addEventListener('resize', this.handleResize);
+    window.addEventListener('resize', this.handleResize)
 
+    console.log(this.reviewbox_width)
 
-   console.log(  this.reviewbox_width);
-    
-    //Start Moving 
-    this.moveReviews();
-  
+    //Start Moving
+    this.moveReviews()
   },
   beforeUnmount() {
-  window.removeEventListener('resize', this.handleResize);
-},
- 
+    window.removeEventListener('resize', this.handleResize)
+  },
 
   methods: {
     handleResize() {
-      this.reviewbox_width = this.$refs.reviewbox.getBoundingClientRect().width;
-      this.reviews_inner.style.transform = "translateX(0px)";
+      this.reviewbox_width = this.$refs.reviewbox.getBoundingClientRect().width
+      this.reviews_inner.style.transform = 'translateX(0px)'
     },
-   
-     moveSlider() { 
-     
-      this.slider_inner.style.transform =
-        "translateX(-150px)";
+
+    moveSlider() {
+      this.slider_inner.style.transform = 'translateX(-150px)'
       setTimeout(() => {
-        var item = this.$refs.inner.querySelector(".brand");
-        item.remove();
-        this.slider_inner.style.transform = "translateX(0px)";
-        this.slider_inner.append(item);
-        this.slider_inner.style.transition = "none";
-        this.slider_inner.offsetHeight;
-        this.slider_inner.style.transition = null;
+        var item = this.$refs.inner.querySelector('.brand')
+        item.remove()
+        this.slider_inner.style.transform = 'translateX(0px)'
+        this.slider_inner.append(item)
+        this.slider_inner.style.transition = 'none'
+        this.slider_inner.offsetHeight
+        this.slider_inner.style.transition = null
         this.moveSlider()
-      },   5000);
-    
-        
+      }, 5000)
     },
-     moveReviews() { 
-    if (this.reviewbox_width < 900) {
-         this.reviews_inner.style.transform = `translateX(-${this.reviewbox_width + 10}px)`;
+    moveReviews() {
+      if (this.reviewbox_width < 900) {
+        this.reviews_inner.style.transform = `translateX(-${this.reviewbox_width + 10}px)`
+      } else {
+        this.reviews_inner.style.transform = `translateX(-${this.reviewbox_width + 30}px)`
+      }
 
-        } else {
-          this.reviews_inner.style.transform = `translateX(-${this.reviewbox_width + 30}px)`;
-        }
- 
       setTimeout(() => {
-        
-        var thing = this.$refs.review.querySelector(".review");
-        thing.remove();
-         this.reviews_inner.append(thing);
-       
+        var thing = this.$refs.review.querySelector('.review')
+        thing.remove()
+        this.reviews_inner.append(thing)
 
-  this.reviews_inner.style.transform = "translateX(0px)";
+        this.reviews_inner.style.transform = 'translateX(0px)'
 
-       
-        this.reviews_inner.style.transition = "none";
-        this.reviews_inner.offsetHeight;
-        this.reviews_inner.style.transition = null;
+        this.reviews_inner.style.transition = 'none'
+        this.reviews_inner.offsetHeight
+        this.reviews_inner.style.transition = null
         this.moveReviews()
-      },   5000);
-    
-        
-    },
+      }, 5000)
     }
   }
-
+}
 </script>
 
 <style lang="scss" scoped>
-
-
 @function clampReversed($max, $val, $min) {
   @return calc((clamp($min, $val, $max) * -1) + ($min + $max));
 }
@@ -362,7 +335,6 @@ export default {
   justify-content: space-evenly;
   padding: 170px 25px;
   gap: 70px;
- 
 
   @media screen and (max-width: 1000px) {
     flex-direction: column;
@@ -385,7 +357,7 @@ export default {
     font-size: 22px;
     max-width: 590px;
     width: 100%;
-    
+
     flex-wrap: wrap;
 
     @media screen and (max-width: 550px) {
@@ -397,7 +369,7 @@ export default {
       border: 2px solid black;
       box-shadow: 5px 5px 0px 0px rgba(51, 51, 51, 1);
       padding: 10px;
-    //  width: 100%;
+      //  width: 100%;
       max-height: 20px;
       @media screen and (max-width: 1000px) {
         width: 90%;
@@ -438,16 +410,14 @@ export default {
 
 .aboutus-section {
   display: flex;
-    align-items: center;
+  align-items: center;
   justify-content: space-evenly;
   padding: 170px 25px;
   // box-sizing: border-box;
   gap: 70px;
   img {
-   height: auto;
-   max-width: 100%;
-   
-   
+    height: auto;
+    max-width: 100%;
   }
   @media screen and (max-width: 1000px) {
     flex-direction: column;
@@ -463,7 +433,7 @@ export default {
   .aboutus {
     display: flex;
     flex-direction: column;
-   
+
     gap: 30px;
     font-size: 24px;
 
@@ -481,19 +451,16 @@ export default {
       max-width: 90px;
       border: 2px solid black;
     }
-    p{
+    p {
       // font-weight: 400;
-      
     }
   }
-  
 }
 .whyus-section {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 80px 25px;
-  
 
   .whyus {
     display: flex;
@@ -568,147 +535,143 @@ export default {
   }
 }
 
-
-  .brands {
-    $gap: 20px;
-  $speed: 5s;
+.brands {
   
+  background-color: rgb(0, 0, 0);
+  overflow: hidden;
 
-  background-color: rgb(240, 232, 8);
-    overflow: hidden;
-    
-    padding: 40px 0;
+  padding: 25px 0;
 
-    // width: 800px;
-  
-  
+  // width: 800px;
+
   // justify-content: space-evenly;
-  img{
+  img {
     // flex-shrink: 0;
     color: white;
-  margin-right: 20px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  // width: 200px;
-  height: 100%;
-  aspect-ratio: 4/3;
-  // background-color: #5d5dcd;
-  font-size: 30px;
-  font-weight: bold;
-   
+    margin-right: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    // width: 200px;
+    height: 100%;
+    
+    aspect-ratio: 4/3;
+    // background-color: #5d5dcd;
+    font-size: 30px;
+    font-weight: bold;
   }
- 
 
   .inner {
     display: flex;
-    
+
     transition: transform 5s linear;
-  
   }
-  .brand {
-    width: 130px;
-  }
+  // .brand {
+    
+  // }
 }
 
 .testimonials-section {
   display: flex;
-  position: relative;
+
   align-items: center;
   flex-direction: column;
-    gap: 30px;
-    padding: 60px;
+  gap: 30px;
+  padding: 60px;
 }
-.reviewsbox {
- 
-  display: flex;
-  // flex-wrap: wrap;
-  overflow: hidden;
-  box-sizing: border-box;
-  // padding: 50px;
-  width: 1150px;
+.reviewbox-wrapper {
+  position: relative;
+  width: 100%;
   
-  .prev {
-    border: none;
+}
+.prev {
     position: absolute;
+
+    border: none;
+    
     top: 54%;
-    left: 5%;
+    left: 0;
     z-index: 3;
     padding: 10px 20px;
     transform: translateX(-20px);
     cursor: pointer;
-
-
   }
+
   .next {
+    
     position: absolute;
     top: 54%;
     z-index: 3;
-    right: 3%;
+    right: 0;
     border: none;
     padding: 10px 20px;
     background-image: url(path/to/your/arrow.svg);
     cursor: pointer;
-  background-repeat: no-repeat;
-  background-position: center right 10px;
-  background-size: 10px;
-  background-origin: content-box;
-
-
+    transform: translateX(20px);
+    background-repeat: no-repeat;
+    background-position: center right 10px;
+    background-size: 10px;
+    background-origin: content-box;
   }
+.reviewsbox {
+  display: flex;
+  // position: relative;
+  overflow: hidden;
 
-  @media screen and (max-width: 1170px) {
+ 
+  box-sizing: border-box;
+
+  width: 1250px;
+ 
+
+  
+
+  @media screen and (max-width: 1280px) {
     width: 900px;
   }
   @media screen and (max-width: 1000px) {
-    width: clamp(270px ,90% ,900px);
+    width: clamp(270px, 90%, 900px);
   }
- 
+}
+.review-inner {
+  display: flex;
+  // grid-template-columns: repeat(6 , 1fr);
+  width: 100%;
+  // overflow: hidden;
+  gap: 40px;
+  padding: 150px 10px;
+  @media screen and (max-width: 1000px) {
+    padding: 60px 10px 120px 10px;
+  }
+  // transform: translateX(-200px);
 
-  .review-inner {
-    display: flex;
-    // grid-template-columns: repeat(6 , 1fr);
-    width: 100%;
-    // overflow: hidden;
-    gap: 40px;
-    padding: 150px 10px;
-    @media screen and (max-width: 1000px) {
-      padding: 60px 10px 120px 10px;
-  }
-    // transform: translateX(-200px);
-    
-    transition: transform 1.5s ease;
+  transition: transform 1.5s ease;
+}
 
-  }
-  
-  
-  .review {
-     
-   display: flex;
-   justify-content: center;
-   flex-direction: column;
-   flex-shrink: 0;
-  
-   box-sizing: border-box;
-   width: calc(100% - 25px);
+.review {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-shrink: 0;
+
+  box-sizing: border-box;
+  width: calc(100% - 25px);
   //  align-items: center;
-  
+
   position: relative;
-      border: 10px solid #e8eaed;
-      // height: 250px;
-      // width: 490px;
-      padding: 0 18px;
-      z-index: 2;
+  border: 10px solid #e8eaed;
+  // height: 250px;
+  // width: 490px;
+  padding: 0 18px;
+  z-index: 2;
 
-      @media  screen and (min-width:1000px) {
-        width: calc(50% - 25px );
-      }
-      
+  @media screen and (min-width: 1000px) {
+    width: calc(50% - 25px);
+  }
 
-      &::before {
-       
+  &::before {
     // display: block;
-    content: "";
+    content: '';
     position: absolute;
     bottom: -38px;
     left: 18%;
@@ -717,76 +680,67 @@ export default {
     // width: 50px;
     // height: 50px;
     border-top: 35px solid #e8eaed;
-      border-right: 35px solid transparent;
+    border-right: 35px solid transparent;
     // background-color: #e8eaed;
     // transform: skew(50deg);
-        
-      }
-      
-      
-     p {
-      color: black;
-      font-family: roboto;
-      padding: 50px 20px;
-      font-size: 22px;
-      line-height: 30px;
-    
-      @media screen and (max-width: 1000px) {
-        padding: 50px 20px;
   }
-  //  @media screen and (max-width: 1000px) {
-    
-  // //  width:  clamp(450px ,90% ,900px);
-  
-  // }
-  
-      
-     }
-     .quote {
-      
-      position: absolute;
-      top: -35px;
-      right: 6%;
-      width: 13%;
-      z-index: 2;
-      padding: 0 10px ;
-      background-color: white;
-      text-align: center;
-      @media screen and (max-width: 1000px) {
-        width: 50px;
-      }
-      img {
-        width: 100%;
-        max-width: 50px;
-        height: auto;
-        @media screen and (max-width: 1000px) {
-        max-width: 50px;
-       
-      }
-      }
-     }
-     .customer {
-      
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      display: flex;
-      align-items: center;
-      
-      transform: translateY(115px);
-      // padding-left:6px ;
-      gap: 30px;
-      img {
-        height: 65px;
-        width: 65px;
-        border-radius: 50%;
-      }
-      .customer-info {
-        display: grid;
-        gap: 7px;
-      }
-     }
 
+  p {
+    color: black;
+    font-family: roboto;
+    padding: 50px 20px;
+    font-size: 22px;
+    line-height: 30px;
+
+    @media screen and (max-width: 1000px) {
+      padding: 50px 20px;
     }
+    //  @media screen and (max-width: 1000px) {
+
+    // //  width:  clamp(450px ,90% ,900px);
+
+    // }
+  }
+  .quote {
+    position: absolute;
+    top: -35px;
+    right: 6%;
+    width: 13%;
+    z-index: 2;
+    padding: 0 10px;
+    background-color: white;
+    text-align: center;
+    @media screen and (max-width: 1000px) {
+      width: 50px;
+    }
+    img {
+      width: 100%;
+      max-width: 50px;
+      height: auto;
+      @media screen and (max-width: 1000px) {
+        max-width: 50px;
+      }
+    }
+  }
+  .customer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+
+    transform: translateY(115px);
+    // padding-left:6px ;
+    gap: 30px;
+    img {
+      height: 65px;
+      width: 65px;
+      border-radius: 50%;
+    }
+    .customer-info {
+      display: grid;
+      gap: 7px;
+    }
+  }
 }
 </style>

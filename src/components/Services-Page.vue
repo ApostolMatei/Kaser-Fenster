@@ -46,48 +46,48 @@ export default {
     return {
         services: [
        { 
-        img: "/dani.jpg" ,
+        img: "/plan.png" ,
         name: 'Persönliche Beratung ' ,
         text: 'Unsere persönliche Beratung bietet maßgeschneiderte Lösungen, die auf Ihre individuellen Anforderungen zugeschnitten sind, um Ihnen die bestmögliche Unterstützung zu bieten.'
 
        },
        { 
-        img: "/dani.jpg" ,
+        img: "/tech2.png" ,
         name: 'Planung ' ,
         text: 'Unsere Planung umfasst eine gründliche Analyse Ihrer Anforderungen und sorgfältige Berücksichtigung aller Aspekte Ihres Projekts, um Ihre Vision vollständig umzusetzen.'
        },
        { 
-        img: "/dani.jpg" ,
+        img: "/balance3.png" ,
         name: 'Angebotsvergleich ' ,
         text: 'Wir helfen Ihnen dabei, das beste Angebot für Ihre Bedürfnisse zu finden, indem wir eine gründliche Analyse der verfügbaren Optionen durchführen.'
        },
        { 
-        img: "/dani.jpg" ,
+        img: "/measure5.png" ,
         name: 'Vermessung' ,
         text: 'Unsere Vermessungsleistungen umfassen eine genaue Aufnahme aller Gegebenheiten vor Ort für eine optimale Planung und Ausführung Ihres Projekts.'
        },
        { 
-        img: "/dani.jpg" ,
+        img: "/repair.png" ,
         name: 'Reparaturservice' ,
         text: 'In unseren Reparaturservices bieten wir schnelle und zuverlässige Lösungen für Probleme rund um Ihr Zuhause, um eine optimale Funktionalität zu gewährleisten.'
        },
        { 
-        img: "/dani.jpg" ,
+        img: "/montage.png" ,
         name: 'Montageservice' ,
         text: 'Unser Montageservice umfasst eine schnelle und professionelle Installation aller Produkte, um sicherzustellen, dass Ihr Projekt pünktlich und ordnungsgemäß abgeschlossen wird.'
        },
        { 
-        img: "/dani.jpg" ,
+        img: "/finishes.png" ,
         name: 'Endbearbeitungen' ,
         text: 'Unsere Endbearbeitungen umfassen professionelle Reinigung, Lackierarbeiten und Dekorationen, um sicherzustellen, dass Ihr Projekt perfekt abgeschlossen wird.'
        },
        { 
-        img: "/dani.jpg" ,
+        img: "/maintanance2.png" ,
         name: 'Wartungsarbeiten' ,
         text: 'Wir bieten umfassende Wartungsdienstleistungen, um sicherzustellen, dass Ihre Installationen stets einwandfrei funktionieren und eine lange Lebensdauer haben.'
        },
        { 
-        img: "/dani.jpg" ,
+        img: "/season1.png" ,
         name: 'Saisonabhängige Arbeiten' ,
         text: 'Saisonabhängige Arbeiten" können von uns professionell und zuverlässig durchgeführt werden, um sicherzustellen, dass Ihr Zuhause jederzeit in optimaler Form ist.'
        },
@@ -108,17 +108,13 @@ export default {
   margin: 0 auto;
 }
 .pager {
-  // display: flex;
-  background-color: rgba(100, 100, 111, 0.2);
-  
 
+  background-color: rgba(100, 100, 111, 0.2);
   
 }
 .pagerbox {
   display: flex;
-  // flex-direction: column;
   justify-content: space-between;
-  
   padding: 34px;
   
   span {
@@ -137,36 +133,18 @@ img {
 
 .services-container {
   display: flex;
-  // grid-template-columns: 1fr 1fr;
-  // flex-direction: column;
- 
-  justify-content: center; /* add this */
-  // align-items: center; /* add this */
-  // margin: 0 auto;
+  justify-content: center; 
   padding: 60px 34px;
   gap: 70px;
-  // @media screen and (max-width: 1000px) {
-  //   display: flex;
-    
-  // }
-  
   
 }
-
 .services {
   display:grid;
-  // flex-wrap: wrap;
   grid-template-columns: repeat(auto-fill , minmax(300px , 1fr));
   gap:50px;
   width: 100%;
-  
   justify-items: center;
-  // justify-content: center;
-  // align-items: center;
-  // @media screen and (max-width: 1000px) {
-  //   display: flex;
-  //   flex-wrap: wrap;
-  // }
+
   @media screen and (min-width: 1000px) {
     & .contact-now {
     display: none;
@@ -206,10 +184,7 @@ img {
 .contact-testimonials-container {
   display: flex;
   flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
   width: clamp(200px ,90% , 460px);
-  // width: minmax(260px , 330px);
   font-size: 21px;
   color: rgb(14, 13, 13);
   @media screen and (max-width: 1000px) {
@@ -230,7 +205,7 @@ img {
   // ali
   padding: 30px 20px;
   gap: 50px;
-  background-color: rgb(255, 235, 14);
+  background-color: rgb(245, 204, 2);
 h3 {
   font-weight: 800;
 }
@@ -252,8 +227,6 @@ h3 {
     
   }
 
-   
-  
  
 }
 </style>
