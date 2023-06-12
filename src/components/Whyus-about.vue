@@ -130,13 +130,13 @@
   <div class="testimonials-section" ref="testimonials">
     <div class="title">
       <span>Testimonials</span>
-      <h2>What our clients say about us</h2>
+      <h2>What our clients say ?</h2>
     </div>
 
     <div class="reviewbox-wrapper">
-      <button type="button" class="prev">1</button>
-      <button type="button" class="next">2</button>
-      <div class="reviewsbox" ref="reviewbox">
+      <!-- <button type="button" @click="prevButton()"  class="prev">1</button>
+      <button type="button" @click="nextButton()"  class="next">2</button> -->
+      <div class="reviewsbox" @mouseover="setHovered(true) " @mouseleave="setHovered(false), moveReviews()  " ref="reviewbox">
         <div class="review-inner" ref="review">
           <div class="review" v-for="(review, key) in reviews" :key="key">
             <span class="quote">
@@ -169,6 +169,7 @@ export default {
       reviewsGap: '40px',
       brandsGap: '20px',
       brandsSpeed: '5s',
+      isHovered: false,
 
       // Scroll-Animation data
       aboutAnimated: false,
@@ -210,40 +211,40 @@ export default {
         {
           name: 'Sabine Schmidt',
           quote:
-            'Ich bin sehr zufrieden mit dem Service von dieser Firma. Die Reparatur meiner Fenster wurde schnell und professionell durchgeführt.',
+            '"Ich bin sehr zufrieden mit dem Service von dieser Firma. Die Reparatur meiner Fenster wurde schnell und professionell durchgeführt."',
           image: '/dani.jpg'
         },
 
         {
           name: 'Thomas Mayer',
           quote:
-            'Ich hatte Probleme mit meinen Türen und war beeindruckt von der schnellen und effizienten Reparatur durch das Team. Sehr empfehlenswert!',
+            '"Ich hatte Probleme mit meinen Türen und war beeindruckt von der schnellen und effizienten Reparatur durch das Team. Sehr empfehlenswert!""',
           image: '/dani.jpg'
         },
 
         {
           name: 'Sandra Weber',
           quote:
-            'Die Rollen meiner Schiebetür waren schon lange defekt, aber das Team von dieser Firma konnte das Problem schnell beheben. Vielen Dank!',
+            '"Die Rollen meiner Schiebetür waren schon lange defekt, aber das Team von dieser Firma konnte das Problem schnell beheben. Vielen Dank!""',
           image: '/dani.jpg'
         },
         {
           name: 'Stefan Müller',
           quote:
-            'Ich war begeistert von der Qualität der Produkte, die für die Installation meiner neuen Fenster verwendet wurden. Sie sehen toll aus und sind auch energieeffizient.',
+            '"Ich war begeistert von der Qualität der Produkte, die für die Installation meiner neuen Fenster verwendet wurden. Sie sehen toll aus und sind auch energieeffizient.""',
           image: '/dani.jpg'
         },
 
         {
           name: 'Julia Bauer',
           quote:
-            'Der Kundenservice war ausgezeichnet und das Team war sehr freundlich und hilfsbereit bei allen Fragen, die ich hatte. Ich würde sie jedem empfehlen!',
+            '"Der Kundenservice war ausgezeichnet und das Team war sehr freundlich und hilfsbereit bei allen Fragen, die ich hatte. Ich würde sie jedem empfehlen!""',
           image: '/dani.jpg'
         },
         {
           name: 'Michaela Fischer',
           quote:
-            'Ich hatte eine Notfallsituation mit meinen Türen und das Team von dieser Firma kam sofort zur Hilfe. Sie waren professionell, zuverlässig und haben das Problem schnell gelöst.',
+            '"Ich hatte eine Notfallsituation mit meinen Türen und das Team von dieser Firma kam sofort zur Hilfe. Sie waren professionell, zuverlässig und haben das Problem schnell gelöst.""',
           image: '/dani.jpg'
         }
       ]
@@ -300,13 +301,17 @@ export default {
       }, 5000)
     },
     moveReviews() {
+     
+      if (this.isHovered === true) return;
       if (this.reviewbox_width < 900) {
         this.reviews_inner.style.transform = `translateX(-${this.reviewbox_width + 10}px)`
       } else {
         this.reviews_inner.style.transform = `translateX(-${this.reviewbox_width + 30}px)`
       }
-
+       clearTimeout(this.timeout);
       setTimeout(() => {
+        if (this.isHovered === true) return;
+        
         var thing = this.$refs.review.querySelector('.review')
         thing.remove()
         this.reviews_inner.append(thing)
@@ -317,8 +322,12 @@ export default {
         this.reviews_inner.offsetHeight
         this.reviews_inner.style.transition = null
         this.moveReviews()
-      }, 5000)
-    }
+      }, 8000)
+  },
+
+    setHovered(value) {
+    this.isHovered = value;
+  }
   }
 }
 </script>
@@ -552,7 +561,7 @@ export default {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    // width: 200px;
+    object-fit: contain;
     height: 100%;
     
     aspect-ratio: 4/3;
@@ -573,15 +582,39 @@ export default {
 
 .testimonials-section {
   display: flex;
-
+text-align: center;
   align-items: center;
   flex-direction: column;
   gap: 30px;
   padding: 60px;
+  span {
+    font-family: Teko; 
+    font-size: 17px;
+    letter-spacing: 4px;
+    color: #b19777;
+   
+    
+  }
+  h2 {
+    font-family: Playfair Display;
+    font-size: 40px;
+  }
 }
 .reviewbox-wrapper {
   position: relative;
-  width: 100%;
+  // width: 100%;
+  width: 1250px;
+  font-family: Poppins;
+ 
+
+  
+
+  @media screen and (max-width: 1280px) {
+    width: 900px;
+  }
+  @media screen and (max-width: 1000px) {
+    width: clamp(270px, 90%, 900px);
+  }
   
 }
 .prev {
@@ -589,7 +622,7 @@ export default {
 
     border: none;
     
-    top: 54%;
+    top: 50%;
     left: 0;
     z-index: 3;
     padding: 10px 20px;
@@ -600,7 +633,7 @@ export default {
   .next {
     
     position: absolute;
-    top: 54%;
+    top: 50%;
     z-index: 3;
     right: 0;
     border: none;
@@ -617,31 +650,21 @@ export default {
   display: flex;
   // position: relative;
   overflow: hidden;
-
+  padding: 150px 0;
  
   box-sizing: border-box;
 
-  width: 1250px;
- 
-
-  
-
-  @media screen and (max-width: 1280px) {
-    width: 900px;
-  }
-  @media screen and (max-width: 1000px) {
-    width: clamp(270px, 90%, 900px);
-  }
+ width: 100%;
 }
 .review-inner {
   display: flex;
   // grid-template-columns: repeat(6 , 1fr);
   width: 100%;
-  // overflow: hidden;
+  // overflow:50idden;
   gap: 40px;
-  padding: 150px 10px;
+  padding: 0 10px;
   @media screen and (max-width: 1000px) {
-    padding: 60px 10px 120px 10px;
+    // padding: 60px 10px 120px 10px;
   }
   // transform: translateX(-200px);
 
@@ -659,7 +682,7 @@ export default {
   //  align-items: center;
 
   position: relative;
-  border: 10px solid #e8eaed;
+  border: 10px solid rgb(247, 247, 247);
   // height: 250px;
   // width: 490px;
   padding: 0 18px;
@@ -679,17 +702,17 @@ export default {
     // border-radius: 500px;
     // width: 50px;
     // height: 50px;
-    border-top: 35px solid #e8eaed;
+    border-top: 35px solid rgb(247, 247, 247);
     border-right: 35px solid transparent;
     // background-color: #e8eaed;
     // transform: skew(50deg);
   }
 
   p {
-    color: black;
-    font-family: roboto;
+    color: #333333;
+    font-weight: 600;
     padding: 50px 20px;
-    font-size: 22px;
+    font-size: 18px;
     line-height: 30px;
 
     @media screen and (max-width: 1000px) {
@@ -728,10 +751,20 @@ export default {
     left: 0;
     display: flex;
     align-items: center;
-
+    text-align: start;
+ font-size: Poppins; 
     transform: translateY(115px);
     // padding-left:6px ;
     gap: 30px;
+    h3 {
+      font-family: Poppins;
+      
+    }
+    span {
+      letter-spacing: normal;
+     
+    }
+
     img {
       height: 65px;
       width: 65px;
@@ -740,6 +773,8 @@ export default {
     .customer-info {
       display: grid;
       gap: 7px;
+     
+      
     }
   }
 }

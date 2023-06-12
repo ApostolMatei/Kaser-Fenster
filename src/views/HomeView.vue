@@ -8,7 +8,7 @@ import Whyus from '@/components/Whyus-about.vue'
 
 <template>
   <main>
-    <Slider></Slider>
+    <Slider ></Slider>
     <Whyus></Whyus>
     
 

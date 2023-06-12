@@ -1,6 +1,8 @@
 <template>
     <div class="grid-section" >
-    <div class="image-box"></div> 
+    <div class="image-box">
+      <img height="500" width="500" src="/fenster.png" alt="Turen">
+    </div> 
 <div class="text-section">
     <div class="text-box">
     <h3>Fenster</h3>
@@ -16,8 +18,12 @@
 
    </div>
 </div>
-    <div class="image-box"></div>
-    <div class="image-box"></div> 
+    <div class="image-box">
+      <img height="500" width="500" src="/door.png" alt="Turen">
+    </div>
+    <div class="image-box">
+      <img  height="500" width="500" src="/blinds.png" alt="">
+    </div> 
 <div class="text-section">
     <div class="text-box">
     <h3>Sonnenschutz</h3>
@@ -33,7 +39,9 @@
 
    </div>
 </div>
-    <div class="image-box"></div>
+    <div class="image-box">
+      <img height="500" width="500" src="/security.png" alt="securitydoor">
+    </div>
    </div>
 </template>
 
@@ -95,8 +103,14 @@
     
 
 .image-box {
+  display: flex;
+  justify-content: center;
     background-color: aliceblue;
     padding: 300px 0;
+    img {
+      height: auto;
+     max-width: 100%;
+    }
  
 }
 .text-section {

@@ -20,14 +20,14 @@
       </div>
     </div>
 
-    <!-- <div class="navigation-visibility">
+    <div class="navigation-visibility">
       <div
         v-for="(slide, index) in slides"
         :key="index"
         class="slide-icon"
         :class="{ active: currentIndex === index }"
       ></div>
-    </div>-->
+    </div>
   </div>
 </template>
 
@@ -96,7 +96,7 @@ export default {
   height: 80vh;
   // margin: 0 20px;
   /* padding: 20px; */
-  overflow: hidden;
+  // overflow: hidden;
   /* border-radius: 10px; */
   &::after {
    

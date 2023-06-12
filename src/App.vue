@@ -7,7 +7,7 @@ import Header from './components/Nav-Header.vue'
 import Footer from './components/Footer-component.vue'
 </script>
 
-<template>
+<template >
   <Header></Header>
   <router-view></router-view>
   <!-- <Slider></Slider>
@@ -16,7 +16,12 @@ import Footer from './components/Footer-component.vue'
 </template>
 
 <style>
-/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Roboto&display=swap'); */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@200&family=Teko:wght@500&display=swap');
+
+
+
 
 body,
 #app {
