@@ -72,13 +72,13 @@ export default {
 header {
   // height: 100vh;
   background-color: white; 
-  padding: 10px 20px;
+ 
 }
 
 nav {
   display: grid;
  box-sizing: border-box;
- 
+  padding: 10px 20px;
 
  
 
@@ -113,7 +113,7 @@ nav {
     left: 0;
     
    animation: opacity 1.5s   ;
-    padding: 5px 20px;
+    // padding: 5px 20px;
     z-index: 300;
     
 @keyframes opacity {
@@ -153,6 +153,7 @@ ul {
   gap: 15px;
   padding: 0;
   margin: 0;
+  z-index: 3;
 }
 
 span {
@@ -196,6 +197,9 @@ span {
     justify-content: space-between;
     flex-wrap: wrap;
     position: sticky;
+    
+    
+   
     .hamburger {
       display: block;
     }
@@ -203,11 +207,20 @@ span {
 
   ul {
     display: none;
+    background-color: white;
     width: 100%;
+    position: absolute; /* Add this */
+    top: 100%; /* Adjust as needed */
+    left: 0; /* Adjust as needed */
     flex-direction: column;
-    padding: 30px 0;
+    padding: 30px 0px;
+    z-index: 3;
     &.active {
       display: flex;
+     
+   
+      
+      
     }
     li {
       list-style-type: none;
@@ -227,14 +240,7 @@ span {
 
   .contact {
     display: none;
-    &.active {
-      display: flex;
-      flex-direction: column;
-      a {
-        padding: 30px 0;
-        border: 0;
-      }
-    }
+    
   }
   .contact-email {
     border: none;

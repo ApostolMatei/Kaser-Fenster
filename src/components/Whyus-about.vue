@@ -52,78 +52,54 @@
 
   <div class="whyus-section">
     <div class="whyus">
-      <h2>WHY CHOOSE US</h2>
+      <div class="title">
+      <span>Talents</span>
+      <h2>What our talents are ?</h2>
+    </div>
       <div class="talents">
         <div class="talent">
-          <div class="svg">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 16">
-              <path
-                fill-rule="evenodd"
-                d="M15.98 8.17l-.97 5.95C14.84 15.5 13.13 16 12 16H5.69c-.2 0-.38-.05-.53-.14L3.72 15H2c-1.06 0-2-.94-2-2V9c0-1.06.94-2.02 2-2h2c.91 0 1.39-.45 2.39-1.55c.91-1 .88-1.8.63-3.27c-.08-.5.06-1 .42-1.42C7.83.29 8.42 0 9 0c1.83 0 3 3.71 3 5.01l-.02.98h2.04c1.16 0 1.95.8 1.98 1.97c0 .11-.02.21-.02.21zm-1.97-1.19h-1.99c-.7 0-1.03-.28-1.03-.97l.03-1.03c0-1.27-1.17-4-2-4c-.5 0-1.08.5-1 1c.25 1.58.34 2.78-.89 4.14C6.11 7.25 5.36 8 4 8v6l1.67 1H12c.73 0 1.95-.31 2-1l.02-.02l1-6c-.03-.64-.38-1-1-1h-.01z"
-                fill="currentColor"
-              />
-            </svg>
-          </div>
-          <div class="text">
-            <h3>Erfahren und Professionell</h3>
+          <h2>01</h2>
+          
+            <h3> Professionell</h3>
             <p>
-              Unser Team von Experten verfügt über jahrelange Erfahrung in der Reparatur und
-              Installation von Fenstern, Türen und Rollen. Wir legen Wert auf Professionalität und
-              eine akkurate Arbeitsweise.
+              Cras mollis turpis a ipsum ultes, nec cond imentum ipsum consequat.
             </p>
-          </div>
+         
+          <h4>Read more</h4>
         </div>
         <div class="talent">
-          <div class="svg">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="2"
-              stroke="currentColor"
-              class="w-6 h-6"
-              width="32px"
-              height="32px"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
-          </div>
-
-          <div class="text">
+          <h2>02</h2>
+          
+            <h3>Professionell</h3>
+            <p>
+              Cras mollis turpis a ipsum ultes, nec cond imentum ipsum consequat.
+            </p>
+         
+            <h4>Read more</h4>
+        </div>
+        <div class="talent">
+          
+          <h2>03</h2>
+          
             <h3>Qualitätsprodukte</h3>
             <p>
-              Wir verwenden ausschließlich hochwertige Materialien und Produkte für unsere
-              Reparaturen und Installationen. Sie können sicher sein, dass Ihr Zuhause oder Ihr
-              Unternehmen mit erstklassigen Produkten ausgestattet wird, die jahrelang halten
-              werden.
+              Cras mollis turpis a ipsum ultes, nec cond imentum ipsum consequat.
             </p>
-          </div>
+          
+           <h4>Read more</h4>
         </div>
         <div class="talent">
-          <div class="svg">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-              <path
-                fill="currentColor"
-                fill-rule="evenodd"
-                d="M6.535 3.25a1.75 1.75 0 0 0-1.456.78L1.49 9.412c-.219.33-.245.752-.068 1.106A32.952 32.952 0 0 0 9.45 20.8l1.75 1.501a1.23 1.23 0 0 0 1.601 0l1.75-1.5a32.951 32.951 0 0 0 8.029-10.283c.177-.354.15-.776-.069-1.106L18.92 4.03a1.75 1.75 0 0 0-1.455-.779H6.535Zm-.208 1.611a.25.25 0 0 1 .208-.111h2.34L6.96 9.346a1.75 1.75 0 0 0-.1.326a69.284 69.284 0 0 1-2.11-.19l-1.405-.147L6.327 4.86ZM3.28 10.836a31.45 31.45 0 0 0 6.994 8.695l-3.125-8.334a70.78 70.78 0 0 1-2.554-.222l-1.315-.139Zm5.506.454L12 19.864l3.215-8.574a70.793 70.793 0 0 1-6.43 0Zm8.067-.093l-3.125 8.334a31.45 31.45 0 0 0 6.994-8.695l-1.315.139c-.85.089-1.701.163-2.554.222Zm3.803-1.862l-1.406.148a69.27 69.27 0 0 1-2.11.19a1.747 1.747 0 0 0-.099-.327L15.125 4.75h2.34a.25.25 0 0 1 .208.111l2.982 4.474Zm-5.063.435c-2.393.124-4.79.124-7.184 0L10.5 4.75h3l2.092 5.02Z"
-                clip-rule="evenodd"
-              />
-            </svg>
-          </div>
-          <div class="text">
-            <h3>Kundenzufriedenheit</h3>
+          <h2>04</h2>
+          
+            <h3>Kundenzu</h3>
             <p>
-              Wir sind bestrebt, sicherzustellen, dass unsere Kunden zu 100% mit unseren
-              Dienstleistungen zufrieden sind. Vom Anfang bis zum Ende bemühen wir uns, Erwartungen
-              zu übertreffen und sicherzustellen, dass jeder Auftrag perfekt abgeschlossen wird.
+              Cras mollis turpis a ipsum ultes, nec cond imentum ipsum consequat.
             </p>
+            <h4>Read more</h4>
           </div>
+          
         </div>
-      </div>
+      
     </div>
   </div>
 
@@ -469,7 +445,27 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 80px 25px;
+  background-color:#f8f4f3;
+  // text-align: center;
+  // padding: 80px 25px;
+  padding: 170px 25px;
+ .title {
+  text-align: center;
+  span {
+    font-family: Teko; 
+    font-size: 17px;
+    letter-spacing: 4px;
+    color: #b19777;
+   
+    
+  }
+  h2 {
+    font-family: Playfair Display;
+    font-size: 40px;
+   
+
+  }}
+  
 
   .whyus {
     display: flex;
@@ -480,32 +476,34 @@ export default {
 
     h2 {
       font-weight: 00;
-      text-align: center;
+      // text-align: center;
     }
-    h3 {
-      color: #fed991;
+   
+      h3 {
+     
     }
-    p {
-      // max-height: 56px;
+    
+    
+    // .svg {
+    //   display: flex;
+    //   padding: 20px;
 
-      text-align: center;
-    }
-    .svg {
-      display: flex;
-      padding: 20px;
-
-      // background-color: rgb(248, 188, 76);
-      border-radius: 50%;
-    }
-    svg {
-      width: 60px;
-      height: 60px;
-      min-width: 26px;
-      color: #fed991;
-    }
+    //   // background-color: rgb(248, 188, 76);
+    //   border-radius: 50%;
+    // }
+    // svg {
+    //   width: 60px;
+    //   height: 60px;
+    //   min-width: 26px;
+    //   color: #fed991;
+    // }
     .talents {
       display: flex;
-      gap: 20px;
+      // flex-wrap: wrap;
+     
+      background-color: #ffff;
+      max-width: 1140px;
+      // padding: 0 50px;
 
       @media screen and (max-width: 1000px) {
         flex-direction: column;
@@ -515,14 +513,39 @@ export default {
       // background-color: rgb(217, 213, 207);
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 40px;
+      gap: 20px;
+      padding: 35px 40px;
       // height: 250px;
-      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+     border: 1px solid #eee;
+      // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
       // width: 100%;
-      gap: 45px;
+      // gap: 45px;
       //   align-items: center;
+      h2 {
+        font-family: Teko , sans-serif;
+        font-size: 60px;
+        font-weight: 400;
+        color: transparent;
+        -webkit-text-stroke: 1px #b19777;
+      }
+      p {
+        line-height: 2;
+        font-size: 15px;
+        font-weight: 400;
+        color: #888;
+      }
+      &:hover {
+        background-color: rgb(26, 24, 24);
+        h3 {
+          color: #ffff;
+        }
+        p {
+          color: #eee;
+        }
+        h4 {
+         color:#b19777;
+        }
+      }
     }
 
     // .border {
@@ -536,7 +559,7 @@ export default {
     .text {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      // align-items: center;
 
       gap: 10px;
       // padding: 20px 50px;

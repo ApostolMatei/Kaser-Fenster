@@ -1,7 +1,7 @@
 <template>
     <div class="grid-section" >
     <div class="image-box">
-      <img height="500" width="500" src="/fenster.png" alt="Turen">
+      <img height="400" width="400" src="/fenster.png" alt="Turen">
     </div> 
 <div class="text-section">
     <div class="text-box">

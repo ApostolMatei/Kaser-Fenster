@@ -40,7 +40,7 @@
 
      @media screen and (max-width: 1050px) {
        flex-direction: column;
-       padding: 150px;
+    //    padding: 150px;
        .ornament { 
         display: none;
         }
@@ -54,13 +54,14 @@
 
 .input-box {
     display: flex;
+    // flex-wrap: wrap;
     flex-direction: column;
     gap: 70px;
     padding-bottom: 30px;
-    min-width: 360px;
+    max-width: 360px;
 
     h1 {
-        font-size: 60px;
+        font-size: 20px;
     }
     p {
         font-size: 22px;
@@ -71,6 +72,7 @@
     }
 
     input {
+        // width: 150px;
         border: none ;
         border-bottom: 2px solid rgb(198, 194, 194); 
         border-radius: 2px;
@@ -99,7 +101,10 @@
     justify-content: space-between;
     // padding: 60px 650px 60px 40px;
     padding: 40px 0 40px 40px;
-    width: 935px;
+    width: 100%;
+    @media screen and (max-width: 1000px) {
+       min-width: 203px;
+     }
     
    
     background-color: rgb(36, 36, 36);

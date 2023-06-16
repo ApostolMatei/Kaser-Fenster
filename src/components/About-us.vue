@@ -55,7 +55,7 @@ Mehr als 12 Jahre Erfahrung für erfolgreiche Projekte und zufriedene Kunden.
   </div>
   <div class="box">
     <p>Unser Engagement für exzellenten Kundenservice hat zu über 350 zufriedenen Kunden geführt.</p>
-    <span>{{happyCustomers}}+</span>
+    <span ref="numbers" >{{happyCustomers}}+</span>
   </div>
 </div>
  </main>
@@ -74,9 +74,28 @@ export default {
 
 
   mounted() {
-    this.projects()
+     
+  const options = {
+    threshold: 0.5, // Adjust this value as needed
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Start your animation here
+     this.projects()
     this.years()
     this.happy()
+        console.log('.projects is in the viewport');
+        // Add your animation logic or class toggling code here
+      }
+    });
+  }, options);
+
+  const projectsElement = this.$refs.numbers;
+  observer.observe(projectsElement);
+
+    
   
   },
 
@@ -159,7 +178,7 @@ margin: 0 auto;
  
  
  span{
-  font-size: 55px;
+  font-size: 25px;
   font-weight: 700;
   // text-align: center;
  }

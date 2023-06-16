@@ -92,7 +92,7 @@ export default {
 .slider {
   position: relative;
   /* background: #000116; */
-
+z-index: -1;
   height: 80vh;
   // margin: 0 20px;
   /* padding: 20px; */
