@@ -13,7 +13,7 @@
   <span class="title">Verlässlicher Partner für Ihr  <span class="gray"> Zuhause oder Unternehmen</span></span>
   <p>Unsere Mission ist es, eine Reparaturdienstleistung anzubieten, die nicht nur Fenster wiederherstellt, sondern auch langfristige Beziehungen zu unseren Kunden aufbaut und pflegt.</p>
  </div>
- <img src="/office.jpg" class="officeimg" alt="office">
+ <img src="/office.jpg" class="officeimg" alt="Bürogebäude">
  <div class="whoweare">
  <div class="section">
   <h2>Unser Wissen – Ihr Vorteil</h2>
@@ -28,7 +28,7 @@ Anforderungen für Ihr Zuhause schnell und unkompliziert umsetzen.Unser erfahren
  </div>
  <div class="section">
   <div class="ceo">
-    <img class="dumitru" src="/dani.jpg" alt="ceo">
+    <img class="dumitru" src="/dani.jpg" alt="CEO Dumitru Ionita">
     <div class="name">
       <span class="ceoname">Dumitru Ionita</span>
       <p>Founder & CEO</p>
@@ -161,7 +161,7 @@ margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   // justify-items: center;
-  padding: 80px 30px;
+  padding: 80px 0;
   @media screen and (max-width: 1000px) {
     grid-template-columns: none;
     justify-items: center;
@@ -178,7 +178,7 @@ margin: 0 auto;
  
  
  span{
-  font-size: 25px;
+  font-size: 55px;
   font-weight: 700;
   // text-align: center;
  }

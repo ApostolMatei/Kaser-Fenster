@@ -10,8 +10,10 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "vue": "^3.2.47",
-    "vue-router": "^4.1.6"
+    "@vueuse/head": "^1.1.26",
+    "vue": "^3.3.4",
+    "vue-meta": "^3.0.0-alpha.2",
+    "vue-router": "^4.2.2"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",

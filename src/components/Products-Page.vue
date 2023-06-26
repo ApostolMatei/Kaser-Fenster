@@ -1,11 +1,11 @@
 <template>
     <div class="grid-section" >
     <div class="image-box">
-      <img height="400" width="400" src="/fenster.png" alt="Turen">
+      <img height="500" width="500" src="/fenster.png" alt="Fenster aus Kunststoff, Kunststoff-Alu, Aluminium, Holz und Holz-Alu">
     </div> 
 <div class="text-section">
     <div class="text-box">
-    <h3>Fenster</h3>
+    <h3>Fenster </h3>
     <p>Entdecken Sie unsere Fenster aus Kunststoff, Kunststoff-Alu, Aluminium, Holz und Holz-Alu</p>
     <span>Qualitativ hochwertige Fenster in verschiedenen Materialien und Ausführungen - für mehr Energieeffizienz und Stil</span>
 </div>
@@ -19,10 +19,10 @@
    </div>
 </div>
     <div class="image-box">
-      <img height="500" width="500" src="/door.png" alt="Turen">
+      <img height="500" width="500" src="/door.png" alt="Türen aus Kunststoff, Kunststoff-Alu, Aluminium, Holz und Holz-Alu">
     </div>
     <div class="image-box">
-      <img  height="500" width="500" src="/blinds.png" alt="">
+      <img  height="500" width="500" src="/blinds.png" alt="Sonnenschutzprodukte für Innen- und Außenbereich">
     </div> 
 <div class="text-section">
     <div class="text-box">
@@ -40,7 +40,7 @@
    </div>
 </div>
     <div class="image-box">
-      <img height="500" width="500" src="/security.png" alt="securitydoor">
+      <img height="500" width="500" src="/security.png" alt="Einbruchsschutz für Ihr Zuhause oder Büro">
     </div>
    </div>
 </template>
@@ -106,17 +106,17 @@
   display: flex;
   justify-content: center;
     background-color: aliceblue;
-    padding: 300px 0;
+    padding: 200px 0;
     img {
       height: auto;
-     max-width: 100%;
+     max-width: 90%;
     }
  
 }
 .text-section {
     display: grid;
     place-items: center;
-   padding: 300px 0;
+  //  padding: 150px 0;
     background-color: black; 
     // text-align: center;
     color: white;
@@ -129,16 +129,18 @@
         flex-direction: column;
         box-sizing: border-box;
         gap: 20px;
-        padding: 40px;
+        padding: 15px;
       }
       
       
     // padding: 250px 0;
     h3 {
+      font-family: Teko;
         color: rgb(236, 198, 7);
         font-size:5em;
     }
     p {
+      font-family: Poppins;
         font-size:2em;
         max-width: 550px;
     }

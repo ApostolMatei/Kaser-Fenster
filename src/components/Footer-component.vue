@@ -1,12 +1,11 @@
 <template>
   <footer>
     <div class="footer-contact">
-      <h2>LET`S WORK TOGHETER</h2>
+      <h2>LASST UNS ZUSAMMENARBEITEN</h2>
       <p>
-        Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed do eiusmod temporLorem ipsum
-        dolo sit amet, consectetur adipisicing .
+        Wir freuen uns auf eine erfolgreiche Zusammenarbeit, um Ihre Projekte umzusetzen. Mit unserem Engagement, Fachwissen und exzellentem Service stehen wir Ihnen zur Seite, um Ihre Anforderungen zu erfüllen.
       </p>
-      <a href="/">CONTACT US</a>
+      <a href="/">KONTAKTIEREN SIE UNS</a>
     </div>
     <div class="footer-nav">
       <svg
@@ -103,22 +102,33 @@
   background-position: center;
   background-size: cover;
   justify-content: center;
-  gap: 20px;
+  text-align: center;
+  gap: 40px;
   align-items: center;
   flex-direction: column;
-  padding: 100px;
+  padding: 140px 0 100px 0;
   background-color: rgb(54, 56, 56);
   p {
+    font-size: 24px;
     max-width: 600px;
-    text-align: center;
+    // text-align: center;
+    font-family: Poppins;
+    
   }
   a {
     padding: 10px 25px;
     border-radius: 2px;
     text-decoration: none;
     color: white;
+    font-size: 20px;
+    
     border: 1.5px solid rgb(212, 206, 206);
-  }
+   
+  } 
+  h2 {
+      font-size: 40px;
+      font-family: Teko;
+    }
 }
 .footer-nav {
   display: grid;

@@ -10,9 +10,8 @@
         next: nextIndex === index
       }"
     >
-    
       <img :src="slide.src" :alt="slide.alt" />
-    
+
       <div class="info">
         <h2>{{ slide.title }}</h2>
         <p>{{ slide.description }}</p>
@@ -31,28 +30,28 @@
   </div>
 </template>
 
-<script >
+<script>
 export default {
   data() {
     return {
       slides: [
         {
           src: '/window1.jpg',
-          alt: '',
+          alt: 'Fensterinstallation durch Fachmann',
           title: 'Fenster',
           description:
             'Unsere Fenster sind von höchster Qualität und werden von unseren erfahrenen Handwerkern fachgerecht eingebaut.'
         },
         {
           src: '/window2.jpg',
-          alt: '',
+          alt: 'Mädchen mit Helm zeigt auf ein Fenster',
           title: 'Turen',
           description:
             'Mit unseren hochwertigen Türen und professioneller Installation schützen Sie Ihr Zuhause und steigern den Wert Ihrer Immobilie.'
         },
         {
           src: '/window3.jpg',
-          alt: '',
+          alt: 'Mann misst den Rahmen eines Fensters',
           title: 'Rollen',
           description:
             'Our rollers meet the highest standards and ensure a smooth and quiet movement of your doors and windows.'
@@ -92,24 +91,24 @@ export default {
 .slider {
   position: relative;
   /* background: #000116; */
-z-index: -1;
+  z-index: -1;
   height: 80vh;
   // margin: 0 20px;
   /* padding: 20px; */
   // overflow: hidden;
   /* border-radius: 10px; */
   &::after {
-   
-   content: "";
-   position: absolute;
-   display: block;
-   left: 0;
-   top: 0;
-   width: 100%;
-   height: 100%;
-   background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.6) 100%) repeat 0 0;
-   z-index: 1;
-   }
+    content: '';
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0)
+      linear-gradient(to bottom, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.6) 100%) repeat 0 0;
+    z-index: 1;
+  }
 }
 
 .slider .slide {
@@ -135,7 +134,7 @@ z-index: -1;
 //   position: relative;
 
 //   &::after {
-   
+
 // content: "";
 // position: absolute;
 // display: block;

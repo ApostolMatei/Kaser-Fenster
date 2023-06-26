@@ -11,7 +11,7 @@
   <div class="services-container">
     <div class="services">
         <div class="service" v-for="service in services" :key="service" >
-            <img :src="service.img" >
+            <img :src="service.img" :alt="service.name + ' Image'" >
             <h2>{{ service.name }}</h2>
             <span></span>
             <p>{{ service.text }}</p>

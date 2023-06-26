@@ -1,22 +1,22 @@
 <template>
-  <div class="brands" ref="slider" @click="muian">
+  <!-- <div class="brands" ref="slider" @click="muian">
     <div class="inner" ref="inner">
       <img
-        width="130"
-        height="97"
+        
         class="brand"
         v-for="brand in brands"
         :key="brand"
         :src="brand.src"
+        :alt="brand.alt"
       />
     </div>
-  </div>
+  </div> -->
   <div class="aboutus-section" ref="about">
-    <img src="/window.png" alt="windows " width="500" />
+    <img src="/window.png" alt="Fenster - Beispielbild" width="500" />
     <div class="aboutus">
       <div>
-        <span>Why We/Us</span>
-        <h2>ABOUT US</h2>
+        <span>Warum Wir</span>
+        <h2>Über uns</h2>
       </div>
       <p>
         Seit über 15 Jahren sind wir im Bereich Fenster-, Tür-, Sonnenschutzsysteme sowie
@@ -25,23 +25,23 @@
         Wissen ist Ihr Vorteil. Wir planen für Sie und mit Ihnen. Somit ermöglichen wir Ihnen freies
         Gestalten und setzen Ihre Wünsche mit qualitativ hochwertigen Produkten für Ihr Zuhause um.
       </p>
-      <a href="/">More</a>
+      <a href="/">Mehr</a>
     </div>
   </div>
   <div class="service-section">
     <div class="ourservice">
       <div class="title">
-        <span>What We Do</span>
-        <h2>Our Services</h2>
+        <span>Was Wir Tun</span>
+        <h2>Unsere Leistungen</h2>
       </div>
       <p>
-        Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua.Lorem ipsum dolo sit amet, consectetur adipisicing elit, sed
-        do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolo sit amet,
-        consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-        aliqua.
+        Unsere Leistungen umfassen umfassende Einzelberatung, professionelle Planung, detaillierte
+        Angebotsvergleiche, präzise Vermessungen, zuverlässigen Reparaturservice, fachgerechte
+        Montagen, sorgfältige Endbearbeitungen, regelmäßige Wartungsarbeiten sowie saisonale
+        Tätigkeiten. Vertrauen Sie uns für erstklassigen Service und höchste Qualität bei allen
+        Ihren Fenstermontage-Bedürfnissen.
       </p>
-      <a href="/">More</a>
+      <a href="/">Mehr</a>
     </div>
     <div class="services">
       <div class="service" v-for="(service, index) in services" :key="index">
@@ -53,76 +53,72 @@
   <div class="whyus-section">
     <div class="whyus">
       <div class="title">
-      <span>Talents</span>
-      <h2>What our talents are ?</h2>
-    </div>
+        <span>Talente</span>
+        <h2>Was sind unsere Stärken ?</h2>
+      </div>
       <div class="talents">
         <div class="talent">
           <h2>01</h2>
-          
-            <h3> Professionell</h3>
-            <p>
-              Cras mollis turpis a ipsum ultes, nec cond imentum ipsum consequat.
-            </p>
-         
-          <h4>Read more</h4>
+
+          <h3>Professionell</h3>
+          <p>
+            Erfahrene Profis mit Fachwissen und höchster Präzision für herausragende Leistungen.
+          </p>
+
+          <h4>Mehr erfahren</h4>
         </div>
         <div class="talent">
           <h2>02</h2>
-          
-            <h3>Professionell</h3>
-            <p>
-              Cras mollis turpis a ipsum ultes, nec cond imentum ipsum consequat.
-            </p>
-         
-            <h4>Read more</h4>
+
+          <h3>Fachkompetenz</h3>
+          <p>Umfassende Fachkompetenz für optimale Ergebnisse und maßgeschneiderte Lösungen.</p>
+
+          <h4>Mehr erfahren</h4>
         </div>
         <div class="talent">
-          
           <h2>03</h2>
-          
-            <h3>Qualitätsprodukte</h3>
-            <p>
-              Cras mollis turpis a ipsum ultes, nec cond imentum ipsum consequat.
-            </p>
-          
-           <h4>Read more</h4>
+
+          <h3>Qualitätsprodukte</h3>
+          <p>Präzise gefertigt, beständig und stilvoll für herausragende Leistung und Ästhetik.</p>
+
+          <h4>Mehr erfahren</h4>
         </div>
         <div class="talent">
           <h2>04</h2>
-          
-            <h3>Kundenzu</h3>
-            <p>
-              Cras mollis turpis a ipsum ultes, nec cond imentum ipsum consequat.
-            </p>
-            <h4>Read more</h4>
-          </div>
-          
+
+          <h3>Kundenzu</h3>
+          <p>Wir kümmern uns um Ihre Bedürfnisse mit hervorragendem Service.</p>
+          <h4>Mehr erfahren</h4>
         </div>
-      
+      </div>
     </div>
   </div>
 
   <div class="testimonials-section" ref="testimonials">
     <div class="title">
-      <span>Testimonials</span>
-      <h2>What our clients say ?</h2>
+      <span>Referenzen</span>
+      <h2>Was unsere Kunden sagen ?</h2>
     </div>
 
     <div class="reviewbox-wrapper">
       <!-- <button type="button" @click="prevButton()"  class="prev">1</button>
       <button type="button" @click="nextButton()"  class="next">2</button> -->
-      <div class="reviewsbox" @mouseover="setHovered(true) " @mouseleave="setHovered(false), moveReviews()  " ref="reviewbox">
+      <div
+        class="reviewsbox"
+        @mouseover="setHovered(true)"
+        @mouseleave="setHovered(false), refreshReviews()"
+        ref="reviewbox"
+      >
         <div class="review-inner" ref="review">
           <div class="review" v-for="(review, key) in reviews" :key="key">
             <span class="quote">
-              <img src="/quote.svg" alt="quote" />
+              <img src="/quote.svg" alt="Review Quote" />
             </span>
 
             <p>{{ review.quote }}</p>
 
             <div class="customer">
-              <img :src="review.image" alt="customer-image" />
+              <img :src="review.image" :alt="'Happy Customer' + review.name" />
               <div class="customer-info">
                 <h3>{{ review.name }}</h3>
                 <span>Kaser Customer</span>
@@ -162,27 +158,27 @@ export default {
         { service: 'Wartungsarbeiten' },
         { service: 'Saisontätigkeiten' }
       ],
-      brands: [
-        { src: '/schuco.png' },
-        { src: '/saint.png' },
-        { src: '/trocal.png' },
-        { src: '/abus.png' },
-        { src: '/roto.png' },
-        { src: '/siegenia.png' },
-        { src: '/veka.png' },
-        { src: '/velux.png' },
-        { src: '/wink.png' },
-        { src: '/schuco.png' },
-        { src: '/saint.png' },
-        { src: '/trocal.png' },
-        { src: '/abus.png' },
-        { src: '/roto.png' },
-        { src: '/siegenia.png' },
-        { src: '/veka.png' },
-        { src: '/velux.png' },
-        { src: '/wink.png' },
-        
-      ],
+      // brands: [
+      //   { src: '/schuco.png', alt: 'Schuco Logo' },
+      //   { src: '/saint.png', alt: 'Saint Logo' },
+      //   { src: '/trocal.png', alt: 'Trocal Logo'},
+      //   { src: '/abus.png', alt: 'Abus Logo' },
+      //   { src: '/roto.png' ,alt: 'Roto Logo' },
+      //   { src: '/siegenia.png',alt: 'Siegenia Logo' },
+      //   { src: '/veka.png', alt: 'Veka Logo' },
+      //   { src: '/velux.png', alt: 'Velux Logo' },
+      //   { src: '/wink.png' , alt: 'Wink Logo'},
+      //   { src: '/schuco.png',  alt: 'Schuco Logo'},
+      //   { src: '/saint.png', alt: 'Saint Logo' },
+      //   { src: '/trocal.png' , alt: 'Trocal Logo' },
+      //   { src: '/abus.png', alt: 'Abus Logo'},
+      //   { src: '/roto.png' ,  alt: 'Roto Logo'},
+      //   { src: '/siegenia.png', alt: 'Siegenia Logo'},
+      //   { src: '/veka.png' , alt: 'Veka Logo' },
+      //   { src: '/velux.png',  alt: 'Velux Logo'},
+      //   { src: '/wink.png' ,  alt: 'Wink Logo'},
+
+      // ],
       reviews: [
         {
           name: 'Sabine Schmidt',
@@ -229,15 +225,14 @@ export default {
 
   mounted() {
     //Vars
-    this.slider_inner = this.$refs.inner
-    this.slides = this.$refs.inner.querySelectorAll('.brand')
+    // this.slider_inner = this.$refs.inner
+    // this.slides = this.$refs.inner.querySelectorAll('.brand')
 
     //Slider
-    this.slide_width = this.slides[0].getBoundingClientRect().width
-    this.slide_distance = this.slide_width + parseInt(this.brandsGap)
+    // this.slide_width = this.slides[0].getBoundingClientRect().width
+    // this.slide_distance = this.slide_width + parseInt(this.brandsGap)
 
     //Start Moving
-    this.moveSlider()
 
     // Reviews //
     //Vars
@@ -263,31 +258,17 @@ export default {
       this.reviews_inner.style.transform = 'translateX(0px)'
     },
 
-    moveSlider() {
-      this.slider_inner.style.transform = 'translateX(-150px)'
-      setTimeout(() => {
-        var item = this.$refs.inner.querySelector('.brand')
-        item.remove()
-        this.slider_inner.style.transform = 'translateX(0px)'
-        this.slider_inner.append(item)
-        this.slider_inner.style.transition = 'none'
-        this.slider_inner.offsetHeight
-        this.slider_inner.style.transition = null
-        this.moveSlider()
-      }, 5000)
-    },
     moveReviews() {
-     
-      if (this.isHovered === true) return;
+      if (this.isHovered === true) return
       if (this.reviewbox_width < 900) {
         this.reviews_inner.style.transform = `translateX(-${this.reviewbox_width + 10}px)`
       } else {
         this.reviews_inner.style.transform = `translateX(-${this.reviewbox_width + 30}px)`
       }
-       clearTimeout(this.timeout);
-      setTimeout(() => {
-        if (this.isHovered === true) return;
-        
+      clearTimeout(this.timeout)
+      this.timeout = setTimeout(() => {
+        if (this.isHovered === true) return
+
         var thing = this.$refs.review.querySelector('.review')
         thing.remove()
         this.reviews_inner.append(thing)
@@ -299,11 +280,15 @@ export default {
         this.reviews_inner.style.transition = null
         this.moveReviews()
       }, 8000)
-  },
+    },
 
     setHovered(value) {
-    this.isHovered = value;
-  }
+      this.isHovered = value
+    },
+    refreshReviews() {
+      clearTimeout(this.timeout)
+      this.moveReviews()
+    }
   }
 }
 </script>
@@ -445,27 +430,23 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color:#f8f4f3;
+  background-color: #f8f4f3;
   // text-align: center;
   // padding: 80px 25px;
   padding: 170px 25px;
- .title {
-  text-align: center;
-  span {
-    font-family: Teko; 
-    font-size: 17px;
-    letter-spacing: 4px;
-    color: #b19777;
-   
-    
+  .title {
+    text-align: center;
+    span {
+      font-family: Teko;
+      font-size: 17px;
+      letter-spacing: 4px;
+      color: #b19777;
+    }
+    h2 {
+      font-family: Playfair Display;
+      font-size: 40px;
+    }
   }
-  h2 {
-    font-family: Playfair Display;
-    font-size: 40px;
-   
-
-  }}
-  
 
   .whyus {
     display: flex;
@@ -478,12 +459,10 @@ export default {
       font-weight: 00;
       // text-align: center;
     }
-   
-      h3 {
-     
+
+    h3 {
     }
-    
-    
+
     // .svg {
     //   display: flex;
     //   padding: 20px;
@@ -500,7 +479,7 @@ export default {
     .talents {
       display: flex;
       // flex-wrap: wrap;
-     
+
       background-color: #ffff;
       max-width: 1140px;
       // padding: 0 50px;
@@ -516,13 +495,13 @@ export default {
       gap: 20px;
       padding: 35px 40px;
       // height: 250px;
-     border: 1px solid #eee;
+      border: 1px solid #eee;
       // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
       // width: 100%;
       // gap: 45px;
       //   align-items: center;
       h2 {
-        font-family: Teko , sans-serif;
+        font-family: Teko, sans-serif;
         font-size: 60px;
         font-weight: 400;
         color: transparent;
@@ -543,7 +522,7 @@ export default {
           color: #eee;
         }
         h4 {
-         color:#b19777;
+          color: #b19777;
         }
       }
     }
@@ -567,56 +546,54 @@ export default {
   }
 }
 
-.brands {
-  
-  background-color: rgb(0, 0, 0);
-  overflow: hidden;
+// .brands {
 
-  padding: 25px 0;
+//   background-color: rgb(0, 0, 0);
+//   overflow: hidden;
 
-  // width: 800px;
+//   padding: 25px 0;
 
-  // justify-content: space-evenly;
-  img {
-    // flex-shrink: 0;
-    color: white;
-    margin-right: 20px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    object-fit: contain;
-    height: 100%;
-    
-    aspect-ratio: 4/3;
-    // background-color: #5d5dcd;
-    font-size: 30px;
-    font-weight: bold;
-  }
+//   // justify-content: space-evenly;
+//   img {
+//     // flex-shrink: 0;
+//     color: white;
+//     margin-right: 20px;
 
-  .inner {
-    display: flex;
+//     display: inline-flex;
+//     justify-content: center;
+//     align-items: center;
+//     object-fit: contain;
+//     height: 50px;
+//     width: 120px;
 
-    transition: transform 5s linear;
-  }
-  // .brand {
-    
-  // }
-}
+//     aspect-ratio: 4/3;
+//     // background-color: #5d5dcd;
+//     font-size: 30px;
+//     font-weight: bold;
+//   }
+
+//   .inner {
+//     display: flex;
+
+//     transition: transform 5s linear;
+//   }
+//   // .brand {
+
+//   // }
+// }
 
 .testimonials-section {
   display: flex;
-text-align: center;
+  text-align: center;
   align-items: center;
   flex-direction: column;
   gap: 30px;
   padding: 60px;
   span {
-    font-family: Teko; 
+    font-family: Teko;
     font-size: 17px;
     letter-spacing: 4px;
     color: #b19777;
-   
-    
   }
   h2 {
     font-family: Playfair Display;
@@ -628,9 +605,6 @@ text-align: center;
   // width: 100%;
   width: 1250px;
   font-family: Poppins;
- 
-
-  
 
   @media screen and (max-width: 1280px) {
     width: 900px;
@@ -638,46 +612,44 @@ text-align: center;
   @media screen and (max-width: 1000px) {
     width: clamp(270px, 90%, 900px);
   }
-  
 }
 .prev {
-    position: absolute;
+  position: absolute;
 
-    border: none;
-    
-    top: 50%;
-    left: 0;
-    z-index: 3;
-    padding: 10px 20px;
-    transform: translateX(-20px);
-    cursor: pointer;
-  }
+  border: none;
 
-  .next {
-    
-    position: absolute;
-    top: 50%;
-    z-index: 3;
-    right: 0;
-    border: none;
-    padding: 10px 20px;
-    background-image: url(path/to/your/arrow.svg);
-    cursor: pointer;
-    transform: translateX(20px);
-    background-repeat: no-repeat;
-    background-position: center right 10px;
-    background-size: 10px;
-    background-origin: content-box;
-  }
+  top: 50%;
+  left: 0;
+  z-index: 3;
+  padding: 10px 20px;
+  transform: translateX(-20px);
+  cursor: pointer;
+}
+
+.next {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  right: 0;
+  border: none;
+  padding: 10px 20px;
+  background-image: url(path/to/your/arrow.svg);
+  cursor: pointer;
+  transform: translateX(20px);
+  background-repeat: no-repeat;
+  background-position: center right 10px;
+  background-size: 10px;
+  background-origin: content-box;
+}
 .reviewsbox {
   display: flex;
   // position: relative;
   overflow: hidden;
   padding: 150px 0;
- 
+
   box-sizing: border-box;
 
- width: 100%;
+  width: 100%;
 }
 .review-inner {
   display: flex;
@@ -775,17 +747,15 @@ text-align: center;
     display: flex;
     align-items: center;
     text-align: start;
- font-size: Poppins; 
+    font-size: Poppins;
     transform: translateY(115px);
     // padding-left:6px ;
     gap: 30px;
     h3 {
       font-family: Poppins;
-      
     }
     span {
       letter-spacing: normal;
-     
     }
 
     img {
@@ -796,8 +766,6 @@ text-align: center;
     .customer-info {
       display: grid;
       gap: 7px;
-     
-      
     }
   }
 }

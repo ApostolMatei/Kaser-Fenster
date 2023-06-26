@@ -23,11 +23,11 @@
         />
       </svg>
       <ul :class="{ active: menuActive }">
-        <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="/about">Uber uns</router-link></li>
-        <li><router-link to="/services">Services</router-link></li>
+        <li><router-link to="/">Startseite</router-link></li>
+        <li><router-link to="/ueber-uns">Über uns</router-link></li>
+        <li><router-link to="/leistungen">Leistungen</router-link></li>
         <li><router-link to="/produkte">Produkte</router-link></li>
-        <li><router-link to="/kontact">Kontact</router-link></li>
+        <li><router-link to="/kontakt">Kontakt</router-link></li>
       </ul>
       <div class="contact" :class="{ active: menuActive }">
         <span>Tel: <a href="/">+54124124</a></span>
