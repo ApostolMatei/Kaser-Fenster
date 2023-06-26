@@ -184,40 +184,40 @@ export default {
           name: 'Sabine Schmidt',
           quote:
             '"Ich bin sehr zufrieden mit dem Service von dieser Firma. Die Reparatur meiner Fenster wurde schnell und professionell durchgeführt."',
-          image: '/dani.jpg'
+          image: '/sabine.avif'
         },
 
         {
           name: 'Thomas Mayer',
           quote:
             '"Ich hatte Probleme mit meinen Türen und war beeindruckt von der schnellen und effizienten Reparatur durch das Team. Sehr empfehlenswert!""',
-          image: '/dani.jpg'
+          image: '/thomas.avif'
         },
 
         {
           name: 'Sandra Weber',
           quote:
             '"Die Rollen meiner Schiebetür waren schon lange defekt, aber das Team von dieser Firma konnte das Problem schnell beheben. Vielen Dank!""',
-          image: '/dani.jpg'
+          image: '/sandra.avif'
         },
         {
           name: 'Stefan Müller',
           quote:
             '"Ich war begeistert von der Qualität der Produkte, die für die Installation meiner neuen Fenster verwendet wurden. Sie sehen toll aus und sind auch energieeffizient.""',
-          image: '/dani.jpg'
+          image: '/stefan.avif'
         },
 
         {
           name: 'Julia Bauer',
           quote:
             '"Der Kundenservice war ausgezeichnet und das Team war sehr freundlich und hilfsbereit bei allen Fragen, die ich hatte. Ich würde sie jedem empfehlen!""',
-          image: '/dani.jpg'
+          image: '/julia.avif'
         },
         {
           name: 'Michaela Fischer',
           quote:
             '"Ich hatte eine Notfallsituation mit meinen Türen und das Team von dieser Firma kam sofort zur Hilfe. Sie waren professionell, zuverlässig und haben das Problem schnell gelöst.""',
-          image: '/dani.jpg'
+          image: '/michaela.avif'
         }
       ]
     }
@@ -734,6 +734,7 @@ export default {
     img {
       width: 100%;
       max-width: 50px;
+
       height: auto;
       @media screen and (max-width: 1000px) {
         max-width: 50px;
@@ -762,6 +763,7 @@ export default {
       height: 65px;
       width: 65px;
       border-radius: 50%;
+      object-fit: cover;
     }
     .customer-info {
       display: grid;

@@ -1,9 +1,8 @@
 <template>
   <header :class="{ 'sticky-nav': isSticky }">
-    <nav >
+    <nav>
       <div class="logo">
-        <img src="/logo3.png" alt="logo1">
-      
+        <img src="/logo3.png" alt="Main logo | Kaser" />
       </div>
       <svg
         @click.prevent="menuActive = !this.menuActive"
@@ -30,7 +29,7 @@
         <li><router-link to="/kontakt">Kontakt</router-link></li>
       </ul>
       <div class="contact" :class="{ active: menuActive }">
-        <span>Tel: <a href="/">+54124124</a></span>
+        <span>Tel: <a href="/">+43 664 1315477</a></span>
         <a class="contact-email" href="/">kaserfenster@office.ro</a>
       </div>
     </nav>
@@ -49,21 +48,21 @@ export default {
   },
 
   mounted() {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('scroll', this.handleScroll)
   },
   beforeUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('scroll', this.handleScroll)
   },
 
-  methods: { 
+  methods: {
     handleScroll() {
-      if (window.pageYOffset > 100) { // Make the navbar sticky after 2 scrolls (twice the height of the viewport)
-        this.isSticky = true;
+      if (window.pageYOffset > 100) {
+        // Make the navbar sticky after 2 scrolls (twice the height of the viewport)
+        this.isSticky = true
       } else {
-        this.isSticky = false;
+        this.isSticky = false
       }
-    },
-
+    }
   }
 }
 </script>
@@ -71,74 +70,65 @@ export default {
 <style scoped lang="scss">
 header {
   // height: 100vh;
-  background-color: white; 
- 
+  background-color: white;
 }
 
 nav {
   display: grid;
- box-sizing: border-box;
+  box-sizing: border-box;
   padding: 10px 20px;
-
- 
 
   grid-template-columns: 20% 1fr 40%;
   align-items: center;
- 
+
   max-width: 1260px;
   margin: 0 auto;
 
   .logo {
- 
     img {
-    height: 58px;
-    
-    // width: 152px;
-    // background-color: #222222;
-    // justify-self: center
-   
-  }
+      height: 58px;
+
+      // width: 152px;
+      // background-color: #222222;
+      // justify-self: center
+    }
   }
   .hamburger {
     display: none;
   }
-
-  
 }
 .sticky-nav {
   box-sizing: border-box;
-    position: fixed;
-    width: 100% ;
-    top: 0;
-    left: 0;
-    
-   animation: opacity 1.5s   ;
-    // padding: 5px 20px;
-    z-index: 300;
-    
-@keyframes opacity {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  letter-spacing: 1px;
+
+  animation: opacity 1.5s;
+  // padding: 5px 20px;
+  z-index: 300;
+
+  @keyframes opacity {
     0% {
-       
-        opacity: 0;
+      opacity: 0;
     }
 
     100% {
-        
-        opacity: 1;
+      opacity: 1;
     }
-
   }
-
-  }
+}
 li {
   all: unset;
   a {
     /* list-style: none; */
     text-decoration: none;
     cursor: pointer;
-    font-family: sans-serif;
-    font-size: 15px;
-    font-weight: 700;
+    font-family: Poppins;
+
+    font-size: 17px;
+    font-weight: 800;
     /* padding: 0 15px; */
     color: black;
     justify-content: center;
@@ -157,8 +147,8 @@ ul {
 }
 
 span {
-  font-size: 14px;
-  font-family: sans-serif;
+  font-size: 17px;
+  font-family: Poppins;
   font-weight: 600;
   padding: 0 20px 0 0;
   &:hover > a {
@@ -171,9 +161,9 @@ span {
   a {
     text-decoration: none;
     color: black;
-
-    font-size: 14px;
-    font-family: sans-serif;
+    // letter-spacing:
+    font-size: 17px;
+    font-family: Poppins;
     font-weight: 600;
     /* padding: 0 20px 0 0; */
   }
@@ -197,9 +187,7 @@ span {
     justify-content: space-between;
     flex-wrap: wrap;
     position: sticky;
-    
-    
-   
+
     .hamburger {
       display: block;
     }
@@ -217,10 +205,6 @@ span {
     z-index: 3;
     &.active {
       display: flex;
-     
-   
-      
-      
     }
     li {
       list-style-type: none;
@@ -240,7 +224,6 @@ span {
 
   .contact {
     display: none;
-    
   }
   .contact-email {
     border: none;
