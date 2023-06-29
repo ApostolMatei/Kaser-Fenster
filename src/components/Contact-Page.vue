@@ -16,7 +16,7 @@
         Gerne können Sie uns jederzeit kontaktieren. Wir werden uns so schnell wie möglich bei Ihnen
         melden!
       </p>
-      <form name="contact" method="POST">
+      <form name="contact" method="POST" data-netlify="true">
         <input type="text" placeholder="Name" name="naame" />
         <input type="email" placeholder="E-Mail-Adresse" name="email" />
         <input type="text" placeholder="Nachricht" name="message" />
