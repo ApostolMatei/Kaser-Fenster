@@ -147,6 +147,11 @@
     font-weight: 600;
     color: rgb(85, 83, 83);
   }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
 
   input {
     // width: 150px;
