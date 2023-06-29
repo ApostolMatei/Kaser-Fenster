@@ -17,7 +17,7 @@
         melden!
       </p>
       <form name="contact" method="POST" data-netlify="true">
-        <input type="text" placeholder="Name" name="naame" />
+        <input type="text" placeholder="Name" name="name" />
         <input type="email" placeholder="E-Mail-Adresse" name="email" />
         <input type="text" placeholder="Nachricht" name="message" />
         <button type="submit">SEND</button>
