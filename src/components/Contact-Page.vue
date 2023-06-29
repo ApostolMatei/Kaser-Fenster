@@ -16,11 +16,11 @@
         Gerne können Sie uns jederzeit kontaktieren. Wir werden uns so schnell wie möglich bei Ihnen
         melden!
       </p>
-      <form name="contact" method="POST" netlify>
+      <form name="contact" method="POST">
         <input type="text" placeholder="Name" name="naame" />
         <input type="email" placeholder="E-Mail-Adresse" name="email" />
         <input type="text" placeholder="Nachricht" name="message" />
-        <a href="/">SEND</a>
+        <button type="submit">SEND</button>
       </form>
     </div>
 
@@ -167,7 +167,7 @@
       color: rgb(124, 122, 122);
     }
   }
-  a {
+  button {
     font-family: Poppins;
     text-align: center;
     font-size: 20px;

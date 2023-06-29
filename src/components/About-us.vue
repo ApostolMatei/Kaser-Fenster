@@ -45,7 +45,7 @@
       </div>
       <div class="section">
         <div class="ceo">
-          <img class="dumitru" src="/dani.jpg" alt="CEO Dumitru Ionita" />
+          <img class="dumitru" src="/ceo.avif" alt="CEO Dumitru Ionita" />
           <div class="name">
             <span class="ceoname">Dumitru Ionita</span>
             <p>Founder & CEO</p>
@@ -173,7 +173,7 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr;
   // justify-items: center;
-  padding: 80px 0;
+  padding: 80px 20px;
   @media screen and (max-width: 1000px) {
     grid-template-columns: none;
     justify-items: center;
@@ -265,11 +265,15 @@ export default {
   height: 42px;
   width: 42px;
   border-radius: 50%;
+  object-fit: cover;
 }
 .projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  // display: grid;
+  display: flex;
+  justify-content: space-evenly;
+  // grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   justify-items: center;
+  align-items: center;
   font-weight: 600;
   p {
     color: rgb(83, 83, 83);
