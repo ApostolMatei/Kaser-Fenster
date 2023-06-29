@@ -10,11 +10,11 @@
       <a href="/">KONTAKTIEREN SIE UNS</a>
     </div>
     <div class="footer-nav">
-      <img src="/logo3.png" alt="Main logo | Kaser" />
+      <img src="/logo3.png" height="70px" width="138px" alt="Main logo | Kaser" />
       <span>@ 2023, copyright reserved</span>
 
       <div class="contact">
-        <div class="tel">Tel: <a href="/">+54124124</a></div>
+        <div class="tel"><a href="/">+54124124</a></div>
         <a class="contact-email" href="/">kaserfenster@office.ro</a>
       </div>
     </div>
@@ -40,7 +40,7 @@
   padding: 140px 0 100px 0;
   background-color: rgb(241, 241, 241);
   p {
-    font-size: 24px;
+    font-size: 20px;
     max-width: 600px;
     // text-align: center;
     color: white;
@@ -61,40 +61,59 @@
   }
 }
 .footer-nav {
-  display: grid;
-  grid-template-columns: 30% 1fr 30%;
+  // display: grid;
+  // grid-template-columns: 40% 1fr 37%;
+  display: flex;
+  justify-content: space-between;
   background-color: rgb(255, 255, 255);
   align-items: center;
-  font-family: Poppins;
+  // font-family: Poppins;
   // color: white;
   padding: 25px;
   @media screen and (max-width: 1000px) {
-    grid-template-columns: none;
-    grid-template-rows: repeat(3, 1fr);
-    gap: 10px;
+    flex-direction: column;
+    gap: 40px;
+    // padding: 40px;
   }
+  // @media screen and (max-width: 1000px) {
+  //   grid-template-columns: none;
+  //   grid-template-rows: repeat(3, 1fr);
+  //   gap: 10px;
+  // }
   img {
-    justify-self: center;
+    // justify-self: center;
     // color: white;
 
     // background-color: white;
-    height: 50%;
   }
 
   span {
     justify-self: center;
     font-size: 20px;
     font-weight: 600;
+    color: rgb(67, 66, 66);
+    transform: translateX(120px);
+    @media screen and (max-width: 1300px) {
+      transform: translateX(90px);
+    }
+    @media screen and (max-width: 1150px) {
+      transform: translateX(0px);
+    }
+    @media screen and (max-width: 1000px) {
+      font-size: 17px;
+    }
+
+    // padding-left: 200px;
   }
 }
 .tel {
   display: flex;
   gap: 10px;
   font-size: 20px;
-  font-family: Poppins;
-  font-weight: 1000;
+  // font-family: Poppins;
+  // font-weight: 1000;
   letter-spacing: 1.5px;
-  padding: 0 20px 0 0;
+  padding: 0 10px 0 0;
   &:hover > a {
     color: rgb(215, 165, 28);
   }
@@ -103,20 +122,21 @@
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  //   justify-self: center;
-  font-family: Poppins;
-  font-weight: 600;
+  justify-self: center;
+  // font-family: Poppins;
+  // font-weight: 600;
   a {
     text-decoration: none;
-    color: rgb(2, 2, 2);
-    font-family: Poppins;
+    color: rgb(67, 66, 66);
+    font-weight: 600;
     font-size: 20px;
-
-    /* padding: 0 20px 0 0; */
+    @media screen and (max-width: 1000px) {
+      font-size: 17px;
+    }
   }
   .contact-email {
     border-left: 1px solid grey;
-    padding: 7px 20px;
+    padding: 7px 10px;
   }
 }
 </style>

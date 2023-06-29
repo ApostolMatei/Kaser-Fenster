@@ -1,4 +1,13 @@
 <template>
+  <div class="pager">
+    <div class="pagerbox">
+      <h3>Kontakt</h3>
+      <div class="pages">
+        <router-link to="/">Home /</router-link>
+        <span>Kontakt</span>
+      </div>
+    </div>
+  </div>
   <div class="container-box">
     <div class="ornament"></div>
     <div class="input-box">
@@ -7,10 +16,12 @@
         Gerne können Sie uns jederzeit kontaktieren. Wir werden uns so schnell wie möglich bei Ihnen
         melden!
       </p>
-      <input type="text" placeholder="Name" />
-      <input type="text" placeholder="E-Mail-Adresse" />
-      <input type="text" placeholder="Nachricht" />
-      <a href="/">SEND</a>
+      <form name="contact" method="POST" data-netlify="true">
+        <input type="text" name="form-name" placeholder="Name" value="contact" />
+        <input type="text" placeholder="E-Mail-Adresse" name="form-email" value="contact" />
+        <input type="text" placeholder="Nachricht" name="form-message" value="contact" />
+        <a href="/">SEND</a>
+      </form>
     </div>
 
     <div class="info-box">
@@ -22,7 +33,7 @@
             d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5l-8-5h16zm0 12H4V8l8 5l8-5v10z"
           />
         </svg>
-        kaserfenster@office.ro
+        kaserfenster@office.com
       </div>
       <div class="tel">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
@@ -65,6 +76,33 @@
 <script></script>
 
 <style lang="scss" scoped>
+.pager {
+  background-color: rgba(100, 100, 111, 0.2);
+}
+
+.pagerbox {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 34px;
+  h3 {
+    font-family: Teko;
+    font-size: 23px;
+  }
+  a {
+    text-decoration: none;
+    color: rgb(67, 66, 66);
+    font-family: Poppins;
+    font-weight: 600;
+  }
+  span {
+    padding: 0 20px;
+    color: rgb(67, 66, 66);
+    font-family: Poppins;
+    font-weight: 600;
+  }
+}
 .container-box {
   display: flex;
   justify-content: space-between;
@@ -77,7 +115,7 @@
 
   @media screen and (max-width: 1050px) {
     flex-direction: column;
-    padding: 100px 0;
+    padding: 70px 0;
     .ornament {
       display: none;
     }

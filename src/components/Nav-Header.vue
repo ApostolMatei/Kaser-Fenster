@@ -29,8 +29,8 @@
         <li><router-link to="/kontakt">Kontakt</router-link></li>
       </ul>
       <div class="contact" :class="{ active: menuActive }">
-        <span>Tel: <a href="/">+43 664 1315477</a></span>
-        <a class="contact-email" href="/">kaserfenster@office.ro</a>
+        <span><a href="/">+43 664 1315477</a></span>
+        <a class="contact-email" href="/">kaserfenster@office.com</a>
       </div>
     </nav>
   </header>
@@ -76,14 +76,16 @@ header {
 nav {
   display: grid;
   box-sizing: border-box;
-  padding: 10px 20px;
+  padding: 10px 0px 0 20px;
 
-  grid-template-columns: 20% 1fr 40%;
+  grid-template-columns: 15% 1fr 40%;
   align-items: center;
 
   max-width: 1260px;
   margin: 0 auto;
-
+  @media screen and (max-width: 1000px) {
+    padding: 10px 20px 0 20px;
+  }
   .logo {
     img {
       height: 58px;
@@ -103,7 +105,7 @@ nav {
   width: 100%;
   top: 0;
   left: 0;
-  letter-spacing: 1px;
+  // letter-spacing: 1px;
 
   animation: opacity 1.5s;
   // padding: 5px 20px;
@@ -128,7 +130,7 @@ li {
     font-family: Poppins;
 
     font-size: 17px;
-    font-weight: 800;
+    font-weight: 1000;
     /* padding: 0 15px; */
     color: black;
     justify-content: center;
@@ -148,8 +150,8 @@ ul {
 
 span {
   font-size: 17px;
-  font-family: Poppins;
-  font-weight: 600;
+  // font-family: Poppins;
+  // font-weight: 600;
   padding: 0 20px 0 0;
   &:hover > a {
     color: rgb(215, 165, 28);
@@ -163,8 +165,8 @@ span {
     color: black;
     // letter-spacing:
     font-size: 17px;
-    font-family: Poppins;
-    font-weight: 600;
+    // font-family: Poppins;
+    // font-weight: 600;
     /* padding: 0 20px 0 0; */
   }
   .contact-email {

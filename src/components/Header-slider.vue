@@ -90,13 +90,12 @@ export default {
 <style lang="scss">
 .slider {
   position: relative;
-  /* background: #000116; */
   z-index: -1;
   height: 80vh;
-  // margin: 0 20px;
-  /* padding: 20px; */
-  // overflow: hidden;
-  /* border-radius: 10px; */
+  @media screen and (max-width: 1000px) {
+    height: 80vh;
+  }
+
   &::after {
     content: '';
     position: absolute;
@@ -177,15 +176,15 @@ export default {
   font-family: sans-serif;
   transform: translate(-50%, 100%);
   opacity: 0;
-  // width: 100%;
   padding: 20px;
   z-index: 2;
-  // background: rgba(0, 0, 0, 0.7);
   color: #fbf6f6;
+  @media screen and (max-width: 1000px) {
+    left: 50%;
+  }
   h2 {
     opacity: 0;
     font-size: 70px;
-    // margin-bottom: 10px;
   }
   p {
     line-height: 30px;
