@@ -16,10 +16,10 @@
         Gerne können Sie uns jederzeit kontaktieren. Wir werden uns so schnell wie möglich bei Ihnen
         melden!
       </p>
-      <form name="contact" method="POST" data-netlify="true" netlify>
-        <input type="text" name="form-name" placeholder="Name" value="contact" />
-        <input type="text" placeholder="E-Mail-Adresse" name="form-email" value="contact" />
-        <input type="text" placeholder="Nachricht" name="form-message" value="contact" />
+      <form name="contact" method="POST" netlify>
+        <input type="text" placeholder="Name" />
+        <input type="email" placeholder="E-Mail-Adresse" />
+        <input type="text" placeholder="Nachricht" />
         <a href="/">SEND</a>
       </form>
     </div>
