@@ -16,7 +16,7 @@
         Gerne können Sie uns jederzeit kontaktieren. Wir werden uns so schnell wie möglich bei Ihnen
         melden!
       </p>
-      <form action="https://formsubmit.co/mateias109@gmail.com" method="POST">
+      <form action="https://formsubmit.co/proservices1992@gmail.com" method="POST">
         <input v-model="email" type="email" placeholder="E-Mail-Adresse" required name="email" />
         <input v-model="name" type="text" placeholder="Name" name="name" required />
         <input v-model="message" type="text" placeholder="Nachricht" name="message" required />
