@@ -76,20 +76,7 @@ const routes = [
       ]
     }
   },
-  {
-    path: '/test',
-    component: testvue,
-    meta: {
-      title: 'Kontaktieren Sie uns - Kaser',
-      metaTags: [
-        {
-          name: 'description',
-          content:
-            'Gerne können Sie uns jederzeit kontaktieren. Wir werden uns so schnell wie möglich bei Ihnen melden!'
-        }
-      ]
-    }
-  },
+
   {
     path: '/:catchAll(.*)*',
     redirect: '/'
