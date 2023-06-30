@@ -22,7 +22,7 @@
         <input v-model="message" type="text" placeholder="Nachricht" name="message" required />
         <button type="submit">SEND</button>
       </form> -->
-      <form name="contact" method="POST" data-netlify="true">
+      <form name="contact" method="POST" netlify>
         <p>
           <label>Your Name: <input type="text" name="name" /></label>
         </p>

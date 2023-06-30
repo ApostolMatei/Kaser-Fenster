@@ -5,6 +5,7 @@ import AboutView from '@/views/AboutView.vue'
 import ServicesView from '@/views/ServicesView.vue'
 import ProductstView from '@/views/ProductsView.vue'
 import ContactView from '@/views/ContactView.vue'
+import testvue from '@/views/testVue.vue'
 const routes = [
   {
     path: '/',
@@ -64,6 +65,20 @@ const routes = [
   {
     path: '/kontakt',
     component: ContactView,
+    meta: {
+      title: 'Kontaktieren Sie uns - Kaser',
+      metaTags: [
+        {
+          name: 'description',
+          content:
+            'Gerne können Sie uns jederzeit kontaktieren. Wir werden uns so schnell wie möglich bei Ihnen melden!'
+        }
+      ]
+    }
+  },
+  {
+    path: '/test',
+    component: testvue,
     meta: {
       title: 'Kontaktieren Sie uns - Kaser',
       metaTags: [
