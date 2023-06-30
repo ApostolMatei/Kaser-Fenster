@@ -16,34 +16,11 @@
         Gerne können Sie uns jederzeit kontaktieren. Wir werden uns so schnell wie möglich bei Ihnen
         melden!
       </p>
-      <!-- <form @submit="sendForm">
-        <input v-model="email" type="email" placeholder="E-Mail-Adresse" name="email" required />
+      <form action="https://formsubmit.co/mateias109@gmail.com" method="POST">
+        <input v-model="email" type="email" placeholder="E-Mail-Adresse" required name="email" />
         <input v-model="name" type="text" placeholder="Name" name="name" required />
         <input v-model="message" type="text" placeholder="Nachricht" name="message" required />
         <button type="submit">SEND</button>
-      </form> -->
-      <form name="contact" method="POST" netlify>
-        <p>
-          <label>Your Name: <input type="text" name="name" /></label>
-        </p>
-        <p>
-          <label>Your Email: <input type="email" name="email" /></label>
-        </p>
-        <p>
-          <label
-            >Your Role:
-            <select name="role[]" multiple>
-              <option value="leader">Leader</option>
-              <option value="follower">Follower</option>
-            </select></label
-          >
-        </p>
-        <p>
-          <label>Message: <textarea name="message"></textarea></label>
-        </p>
-        <p>
-          <button type="submit">Send</button>
-        </p>
       </form>
     </div>
 
