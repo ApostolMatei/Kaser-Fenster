@@ -16,7 +16,7 @@
         Gerne können Sie uns jederzeit kontaktieren. Wir werden uns so schnell wie möglich bei Ihnen
         melden!
       </p>
-      <form action="https://formsubmit.co/office@kaser-fenster.at" method="POST">
+      <form action="https://formsubmit.co/gollanart@gmail.com" method="POST">
         <input type="email" placeholder="E-Mail-Adresse" name="email" required />
         <input type="text" placeholder="Name" name="name" required />
         <input type="text" placeholder="Nachricht" name="message" required />
