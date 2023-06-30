@@ -16,7 +16,7 @@
         Gerne können Sie uns jederzeit kontaktieren. Wir werden uns so schnell wie möglich bei Ihnen
         melden!
       </p>
-      <form action="https://formsubmit.co/kaserfenster@office.com" method="POST">
+      <form @submit="sendForm">
         <input v-model="email" type="email" placeholder="E-Mail-Adresse" required name="email" />
         <input v-model="name" type="text" placeholder="Name" name="name" required />
         <input v-model="message" type="text" placeholder="Nachricht" name="message" required />
@@ -74,46 +74,46 @@
 </template>
 
 <script>
-// export default {
-//   data() {
-//     return {
-//       name: '',
-//       email: '',
-//       message: ''
-//     }
-//   },
+export default {
+  data() {
+    return {
+      name: '',
+      email: '',
+      message: ''
+    }
+  },
 
-//   methods: {
-//     sendForm(event) {
-//       event.preventDefault()
+  methods: {
+    sendForm(event) {
+      event.preventDefault()
 
-//       // Configure SMTP.js
-//       Email.send({
-//         Host: 'smtp.elasticemail.com',
-//         Username: 'mateias109@gmail.com',
-//         Password: 'E842C5608C06781D569624BE5242DF5C3B2B',
-//         To: 'kaserfenster@office.com',
-//         From: this.email,
-//         Subject: 'New form submission',
-//         Body: `
-//           Name: ${this.name}
-//           Email: ${this.email}
-//           Message: ${this.message}
-//         `
-//       })
-//         .then(() => {
-//           console.log('Email sent successfully!', this.name, this.email, this.message)
-//           // Reset the form fields
-//           this.name = ''
-//           this.email = ''
-//           this.message = ''
-//         })
-//         .catch((error) => {
-//           console.error('Email sending failed:', error)
-//         })
-//     }
-//   }
-// }
+      // Configure SMTP.js
+      Email.send({
+        Host: 'smtp.elasticemail.com',
+        Username: 'mateias109@gmail.com',
+        Password: 'E842C5608C06781D569624BE5242DF5C3B2B',
+        To: 'Office@kaser-fenster.at',
+        From: this.email,
+        Subject: 'New form submission',
+        Body: `
+          Name: ${this.name}
+          Email: ${this.email}
+          Message: ${this.message}
+        `
+      })
+        .then(() => {
+          console.log('Email sent successfully!', this.name, this.email, this.message)
+          // Reset the form fields
+          this.name = ''
+          this.email = ''
+          this.message = ''
+        })
+        .catch((error) => {
+          console.error('Email sending failed:', error)
+        })
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
