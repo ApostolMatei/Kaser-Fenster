@@ -54,7 +54,7 @@ export default {
           alt: 'Mann misst den Rahmen eines Fensters',
           title: 'Rollen',
           description:
-            'Our rollers meet the highest standards and ensure a smooth and quiet movement of your doors and windows.'
+            'Unsere Rollen erfüllen die höchsten Standards und gewährleisten eine reibungslose und geräuschlose Bewegung Ihrer Türen und Fenster.'
         }
       ],
       currentIndex: 0,

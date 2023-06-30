@@ -16,11 +16,34 @@
         Gerne können Sie uns jederzeit kontaktieren. Wir werden uns so schnell wie möglich bei Ihnen
         melden!
       </p>
-      <form name="contact" method="POST" data-netlify="true">
-        <input type="text" placeholder="Name" name="name" />
-        <input type="email" placeholder="E-Mail-Adresse" name="email" />
-        <input type="text" placeholder="Nachricht" name="message" />
+      <!-- <form @submit="sendForm">
+        <input v-model="email" type="email" placeholder="E-Mail-Adresse" name="email" required />
+        <input v-model="name" type="text" placeholder="Name" name="name" required />
+        <input v-model="message" type="text" placeholder="Nachricht" name="message" required />
         <button type="submit">SEND</button>
+      </form> -->
+      <form name="contact" method="POST" data-netlify="true">
+        <p>
+          <label>Your Name: <input type="text" name="name" /></label>
+        </p>
+        <p>
+          <label>Your Email: <input type="email" name="email" /></label>
+        </p>
+        <p>
+          <label
+            >Your Role:
+            <select name="role[]" multiple>
+              <option value="leader">Leader</option>
+              <option value="follower">Follower</option>
+            </select></label
+          >
+        </p>
+        <p>
+          <label>Message: <textarea name="message"></textarea></label>
+        </p>
+        <p>
+          <button type="submit">Send</button>
+        </p>
       </form>
     </div>
 
@@ -73,7 +96,48 @@
   </div>
 </template>
 
-<script></script>
+<script>
+// export default {
+//   data() {
+//     return {
+//       name: '',
+//       email: '',
+//       message: ''
+//     }
+//   },
+
+//   methods: {
+//     sendForm(event) {
+//       event.preventDefault()
+
+//       // Configure SMTP.js
+//       Email.send({
+//         Host: 'smtp.elasticemail.com',
+//         Username: 'mateias109@gmail.com',
+//         Password: 'E842C5608C06781D569624BE5242DF5C3B2B',
+//         To: 'kaserfenster@office.com',
+//         From: this.email,
+//         Subject: 'New form submission',
+//         Body: `
+//           Name: ${this.name}
+//           Email: ${this.email}
+//           Message: ${this.message}
+//         `
+//       })
+//         .then(() => {
+//           console.log('Email sent successfully!', this.name, this.email, this.message)
+//           // Reset the form fields
+//           this.name = ''
+//           this.email = ''
+//           this.message = ''
+//         })
+//         .catch((error) => {
+//           console.error('Email sending failed:', error)
+//         })
+//     }
+//   }
+// }
+</script>
 
 <style lang="scss" scoped>
 .pager {

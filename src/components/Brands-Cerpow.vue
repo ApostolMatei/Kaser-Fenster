@@ -57,7 +57,7 @@ export default {
 
 .brands {
   --gap: 40px;
-  padding: 40px 0;
+  padding: 25px 0;
   background-color: rgb(0, 0, 0);
   overflow: hidden;
 
