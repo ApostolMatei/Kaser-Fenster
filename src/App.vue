@@ -1,34 +1,30 @@
 <script setup>
 import { RouterView } from 'vue-router'
 import Header from './components/Nav-Header.vue'
-// import Slider from './components/Header-slider.vue'
-// import Whyus from './components/Whyus-about.vue'
-
 import Footer from './components/Footer-component.vue'
 </script>
 
-<template >
-  <Header></Header>
+<template>
+  <Header @menu-active="menuActive = $event"></Header>
   <router-view></router-view>
   <!-- <Slider></Slider>
   <Whyus></Whyus> -->
   <Footer></Footer>
 </template>
 
-<style>
-
-
+<style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@200&family=Teko:wght@500&display=swap');
-
-
-
-
-body,
-#app {
+#app,
+body {
   margin: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+
+  &.menuactive {
+    overflow: hidden;
+  }
 }
+
 h1,
 h2,
 h3,
@@ -38,3 +34,21 @@ a {
   text-decoration: none;
 }
 </style>
+<script>
+export default {
+  data() {
+    return {
+      menuActive: false
+    }
+  },
+  watch: {
+    menuActive(newValue) {
+      if (newValue) {
+        document.body.classList.add('menuactive')
+      } else {
+        document.body.classList.remove('menuactive')
+      }
+    }
+  }
+}
+</script>

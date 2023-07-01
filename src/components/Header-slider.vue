@@ -54,7 +54,7 @@ export default {
           alt: 'Mann misst den Rahmen eines Fensters',
           title: 'Rollen',
           description:
-            'Unsere Rollen erfüllen die höchsten Standards und gewährleisten eine reibungslose und geräuschlose Bewegung Ihrer Türen und Fenster.'
+            'Unsere Rollen setzen Maßstäbe und sorgen für eine mühelose und geräuschlose Bewegung Ihrer Türen und Fenster.'
         }
       ],
       currentIndex: 0,
@@ -179,6 +179,7 @@ export default {
   padding: 20px;
   z-index: 2;
   color: #fbf6f6;
+
   @media screen and (max-width: 1000px) {
     left: 50%;
   }
@@ -187,7 +188,7 @@ export default {
     font-size: 70px;
   }
   p {
-    line-height: 30px;
+    line-height: 33px;
     opacity: 0;
     font-size: 30px;
   }

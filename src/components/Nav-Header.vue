@@ -5,7 +5,7 @@
         <img src="/logo3.png" alt="Main logo | Kaser" />
       </div>
       <svg
-        @click.prevent="menuActive = !this.menuActive"
+        @click.prevent="mainMenuActive()"
         class="hamburger"
         xmlns="http://www.w3.org/2000/svg"
         width="32"
@@ -22,11 +22,17 @@
         />
       </svg>
       <ul :class="{ active: menuActive }">
-        <li><router-link to="/">Startseite</router-link></li>
-        <li><router-link to="/ueber-uns">Über uns</router-link></li>
-        <li><router-link to="/leistungen">Leistungen</router-link></li>
-        <li><router-link to="/produkte">Produkte</router-link></li>
-        <li><router-link to="/kontakt">Kontakt</router-link></li>
+        <li class="line"><router-link @click="menuRefresh()" to="/">Startseite</router-link></li>
+        <li class="line">
+          <router-link @click="menuRefresh()" to="/ueber-uns">Über uns</router-link>
+        </li>
+        <li class="line">
+          <router-link @click="menuRefresh()" to="/leistungen">Leistungen</router-link>
+        </li>
+        <li class="line">
+          <router-link @click="menuRefresh()" to="/produkte">Produkte</router-link>
+        </li>
+        <li><router-link @click="menuRefresh()" to="/kontakt">Kontakt</router-link></li>
       </ul>
       <div class="contact" :class="{ active: menuActive }">
         <span><a href="/">+43 664 1315477</a></span>
@@ -39,7 +45,7 @@
 <script scoped>
 export default {
   name: 'Nav-Header',
-
+  emits: ['menu-active'],
   data() {
     return {
       menuActive: false,
@@ -62,6 +68,14 @@ export default {
       } else {
         this.isSticky = false
       }
+    },
+
+    menuRefresh() {
+      this.menuActive = !this.menuActive
+    },
+    mainMenuActive() {
+      this.menuActive = !this.menuActive
+      this.$emit('menu-active', this.menuActive)
     }
   }
 }
@@ -203,7 +217,9 @@ span {
     top: 100%; /* Adjust as needed */
     left: 0; /* Adjust as needed */
     flex-direction: column;
-    padding: 30px 0px;
+    padding: 5px 0px;
+    border-bottom-left-radius: 1%;
+    border-bottom-rightf-radius: 1%;
     z-index: 3;
     &.active {
       display: flex;
@@ -213,6 +229,9 @@ span {
       /* margin: 15px auto; */
       /* text-align: center; */
       width: 100%;
+      // border-bottom: 2px solid gray;
+    }
+    .line {
       border-bottom: 2px solid gray;
     }
     a {
