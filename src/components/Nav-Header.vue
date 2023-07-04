@@ -72,6 +72,7 @@ export default {
 
     menuRefresh() {
       this.menuActive = !this.menuActive
+      this.$emit('menu-active', this.menuActive)
     },
     mainMenuActive() {
       this.menuActive = !this.menuActive
@@ -219,7 +220,7 @@ span {
     flex-direction: column;
     padding: 5px 0px;
     border-bottom-left-radius: 1%;
-    border-bottom-rightf-radius: 1%;
+    border-bottom-right-radius: 1%;
     z-index: 3;
     &.active {
       display: flex;
