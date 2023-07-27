@@ -174,6 +174,7 @@
     letter-spacing: 5px;
     background-color: black;
     color: white;
+    cursor: pointer;
     padding: 15px 0;
   }
 }

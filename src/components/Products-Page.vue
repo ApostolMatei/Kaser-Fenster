@@ -170,8 +170,11 @@
 .image-box {
   display: flex;
   justify-content: center;
-  background-color: aliceblue;
+  background-color: rgb(224, 225, 227);
   padding: 200px 0;
+  @media screen and (max-width: 1000px) {
+    padding: 100px 0;
+  }
   img {
     height: auto;
     max-width: 90%;
@@ -187,7 +190,7 @@
   //   width: 100%;
   font-size: 10px;
   @media (max-width: 1000px) {
-    padding: 100px 0;
+    padding: 70px 0;
   }
   .text-box {
     display: grid;
