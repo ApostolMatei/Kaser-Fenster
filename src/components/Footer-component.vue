@@ -91,7 +91,7 @@
     justify-self: center;
     font-size: 20px;
     font-weight: 600;
-    color: rgb(67, 66, 66);
+    color: rgb(30, 30, 30);
     transform: translateX(120px);
     @media screen and (max-width: 1300px) {
       transform: translateX(90px);
@@ -127,7 +127,7 @@
   // font-weight: 600;
   a {
     text-decoration: none;
-    color: rgb(67, 66, 66);
+    color: rgb(30, 30, 30);
     font-weight: 600;
     font-size: 20px;
     @media screen and (max-width: 1000px) {

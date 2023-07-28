@@ -71,6 +71,7 @@ export default {
     },
 
     menuRefresh() {
+      if (window.innerWidth >= 1000) return
       this.menuActive = !this.menuActive
       this.$emit('menu-active', this.menuActive)
     },

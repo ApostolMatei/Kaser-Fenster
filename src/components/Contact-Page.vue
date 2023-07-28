@@ -11,7 +11,7 @@
   <div class="container-box">
     <div class="ornament"></div>
     <div class="input-box">
-      <h1>Kontaktieren Sie uns</h1>
+      <h1>Kontaktieren Sie Uns</h1>
       <p>
         Gerne können Sie uns jederzeit kontaktieren. Wir werden uns so schnell wie möglich bei Ihnen
         melden!

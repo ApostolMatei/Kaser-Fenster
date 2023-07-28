@@ -170,7 +170,7 @@
 .image-box {
   display: flex;
   justify-content: center;
-  background-color: rgb(224, 225, 227);
+  background-color: rgb(255, 255, 255);
   padding: 200px 0;
   @media screen and (max-width: 1000px) {
     padding: 100px 0;
