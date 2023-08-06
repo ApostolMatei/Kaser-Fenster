@@ -75,15 +75,11 @@ export default {
       if (window.innerWidth >= 1000) return
       this.menuActive = !this.menuActive
       this.$emit('menu-active', this.menuActive)
+    },
+    mainMenuActive() {
+      this.menuActive = !this.menuActive
+      this.$emit('menu-active', this.menuActive)
     }
-    // mainMenuActive() {
-    //   window.scrollTo({
-    //     top: 0,
-    //     behavior: 'smooth'
-    //   })
-    //   this.menuActive = !this.menuActive
-    //   this.$emit('menu-active', this.menuActive)
-    // }
   }
 }
 </script>
