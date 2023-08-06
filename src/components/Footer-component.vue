@@ -14,7 +14,7 @@
       <span>@ 2023, copyright reserved</span>
 
       <div class="contact">
-        <div class="tel"><a href="/">+43 664 1315477</a></div>
+        <div class="tel"><a href="tel:+436641315477">+43 664 1315477</a></div>
         <a class="contact-email" href="/">office@kaser-fenster.at</a>
       </div>
     </div>

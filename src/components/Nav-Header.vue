@@ -35,7 +35,7 @@
         <li><router-link @click="menuRefresh()" to="/kontakt">Kontakt</router-link></li>
       </ul>
       <div class="contact" :class="{ active: menuActive }">
-        <span><a href="/">+43 664 1315477</a></span>
+        <span><a href="tel:+436641315477">+43 664 1315477</a></span>
         <a class="contact-email" href="/">office@kaser-fenster.at</a>
       </div>
     </nav>

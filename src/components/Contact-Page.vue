@@ -35,7 +35,7 @@
         </svg>
         office@kaser-fenster.at
       </div>
-      <div class="tel">
+      <a href="tel:+436641315477" class="tel">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
           <path
             fill="none"
@@ -46,7 +46,7 @@
           />
         </svg>
         +43 664 1315477
-      </div>
+      </a>
       <div class="adress">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
           <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5">
@@ -177,6 +177,10 @@
     cursor: pointer;
     padding: 15px 0;
   }
+}
+.tel {
+  color: white;
+  text-decoration: none;
 }
 
 .info-box {
