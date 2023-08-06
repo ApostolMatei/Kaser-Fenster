@@ -181,6 +181,8 @@
 .tel {
   color: white;
   text-decoration: none;
+  font-size: 20px;
+  font-family: Poppins;
 }
 
 .info-box {
