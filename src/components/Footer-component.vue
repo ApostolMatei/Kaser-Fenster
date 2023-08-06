@@ -14,8 +14,8 @@
       <span>@ 2023, copyright reserved</span>
 
       <div class="contact">
-        <div class="tel"><a href="/">+54124124</a></div>
-        <a class="contact-email" href="/">kaserfenster@office.ro</a>
+        <div class="tel"><a href="/">+43 664 1315477</a></div>
+        <a class="contact-email" href="/">office@kaser-fenster.at</a>
       </div>
     </div>
   </footer>
