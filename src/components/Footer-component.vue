@@ -7,7 +7,7 @@
         unserem Engagement, Fachwissen und exzellentem Service stehen wir Ihnen zur Seite, um Ihre
         Anforderungen zu erfüllen.
       </p>
-      <a href="/">KONTAKTIEREN SIE UNS</a>
+      <router-link to="/kontakt">KONTAKTIEREN SIE UNS</router-link>
     </div>
     <div class="footer-nav">
       <img src="/logo3.png" height="70px" width="138px" alt="Main logo | Kaser" />
