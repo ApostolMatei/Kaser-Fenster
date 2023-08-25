@@ -4,7 +4,7 @@
       <h3>Leistungen</h3>
       <div class="pages">
         <router-link to="/">Home /</router-link>
-        <span>Services</span>
+        <span>Services </span>
       </div>
     </div>
   </div>

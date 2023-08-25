@@ -31,9 +31,9 @@
     </div>
     <div class="text-section">
       <div class="text-box">
-        <h3>Turen</h3>
+        <h3>Türen</h3>
         <p>
-          Entdecken Sie unsere Turen aus Kunststoff, Kunststoff-Alu, Aluminium, Holz und Holz-Alu.
+          Entdecken Sie unsere Türen aus Kunststoff, Kunststoff-Alu, Aluminium, Holz und Holz-Alu.
         </p>
         <span
           >Unsere maßgefertigten Türen bieten höchste Sicherheit, Energieeffizienz und Stilvielfalt

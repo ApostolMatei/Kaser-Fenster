@@ -15,7 +15,7 @@
       <div class="info">
         <h2>{{ slide.title }}</h2>
         <p>{{ slide.description }}</p>
-        <a>View Produkt</a>
+        <router-link to="/produkte">Produkt ansehen</router-link>
       </div>
     </div>
 
@@ -45,7 +45,7 @@ export default {
         {
           src: '/window2.jpg',
           alt: 'Mädchen mit Helm zeigt auf ein Fenster',
-          title: 'Turen',
+          title: 'Türen',
           description:
             'Mit unseren hochwertigen Türen und professioneller Installation schützen Sie Ihr Zuhause und steigern den Wert Ihrer Immobilie.'
         },
@@ -90,7 +90,7 @@ export default {
 <style lang="scss">
 .slider {
   position: relative;
-  z-index: -1;
+  z-index: 1;
   height: 80vh;
   @media screen and (max-width: 1000px) {
     height: 80vh;
@@ -106,7 +106,7 @@ export default {
     height: 100%;
     background: rgba(0, 0, 0, 0)
       linear-gradient(to bottom, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.6) 100%) repeat 0 0;
-    z-index: 1;
+    z-index: 2;
   }
 }
 
@@ -117,6 +117,7 @@ export default {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
   // background-color: black;
+  // z-index: 1;
 }
 
 .slider .slide.active {
@@ -170,6 +171,7 @@ export default {
   flex-direction: column;
   gap: 25px;
   position: absolute;
+
   top: 50%;
   left: 45%;
   max-width: 1260px;
@@ -177,8 +179,11 @@ export default {
   transform: translate(-50%, 100%);
   opacity: 0;
   padding: 20px;
-  z-index: 2;
+  z-index: 3;
   color: #fbf6f6;
+  a {
+    cursor: pointer;
+  }
 
   @media screen and (max-width: 1000px) {
     left: 50%;

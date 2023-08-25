@@ -187,7 +187,7 @@ export default {
   }
 
   span {
-    font-size: 55px;
+    font-size: 50px;
     font-weight: 700;
     // text-align: center;
   }
@@ -270,11 +270,15 @@ export default {
 .projects {
   // display: grid;
   display: flex;
+  // flex-direction: column;
   justify-content: space-evenly;
   // grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   justify-items: center;
   align-items: center;
   font-weight: 600;
+  @media screen and (max-width: 650px) {
+    flex-direction: column;
+  }
   p {
     color: rgb(83, 83, 83);
   }
