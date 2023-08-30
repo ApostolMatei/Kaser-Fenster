@@ -13,7 +13,11 @@
       <img :src="slide.src" :alt="slide.alt" />
 
       <div class="info">
-        <h2>{{ slide.title }}</h2>
+        <div class="title">
+          <h2>{{ slide.title }}</h2>
+          <h2 v-if="slide.next">{{ slide.next }}</h2>
+        </div>
+
         <p>{{ slide.description }}</p>
         <router-link to="/produkte">Produkt ansehen</router-link>
       </div>
@@ -52,9 +56,10 @@ export default {
         {
           src: '/window3.jpg',
           alt: 'Mann misst den Rahmen eines Fensters',
-          title: 'Rollen',
+          title: 'Sonnen-',
+          next: 'schutz',
           description:
-            'Unsere Rollen setzen Maßstäbe und sorgen für eine mühelose und geräuschlose Bewegung Ihrer Türen und Fenster.'
+            'Unsere Schutzprodukte setzen Maßstäbe und sorgen für ein angenehmes Raumklima.'
         }
       ],
       currentIndex: 0,
@@ -93,7 +98,7 @@ export default {
   z-index: 1;
   height: 80vh;
   @media screen and (max-width: 1000px) {
-    height: 80vh;
+    height: 85vh;
   }
 
   &::after {
@@ -171,7 +176,7 @@ export default {
   flex-direction: column;
   gap: 25px;
   position: absolute;
-
+  flex-wrap: wrap;
   top: 50%;
   left: 45%;
   max-width: 1260px;
@@ -188,10 +193,12 @@ export default {
   @media screen and (max-width: 1000px) {
     left: 50%;
   }
+
   h2 {
     opacity: 0;
     font-size: 70px;
   }
+
   p {
     line-height: 33px;
     opacity: 0;
