@@ -2,7 +2,7 @@
   <header :class="{ 'sticky-nav': isSticky }">
     <nav>
       <div class="logo">
-        <img src="/logo3.png" alt="Main logo | Kaser" />
+        <img src="/logo4.png" alt="Main logo | Kaser" />
       </div>
       <svg
         @click.prevent="mainMenuActive()"
@@ -105,7 +105,9 @@ nav {
   }
   .logo {
     img {
-      height: 58px;
+      height: 40px;
+
+      padding: 5px 0 10px 0;
 
       // width: 152px;
       // background-color: #222222;

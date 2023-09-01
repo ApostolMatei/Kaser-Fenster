@@ -10,7 +10,7 @@
       <router-link to="/kontakt">KONTAKTIEREN SIE UNS</router-link>
     </div>
     <div class="footer-nav">
-      <img src="/logo3.png" height="70px" width="138px" alt="Main logo | Kaser" />
+      <img src="/logo4.png" height="70px" width="138px" alt="Main logo | Kaser" />
       <span>@ 2023, copyright reserved</span>
 
       <div class="contact">
@@ -81,8 +81,7 @@
   //   gap: 10px;
   // }
   img {
-    // justify-self: center;
-    // color: white;
+    height: 40px;
 
     // background-color: white;
   }
