@@ -10,12 +10,14 @@
       <router-link to="/kontakt">KONTAKTIEREN SIE UNS</router-link>
     </div>
     <div class="footer-nav">
-      <img src="/logo4.png" height="70px" width="138px" alt="Main logo | Kaser" />
-      <span>@ 2023, copyright reserved</span>
+      <img src="/logo4.png" alt="Main logo | Kaser" />
+      <span>© 2023, copyright reserved</span>
 
       <div class="contact">
         <div class="tel"><a href="tel:+436641315477">+43 664 1315477</a></div>
-        <a class="contact-email" href="/">office@kaser-fenster.at</a>
+        <router-link class="contact-email" to="/kontakt#contactForm"
+          >office@kaser-fenster.at</router-link
+        >
       </div>
     </div>
   </footer>
@@ -67,7 +69,7 @@
   justify-content: space-between;
   background-color: rgb(255, 255, 255);
   align-items: center;
-  // font-family: Poppins;
+  font-family: sans-serif;
   // color: white;
   padding: 25px;
   @media screen and (max-width: 1000px) {
@@ -82,6 +84,7 @@
   // }
   img {
     height: 40px;
+    width: auto;
 
     // background-color: white;
   }
@@ -89,7 +92,7 @@
   span {
     justify-self: center;
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 500;
     color: rgb(30, 30, 30);
     transform: translateX(120px);
     @media screen and (max-width: 1300px) {
@@ -127,7 +130,7 @@
   a {
     text-decoration: none;
     color: rgb(30, 30, 30);
-    font-weight: 600;
+    font-weight: 500;
     font-size: 20px;
     @media screen and (max-width: 1000px) {
       font-size: 17px;

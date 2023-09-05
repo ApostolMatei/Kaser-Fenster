@@ -29,7 +29,7 @@
         >
       </div>
     </div>
-    <div class="text-section">
+    <div id="turen" class="text-section">
       <div class="text-box">
         <h3>Türen</h3>
         <p>
@@ -57,7 +57,7 @@
         alt="Sonnenschutzprodukte für Innen- und Außenbereich"
       />
     </div>
-    <div class="text-section">
+    <div id="schutz" class="text-section">
       <div class="text-box">
         <h3>Sonnenschutz</h3>
         <p>Entdecken Sie unsere Innen - und Außen - Sonnenschutzprodukte aus allen Materialien</p>

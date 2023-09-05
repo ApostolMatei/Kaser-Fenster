@@ -2,7 +2,7 @@
   <header :class="{ 'sticky-nav': isSticky }">
     <nav>
       <div class="logo">
-        <img src="/logo4.png" alt="Main logo | Kaser" />
+        <router-link to="/"><img src="/logo4.png" alt="Main logo | Kaser" /> </router-link>
       </div>
       <svg
         @click.prevent="mainMenuActive()"
@@ -36,7 +36,9 @@
       </ul>
       <div class="contact" :class="{ active: menuActive }">
         <span><a href="tel:+436641315477">+43 664 1315477</a></span>
-        <a class="contact-email" href="/">office@kaser-fenster.at</a>
+        <router-link class="contact-email" to="/kontakt#contactForm"
+          >office@kaser-fenster.at</router-link
+        >
       </div>
     </nav>
   </header>
@@ -164,7 +166,7 @@ ul {
   gap: 15px;
   padding: 0;
   margin: 0;
-  z-index: 3;
+  z-index: 5;
 }
 
 span {
@@ -218,7 +220,7 @@ span {
     display: none;
     background-color: white;
     width: 100%;
-    position: absolute; /* Add this */
+
     top: 100%; /* Adjust as needed */
     left: 0; /* Adjust as needed */
     flex-direction: column;

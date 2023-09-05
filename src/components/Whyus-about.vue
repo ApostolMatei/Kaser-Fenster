@@ -25,7 +25,7 @@
         Wissen ist Ihr Vorteil. Wir planen für Sie und mit Ihnen. Somit ermöglichen wir Ihnen freies
         Gestalten und setzen Ihre Wünsche mit qualitativ hochwertigen Produkten für Ihr Zuhause um.
       </p>
-      <a href="/">Mehr</a>
+      <router-link to="/ueber-uns">Mehr</router-link>
     </div>
   </div>
   <div class="service-section">
@@ -41,7 +41,7 @@
         Tätigkeiten. Vertrauen Sie uns für erstklassigen Service und höchste Qualität bei allen
         Ihren Fenstermontage-Bedürfnissen.
       </p>
-      <a href="/">Mehr</a>
+      <router-link to="/leistungen">Mehr</router-link>
     </div>
     <div class="services">
       <div class="service" v-for="(service, index) in services" :key="index">

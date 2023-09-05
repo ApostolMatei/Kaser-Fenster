@@ -16,8 +16,8 @@
         Gerne können Sie uns jederzeit kontaktieren. Wir werden uns so schnell wie möglich bei Ihnen
         melden!
       </p>
-      <form action="https://formsubmit.co/gollanart@gmail.com" method="POST">
-        <input type="email" placeholder="E-Mail-Adresse" name="email" required />
+      <form id="contactForm" action="https://formsubmit.co/gollanart@gmail.com" method="POST">
+        <input ref="email" type="email" placeholder="E-Mail-Adresse" name="email" required />
         <input type="text" placeholder="Name" name="name" required />
         <input type="text" placeholder="Nachricht" name="message" required />
         <button type="submit">SEND</button>
@@ -58,9 +58,9 @@
             />
           </g>
         </svg>
-        Wien
+        Wien und Umgebung
       </div>
-      <div class="hours">
+      <!-- <div class="hours">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
           <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5">
             <path stroke-linejoin="round" d="M12 9v4l2.5 2.5m-11-11l4-2.5m13 2.5l-4-2.5" />
@@ -68,12 +68,23 @@
           </g>
         </svg>
         09:00 - 18:00
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  mounted() {
+    if (this.$route.hash === '#contactForm') {
+      const inputElement = this.$refs.email
+      if (inputElement) {
+        inputElement.focus()
+      }
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .pager {

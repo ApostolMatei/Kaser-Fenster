@@ -19,7 +19,7 @@
         </div>
 
         <p>{{ slide.description }}</p>
-        <router-link to="/produkte">Produkt ansehen</router-link>
+        <router-link :to="slide.route">Produkt ansehen</router-link>
       </div>
     </div>
 
@@ -44,14 +44,16 @@ export default {
           alt: 'Fensterinstallation durch Fachmann',
           title: 'Fenster',
           description:
-            'Unsere Fenster sind von höchster Qualität und werden von unseren erfahrenen Handwerkern fachgerecht eingebaut.'
+            'Unsere Fenster sind von höchster Qualität und werden von unseren erfahrenen Handwerkern fachgerecht eingebaut.',
+          route: '/produkte'
         },
         {
           src: '/window2.jpg',
           alt: 'Mädchen mit Helm zeigt auf ein Fenster',
           title: 'Türen',
           description:
-            'Mit unseren hochwertigen Türen und professioneller Installation schützen Sie Ihr Zuhause und steigern den Wert Ihrer Immobilie.'
+            'Mit unseren hochwertigen Türen und professioneller Installation schützen Sie Ihr Zuhause und steigern den Wert Ihrer Immobilie.',
+          route: '/produkte#turen'
         },
         {
           src: '/window3.jpg',
@@ -59,7 +61,8 @@ export default {
           title: 'Sonnen-',
           next: 'schutz',
           description:
-            'Unsere Schutzprodukte setzen Maßstäbe und sorgen für ein angenehmes Raumklima.'
+            'Unsere Schutzprodukte setzen Maßstäbe und sorgen für ein angenehmes Raumklima.',
+          route: '/produkte#schutz'
         }
       ],
       currentIndex: 0,

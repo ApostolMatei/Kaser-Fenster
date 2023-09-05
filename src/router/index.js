@@ -83,9 +83,23 @@ const routes = [
   }
 ]
 
+const navHeight = 72
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      return {
+        el: to.hash,
+        top: +navHeight
+      }
+    } else if (savedPosition) {
+      return savedPosition
+    } else {
+      return { left: 0, top: 0 }
+    }
+  }
 })
 
 router.beforeEach((to, from, next) => {
