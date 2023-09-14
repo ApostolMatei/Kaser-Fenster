@@ -4,7 +4,7 @@
       <div class="pagerbox">
         <h3>ÜBER UNS</h3>
         <div class="pages">
-          <router-link to="/">Home /</router-link>
+          <router-link to="/">Startseite /</router-link>
           <span>Über uns</span>
         </div>
       </div>

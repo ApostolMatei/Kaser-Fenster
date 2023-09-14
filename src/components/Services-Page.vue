@@ -3,8 +3,8 @@
     <div class="pagerbox">
       <h3>Leistungen</h3>
       <div class="pages">
-        <router-link to="/">Home /</router-link>
-        <span>Services </span>
+        <router-link to="/">Startseite /</router-link>
+        <span>Leistungen </span>
       </div>
     </div>
   </div>

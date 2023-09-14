@@ -3,7 +3,7 @@
     <div class="pagerbox">
       <h3>Produkte</h3>
       <div class="pages">
-        <router-link to="/">Home /</router-link>
+        <router-link to="/">Startseite /</router-link>
         <span>Produkte</span>
       </div>
     </div>
