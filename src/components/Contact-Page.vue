@@ -20,7 +20,7 @@
         <input ref="email" type="email" placeholder="E-Mail-Adresse" name="email" required />
         <input type="text" placeholder="Name" name="name" required />
         <input type="text" placeholder="Nachricht" name="message" required />
-        <button type="submit">SEND</button>
+        <button type="submit">ABSENDEN</button>
       </form>
     </div>
 
