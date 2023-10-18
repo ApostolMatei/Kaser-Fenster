@@ -75,11 +75,6 @@ const routes = [
         }
       ]
     }
-  },
-
-  {
-    path: '/:catchAll(.*)*',
-    redirect: '/'
   }
 ]
 
