@@ -4,6 +4,7 @@
       <div class="logo">
         <router-link to="/"><img src="/logo4.png" alt="Main logo | Kaser" /> </router-link>
       </div>
+
       <svg
         @click.prevent="mainMenuActive()"
         class="hamburger"
