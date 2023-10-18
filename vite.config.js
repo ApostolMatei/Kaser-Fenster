@@ -10,7 +10,10 @@ export default defineConfig({
     vue(),
     // ...
     Pages({
-      onRoutesGenerated: (routes) => generateSitemap({ routes })
+      onRoutesGenerated: () => {
+        const explicitRoutes = ['/', '/ueber-uns', '/leistungen', '/produkte', '/kontakt']
+        generateSitemap({ routes: explicitRoutes })
+      }
     })
   ],
   resolve: {
