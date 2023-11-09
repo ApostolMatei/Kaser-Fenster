@@ -1,19 +1,13 @@
 <script setup>
-import Slider from '@/components/Header-slider.vue'
-import Brands from '@/components/Brands-Cerpow.vue'
-
-import Whyus from '@/components/Whyus-about.vue'
-
-
-
+import Slider from '@/components/Header-Slider.vue'
+import Brands from '@/components/Brands-Kaser.vue'
+import Main from '@/components/Main-Content.vue'
 </script>
 
 <template>
   <main>
-    <Slider ></Slider>
+    <Slider></Slider>
     <Brands></Brands>
-    <Whyus></Whyus>
-    
-
+    <Main></Main>
   </main>
 </template>

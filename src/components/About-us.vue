@@ -94,28 +94,33 @@ export default {
   },
 
   mounted() {
+    // Define the options for the IntersectionObserver
     const options = {
-      threshold: 0.5 // Adjust this value as needed
+      threshold: 0.5
     }
 
+    // Create a new IntersectionObserver, which will trigger a callback when an element is in the viewport.
     const observer = new IntersectionObserver((entries) => {
+      // Loop through the entries to check if any of them are intersecting.
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // Start your animation here
+          // When '.projects' element is in the viewport, trigger the following methods and log a message.
           this.projects()
           this.years()
           this.happy()
           console.log('.projects is in the viewport')
-          // Add your animation logic or class toggling code here
         }
       })
     }, options)
+    // Get a reference to the element with the ref 'numbers' and start observing it.
 
     const projectsElement = this.$refs.numbers
     observer.observe(projectsElement)
   },
 
   methods: {
+    // Increase the numbers of projects,years and customers  until it reaches the final threshold
+
     projects() {
       if (this.theProjects >= 290) return
       setTimeout(() => {

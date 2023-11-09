@@ -36,22 +36,34 @@ export default {
   },
 
   mounted() {
+    // Get references to the slider container and individual slides.
     this.slider_inner = this.$refs.inner
     this.slides = this.$refs.inner.querySelectorAll('.brand')
+    // Start the slider
     this.moveSlider()
   },
 
   methods: {
+    // Method responsible for sliding the content within the slider.
     moveSlider() {
       this.slider_inner.style.transform = 'translateX(-140px)'
+
+      // After a delay of 5 seconds, perform the following actions to simulate the sliding effect.
       setTimeout(() => {
+        // Get a reference to the first slide and remove it.
         var item = this.$refs.inner.querySelector('.brand')
         item.remove()
+
+        // Reset the slider's position and append the removed slide to the end.
         this.slider_inner.style.transform = 'translateX(0px)'
         this.slider_inner.append(item)
+
+        // Temporarily disable transitions for a smooth reset.
         this.slider_inner.style.transition = 'none'
-        this.slider_inner.offsetHeight
-        this.slider_inner.style.transition = null
+        this.slider_inner.offsetHeight // Force a reflow to apply the transition reset.
+        this.slider_inner.style.transition = null // Re-enable transitions.
+
+        // Recursively call the moveSlider method to continue the sliding effect.
         this.moveSlider()
       }, 5000)
     }

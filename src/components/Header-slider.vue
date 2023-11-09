@@ -71,31 +71,25 @@ export default {
     }
   },
   methods: {
-    goToPrevSlide() {
-      this.prevIndex = this.currentIndex
-      this.currentIndex--
-      if (this.currentIndex < 0) {
-        this.currentIndex = this.slides.length - 1
-      }
-      this.nextIndex = this.currentIndex === this.slides.length - 1 ? 0 : this.currentIndex + 1
-    },
     goToNextSlide() {
-      this.prevIndex = this.currentIndex
+      // Increment the current index to switch to the next slide.
       this.currentIndex++
+
+      // If the currentIndex exceeds the last slide, wrap around to the first slide
       if (this.currentIndex > this.slides.length - 1) {
         this.currentIndex = 0
       }
-      this.nextIndex = this.currentIndex === this.slides.length - 1 ? 0 : this.currentIndex + 1
     }
   },
   mounted() {
+    // Set up an automatic slide transition
     setInterval(() => {
-      this.goToNextSlide()
+      this.goToNextSlide() // Call the method to move to the next slide
     }, 5600)
   }
 }
 </script>
-<style lang="scss">
+<style scoped lang="scss">
 .slider {
   position: relative;
   z-index: 1;
@@ -137,23 +131,6 @@ export default {
   height: 100%;
   object-fit: cover;
 }
-
-// .image-wrapper {
-//   position: relative;
-
-//   &::after {
-
-// content: "";
-// position: absolute;
-// display: block;
-// left: 0;
-// top: 0;
-// width: 100%;
-// height: 100%;
-// background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.6) 100%) repeat 0 0;
-// z-index: 1;
-// }
-//   }
 
 .slide.active {
   .info {
