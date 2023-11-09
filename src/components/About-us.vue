@@ -83,7 +83,7 @@
   </main>
 </template>
 <script>
-//
+
 export default {
   name: 'About-us',
   data() {

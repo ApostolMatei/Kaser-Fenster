@@ -11,4 +11,3 @@ import Main from '@/components/Main-Content.vue'
     <Main></Main>
   </main>
 </template>
-//

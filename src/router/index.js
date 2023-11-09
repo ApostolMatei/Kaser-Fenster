@@ -5,7 +5,7 @@ import AboutView from '@/views/AboutView.vue'
 import ServicesView from '@/views/ServicesView.vue'
 import ProductstView from '@/views/ProductsView.vue'
 import ContactView from '@/views/ContactView.vue'
-//
+
 const routes = [
   {
     path: '/',

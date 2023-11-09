@@ -44,7 +44,7 @@
     </nav>
   </header>
 </template>
-//
+
 <script scoped>
 export default {
   name: 'Nav-Header',

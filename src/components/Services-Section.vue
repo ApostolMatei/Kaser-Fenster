@@ -40,7 +40,7 @@ export default {
   }
 }
 </script>
-//
+
 <style scoped lang="scss">
 .service-section {
   display: flex;
