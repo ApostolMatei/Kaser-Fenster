@@ -19,6 +19,7 @@
 </template>
 
 <style lang="scss">
+//
 .aboutus-section {
   display: flex;
   align-items: center;

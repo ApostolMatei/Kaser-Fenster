@@ -11,7 +11,7 @@ import Footer from './components/Footer-component.vue'
   <Whyus></Whyus> -->
   <Footer></Footer>
 </template>
-
+//
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@200&family=Teko:wght@500&display=swap');
 #app,

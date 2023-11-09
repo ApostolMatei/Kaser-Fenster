@@ -23,7 +23,7 @@
   </footer>
 </template>
 <script></script>
-
+//
 <style scoped lang="scss">
 .footer-contact {
   display: flex;
