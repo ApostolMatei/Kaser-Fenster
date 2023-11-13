@@ -7,7 +7,7 @@ import Main from '@/components/Main-content.vue'
 <template>
   <main>
     <Slider></Slider>
-
+    <Brands></Brands>
     <Main></Main>
   </main>
 </template>
