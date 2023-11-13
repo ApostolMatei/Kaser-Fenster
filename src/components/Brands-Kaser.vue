@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: 'Brands-slider',
+  name: 'Brands-kaser',
   data() {
     return {
       brands: [
