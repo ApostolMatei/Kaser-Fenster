@@ -83,16 +83,13 @@ export default {
     flex-shrink: 0;
     color: white;
     margin-right: 20px;
-
     display: inline-flex;
     justify-content: center;
     align-items: center;
     object-fit: contain;
     height: 90px;
     width: 120px;
-
     aspect-ratio: 4/3;
-    // background-color: #5d5dcd;
     font-size: 30px;
     font-weight: bold;
   }
@@ -101,8 +98,6 @@ export default {
     display: flex;
 
     transition: transform 5s linear;
-  }
-  .brand {
   }
 }
 </style>
