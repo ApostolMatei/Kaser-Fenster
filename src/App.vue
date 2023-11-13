@@ -16,8 +16,8 @@ import Footer from './components/Footer-component.vue'
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@200&family=Teko:wght@500&display=swap');
 #app,
 body {
-  margin: 0 auto;
-  max-width: 1920px;
+  // margin: 0 auto;
+  // max-width: 1920px;
   box-sizing: border-box;
   font-family: sans-serif;
 
