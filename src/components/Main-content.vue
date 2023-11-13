@@ -18,7 +18,7 @@ export default {
     WhyusSection,
     TestimonialSection
   },
-  name: 'Main-Content'
+  name: 'Main-content'
 }
 </script>
 

@@ -18,6 +18,7 @@
 
 <script>
 export default {
+  name: 'Brands-slider',
   data() {
     return {
       brands: [
