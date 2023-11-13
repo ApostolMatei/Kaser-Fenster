@@ -18,6 +18,7 @@ import Footer from './components/Footer-component.vue'
 body {
   margin: 0 auto;
   max-width: 1920px;
+  //muie
   box-sizing: border-box;
   font-family: sans-serif;
 
