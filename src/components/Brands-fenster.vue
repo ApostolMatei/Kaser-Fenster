@@ -1,16 +1,18 @@
 <template>
-  <div class="brands" ref="slider" @click="muian">
-    <div class="inner" ref="inner">
-      <div class="logos" v-for="index in 3" :key="index">
-        <img
-          width="120"
-          height="90"
-          class="brand"
-          v-for="brand in brands"
-          :key="brand"
-          :src="brand.src"
-          :alt="brand.alt"
-        />
+  <div class="background">
+    <div class="brands" ref="slider" @click="muian">
+      <div class="inner" ref="inner">
+        <div class="logos" v-for="index in 3" :key="index">
+          <img
+            width="120"
+            height="90"
+            class="brand"
+            v-for="brand in brands"
+            :key="brand"
+            :src="brand.src"
+            :alt="brand.alt"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -55,12 +57,16 @@ export default {
     transform: translate3d(-100%, 0, 0);
   }
 }
-
+.background {
+  background-color: rgb(0, 0, 0);
+}
 .brands {
   --gap: 40px;
   padding: 25px 0;
-  background-color: rgb(0, 0, 0);
+
   overflow: hidden;
+  margin: 0 auto;
+  max-width: 1600px;
 
   img {
     width: 120px;

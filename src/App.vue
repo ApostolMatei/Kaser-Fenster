@@ -7,8 +7,6 @@ import Footer from './components/Footer-component.vue'
 <template>
   <Header @menu-active="menuActive = $event"></Header>
   <router-view></router-view>
-  <!-- <Slider></Slider>
-  <Whyus></Whyus> -->
   <Footer></Footer>
 </template>
 
@@ -18,6 +16,7 @@ import Footer from './components/Footer-component.vue'
 body {
   font-family: sans-serif;
   margin: 0;
+  // max-width: 1920px;
 
   &.menuactive {
     overflow: hidden;

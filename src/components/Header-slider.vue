@@ -160,7 +160,7 @@ export default {
   flex-wrap: wrap;
   top: 50%;
   left: 45%;
-  max-width: 1260px;
+  // max-width: 1260px;
   font-family: sans-serif;
   transform: translate(-50%, 100%);
   opacity: 0;
