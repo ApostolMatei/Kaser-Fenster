@@ -1,5 +1,5 @@
 <script setup>
-import Slider from '@/components/Header-Slider.vue'
+import Slider from '@/components/Header-slider.vue'
 import Brands from '@/components/Brands-Kaser.vue'
 import Main from '@/components/Main-Content.vue'
 </script>
