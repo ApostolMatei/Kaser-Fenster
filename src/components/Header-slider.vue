@@ -36,7 +36,7 @@
 
 <script>
 export default {
-  name: "Header-Slider"
+  name: 'Header-Slider',
   data() {
     return {
       slides: [
