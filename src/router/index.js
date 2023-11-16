@@ -16,7 +16,7 @@ const routes = [
         {
           name: 'description',
           content:
-            'Herzlich willkommen bei Firma! Wir sind Ihr vertrauenswürdiger Anbieter hochwertiger Fenster, Rollen und Türen in Wien. Entdecken Sie unsere breite Palette an Fensterlösungen für Wohn- und Gewerbeimmobilien.'
+            'Als Ihr fachkundiger Ansprechpartner bieten wir Beratung, Service, Reparatur und Montage von Fenstern, Türen sowie Einbruchschutzsystemen an.'
         }
       ]
     }
