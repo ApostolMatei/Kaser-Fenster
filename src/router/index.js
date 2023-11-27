@@ -11,12 +11,12 @@ const routes = [
     path: '/',
     component: HomeView,
     meta: {
-      title: 'Fenster, Rollen, Türen - Ihre vertrauenswürdigen Fensterlösungen in Wien | Kaser',
+      title: 'Beratung - Lieferung - Montage - Wartung - Reparatur von Fenster, Türen, Einbruchschutz Systeme',
       metaTags: [
         {
           name: 'description',
           content:
-            'Als Ihr fachkundiger Ansprechpartner bieten wir Beratung, Service, Reparatur und Montage von Fenstern, Türen sowie Einbruchschutzsystemen an.'
+            'Als Ihr kompetenter Ansprechpartner bieten wir - Beratung – Service – Reparatur und Einbau von Fenstern, Türen und Einbruchschutzsystemen sowie den Verkauf hochwertiger Produkte zu günstigen Preisen.'
         }
       ]
     }

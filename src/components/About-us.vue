@@ -154,6 +154,7 @@ export default {
 .pagerbox {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   max-width: 1250px;
   margin: 0 auto;
   padding: 34px;
