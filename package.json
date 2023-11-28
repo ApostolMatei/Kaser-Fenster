@@ -6,11 +6,11 @@
     "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview",
-    
     "format": "prettier --write src/"
   },
   "dependencies": {
     "@vueuse/head": "^1.1.26",
+    "nodemailer": "^6.9.7",
     "vue": "^3.3.4",
     "vue-meta": "^3.0.0-alpha.2",
     "vue-router": "^4.0.13"
