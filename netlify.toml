@@ -1,0 +1,5 @@
+[build]
+  functions = "functions"
+
+[build.environment]
+  NODE_VERSION = "20.10.0"

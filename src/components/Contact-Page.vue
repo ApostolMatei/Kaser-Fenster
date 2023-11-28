@@ -1,3 +1,4 @@
+<!-- eslint-disable no-irregular-whitespace -->
 <template>
   <div class="pager">
     <div class="pagerbox">
@@ -16,10 +17,10 @@
         Gerne können Sie uns jederzeit kontaktieren. Wir werden uns so schnell wie möglich bei Ihnen
         melden!
       </p>
-      <form id="contactForm" action="https://formsubmit.co/gollanart@gmail.com" method="POST">
-        <input ref="email" type="email" placeholder="E-Mail-Adresse" name="email" required />
-        <input type="text" placeholder="Name" name="name" required />
-        <input type="text" placeholder="Nachricht" name="message" required />
+      <form @submit.prevent="submitForm" id="contactForm" >
+        <input ref="email" v-model="formData.email" type="email" placeholder="E-Mail-Adresse" name="email" required />
+        <input type="text" v-model="formData.name" placeholder="Name" name="name" required />
+        <input type="text" v-model="formData.message" placeholder="Nachricht" name="message" required />
         <button type="submit">ABSENDEN</button>
       </form>
     </div>
@@ -82,6 +83,43 @@ export default {
         inputElement.focus()
       }
     }
+  },
+
+  data() {
+    return {
+      formData: {
+        name: '',
+        email: '',
+        message: ''
+      }
+    };
+  },
+
+  methods: {
+    async submitForm() {
+      try {
+        const response = await fetch('/.netlify/functions/submitForm', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(this.formData)
+        });
+
+        if (response.ok) {
+          console.log('Form submitted successfully');
+          // Reset the form or perform any other actions on success
+          this.formData = { name: '', email: '', message: '' };
+        } else {
+          console.error('Error submitting form');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    }
+
+
+
   }
 }
 </script>
