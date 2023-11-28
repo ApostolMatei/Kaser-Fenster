@@ -27,7 +27,7 @@ async function sendEmail(formData) {
   // Replace these with your Gmail SMTP credentials
   const smtpConfig = {
     host: 'smtp.gmail.com',
-    port: 465,
+    port: 587,
     secure: true,
     auth: {
       user: 'office@kaser-fenster.at',
