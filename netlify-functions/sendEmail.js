@@ -3,10 +3,13 @@ const MailComposer = require('nodemailer/lib/mail-composer');
 
 exports.handler = async function (event, context) {
   try {
-    const { CLIENT_ID, CLIENT_SECRET, REDIRECT_URI, REFRESH_TOKEN } = process.env;
+    const clientId = process.env.client_id;
+const clientSecret = process.env.client_secret;
+const redirectUri = process.env.redirect_uris;
+  const refreshToken = process.env.access_token;
 
-    const oAuth2Client = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI);
-    oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
+    const oAuth2Client = new google.auth.OAuth2(clientId, clientSecret, redirectUri);
+    oAuth2Client.setCredentials({ refresh_token: refreshToken });
 
     const gmail = google.gmail({ version: 'v1', auth: oAuth2Client });
 

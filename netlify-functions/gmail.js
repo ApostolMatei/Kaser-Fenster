@@ -1,17 +1,19 @@
-const credentials = require('../credentials.json');
-const tokens = require('../token.json'); // Make sure you have tokens.json with the correct content
 
-const { CLIENT_ID, CLIENT_SECRET, REDIRECT_URI, ACCESS_TOKEN } = process.env;
+
+
+
 
 const getGmailService = () => {
-  const oAuth2Client = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI);
-  oAuth2Client.setCredentials({ access_token: ACCESS_TOKEN });
+  const clientId = process.env.client_id;
+const clientSecret = process.env.client_secret;
+const redirectUri = process.env.redirect_uris;
+  const refreshToken = process.env.access_token;
+
+  const oAuth2Client = new google.auth.OAuth2(clientId, clientSecret, redirectUri);
+  oAuth2Client.setCredentials({ refresh_token: refreshToken });
+
   const gmail = google.gmail({ version: 'v1', auth: oAuth2Client });
   return gmail;
-};
-
-const encodeMessage = (message) => {
-  return Buffer.from(message).toString('base64').replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
 };
 
 const createMail = async (options) => {
