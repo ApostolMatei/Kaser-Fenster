@@ -3,19 +3,26 @@ const MailComposer = require('nodemailer/lib/mail-composer');
 
 exports.handler = async function (event, context) {
   try {
-    const clientId = process.env.client_id;
-const clientSecret = process.env.client_secret;
-const redirectUri = process.env.redirect_uris;
-  const refreshToken = process.env.access_token;
+    const clientId = process.env.CLIENT_ID;
+    const clientSecret = process.env.CLIENT_SECRET;
+    const redirectUri = process.env.REDIRECT_URI;
+    const accessToken = process.env.ACCESS_TOKEN;
 
     const oAuth2Client = new google.auth.OAuth2(clientId, clientSecret, redirectUri);
-    oAuth2Client.setCredentials({ refresh_token: refreshToken });
+    oAuth2Client.setCredentials({ refresh_token: accessToken });
+
+    console.log('CLIENT_ID:', process.env.client_id);
+console.log('CLIENT_SECRET:', process.env.client_secret);
+console.log('REDIRECT_URI:', process.env.redirect_uris);
+console.log('REDIRECT_URI:', process.env.access_token);
 
     const gmail = google.gmail({ version: 'v1', auth: oAuth2Client });
 
     const formData = JSON.parse(event.body); // Assuming form data is in JSON format
     const { name, email, message } = formData;
 
+    console.log('Received form data:', formData);
+console.log('Sending email with options:', options);
     const fileAttachments = [];
 
     const options = {

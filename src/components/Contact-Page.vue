@@ -93,7 +93,7 @@ export default {
       axios.post('http://localhost:3000/send-email', this.formData)
         .then(response => {
           console.log(response.data);
-          // Handle success, update UI, show a success message, etc.
+          
         })
         .catch(error => {
           console.error(error);
