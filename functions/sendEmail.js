@@ -11,10 +11,10 @@ exports.handler = async function (event, context) {
     const oAuth2Client = new google.auth.OAuth2(clientId, clientSecret, redirectUri);
     oAuth2Client.setCredentials({ refresh_token: accessToken });
 
-    console.log('CLIENT_ID:', process.env.client_id);
-console.log('CLIENT_SECRET:', process.env.client_secret);
-console.log('REDIRECT_URI:', process.env.redirect_uris);
-console.log('REDIRECT_URI:', process.env.access_token);
+    console.log('CLIENT_ID:', process.env.CLIENT_ID);
+    console.log('CLIENT_SECRET:', process.env.CLIENT_SECRET);
+    console.log('REDIRECT_URI:', process.env.REDIRECT_URI);
+    console.log('REDIRECT_URI:', process.env.ACCESS_TOKEN);
 
     const gmail = google.gmail({ version: 'v1', auth: oAuth2Client });
 
@@ -22,7 +22,7 @@ console.log('REDIRECT_URI:', process.env.access_token);
     const { name, email, message } = formData;
 
     console.log('Received form data:', formData);
-
+console.log('Sending email with options:', options);
     const fileAttachments = [];
 
     const options = {
