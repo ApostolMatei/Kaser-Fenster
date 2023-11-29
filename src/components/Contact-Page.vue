@@ -75,6 +75,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   mounted() {
     if (this.$route.hash === '#contactForm') {
@@ -96,31 +98,18 @@ export default {
   },
 
   methods: {
-    async submitForm() {
-      try {
-        const response = await fetch('/.netlify/functions/submitForm', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(this.formData)
+    submitForm() {
+      axios.post('http://localhost:3000/send-email', this.formData)
+        .then(response => {
+          console.log(response.data);
+          // Handle success, update UI, show a success message, etc.
+        })
+        .catch(error => {
+          console.error(error);
+          // Handle error, show an error message, etc.
         });
-
-        if (response.ok) {
-          console.log('Form submitted successfully');
-          // Reset the form or perform any other actions on success
-          this.formData = { name: '', email: '', message: '' };
-        } else {
-          console.error('Error submitting form');
-        }
-      } catch (error) {
-        console.error('Error:', error);
-      }
-    }
-
-
-
-  }
+    },
+  },
 }
 </script>
 

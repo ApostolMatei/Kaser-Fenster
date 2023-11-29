@@ -1,5 +1,7 @@
 
+const { google } = require('googleapis');
 const nodemailer = require('nodemailer');
+
 
 exports.handler = async function (event, context) {
   try {
@@ -24,27 +26,27 @@ exports.handler = async function (event, context) {
 };
 
 async function sendEmail(formData) {
-  // Replace these with your Gmail SMTP credentials
-  const smtpConfig = {
-    host: 'smtp.gmail.com',
-    port: 587,
-    secure: true,
-    auth: {
-      user: 'office@kaser-fenster.at',
-      pass: 'achimPAUL31558486',
-    },
-  };
-
-  // Create a Nodemailer transporter
-  const transporter = nodemailer.createTransport(smtpConfig);
-
-  // Email content
-  const mailOptions = {
-    from: 'your@gmail.com',
-    to: 'recipient@example.com',
-    subject: 'New Form Submission',
-    text: `Name: ${formData.name}\nEmail: ${formData.email}\nMessage: ${formData.message}`,
-  };
+    const oAuth2Client = new google.auth.OAuth2(
+        '245558044112-ibd9rh7n0bj316n2qjr7m5vergleichb60rdn4.apps.googleusercontent.com',
+        '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',
+        'https://kaser-fenster.at/kontakt'
+      );
+      
+      oAuth2Client.setCredentials({
+        refresh_token: '',
+      });
+      
+      const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          type: 'OAuth2',
+          user: 'office@kaser-fenster.at',
+          clientId: '245558044112-ibd9rh7n0bj316n2qjr7m5vergleichb60rdn4.apps.googleusercontent.com',
+          clientSecret: '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',
+          refreshToken: '',
+          accessToken: oAuth2Client.getAccessToken(),
+        },
+      });
 
   // Send email
   await transporter.sendMail(mailOptions);
