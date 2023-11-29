@@ -22,7 +22,7 @@ console.log('REDIRECT_URI:', process.env.access_token);
     const { name, email, message } = formData;
 
     console.log('Received form data:', formData);
-console.log('Sending email with options:', options);
+
     const fileAttachments = [];
 
     const options = {
