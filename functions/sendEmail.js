@@ -22,7 +22,7 @@ exports.handler = async function (event, context) {
     const { name, email, message } = formData;
 
     console.log('Received form data:', formData);
-console.log('Sending email with options:', options);
+
     const fileAttachments = [];
 
     const options = {
