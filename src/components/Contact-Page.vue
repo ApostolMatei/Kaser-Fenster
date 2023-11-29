@@ -90,7 +90,7 @@ export default {
 
   methods: {
     submitForm() {
-      axios.post('/.netlify/functions/send-email', this.formData)
+      axios.post('/.netlify/functions/sendEmail', this.formData)
   .then(response => {
     console.log(response.data);
   })
