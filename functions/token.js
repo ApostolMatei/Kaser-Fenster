@@ -5,12 +5,17 @@ const fs = require('fs');
 
 // Replace with the code you received from Google
 const code = '4/0AfJohXknUY2e2cY95XBn1ibRMHacuCFpBs95joM_UArg70hgNQL5hfhyT3IQH-hfNvwsUg';
-const clientId = process.env.CLIENT_ID;
+const clientId = Netlify.env.get("CLIENT_ID");
 const clientSecret = process.env.CLIENT_SECRET;
 const redirectUri = process.env.ACCESS_TOKEN;
-console.log(clientId );
-console.log(clientSecret );
-console.log(redirectUri );
+// exports.handler = async function (event, context) {
+//   const clientId = Netlify.env.get("CLIENT_ID");
+
+//   return {
+//     statusCode: 200,
+//     body: JSON.stringify({ message: `Value of MY_IMPORTANT_VARIABLE is ${value}.` }),
+//   };  
+// };
 
 
 const oAuth2Client = new google.auth.OAuth2(clientId, clientSecret, redirectUri);

@@ -1,37 +1,25 @@
+// netlify-functions/sendEmail.js
 const { google } = require('googleapis');
 const MailComposer = require('nodemailer/lib/mail-composer');
 
 exports.handler = async function (event, context) {
   try {
-    const clientId = process.env.CLIENT_ID;
-    const clientSecret = process.env.CLIENT_SECRET;
-    const redirectUri = process.env.REDIRECT_URI;
-    const accessToken = process.env.ACCESS_TOKEN;
+    const { CLIENT_ID, CLIENT_SECRET, REDIRECT_URI, REFRESH_TOKEN,} = process.env;
 
-    const oAuth2Client = new google.auth.OAuth2(clientId, clientSecret, redirectUri);
-    oAuth2Client.setCredentials({ refresh_token: accessToken });
+    const oAuth2Client = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI);
+    oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
 
-    console.log('CLIENT_ID:', process.env.client_id);
-console.log('CLIENT_SECRET:', process.env.client_secret);
-console.log('REDIRECT_URI:', process.env.redirect_uris);
-console.log('REDIRECT_URI:', process.env.access_token);
 
-    const gmail = google.gmail({ version: 'v1', auth: oAuth2Client });
 
-    const formData = JSON.parse(event.body); // Assuming form data is in JSON format
-    const { name, email, message } = formData;
-
-    console.log('Received form data:', formData);
-console.log('Sending email with options:', options);
     const fileAttachments = [];
 
     const options = {
       to: 'office@kaser-fenster.at',
       cc: '',
-      replyTo: email,
-      subject: `New Contact Form Submission from ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\n\nMessage: ${message}`,
-      html: `<p><b>New Contact Form Submission</b></p><p><b>Name:</b> ${name}</p><p><b>Email:</b> ${email}</p><p><b>Message:</b> ${message}</p>`,
+      replyTo: 'mateias109@gmail.com',
+      subject: 'Hello Amit 🚀',
+      text: 'This email is sent from the command line',
+      html: `<p>🙋🏻‍♀️  &mdash; This is a <b>test email</b> from <a href="https://digitalinspiration.com">Digital Inspiration</a>.</p>`,
       attachments: fileAttachments,
       textEncoding: 'base64',
       headers: [
@@ -40,20 +28,11 @@ console.log('Sending email with options:', options);
       ],
     };
 
-    const mailComposer = new MailComposer(options);
-    const messageContent = await mailComposer.compile().build();
-    const rawMessage = Buffer.from(messageContent).toString('base64').replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
-
-    const { data: { id } } = await gmail.users.messages.send({
-      userId: 'me',
-      resource: {
-        raw: rawMessage,
-      },
-    });
+    // Continue with the rest of your logic...
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ success: true, messageId: id }),
+      body: JSON.stringify({ success: true, messageId }),
     };
   } catch (error) {
     console.error('Error sending email:', error);
@@ -61,5 +40,4 @@ console.log('Sending email with options:', options);
       statusCode: 500,
       body: JSON.stringify({ success: false, error: error.message }),
     };
-  }
-};
+}}

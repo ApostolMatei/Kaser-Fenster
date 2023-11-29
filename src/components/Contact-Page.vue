@@ -90,15 +90,14 @@ export default {
 
   methods: {
     submitForm() {
-      axios.post('http://localhost:3000/send-email', this.formData)
-        .then(response => {
-          console.log(response.data);
-          
-        })
-        .catch(error => {
-          console.error(error);
-          // Handle error, show an error message, etc.
-        });
+      axios.post('/.netlify/functions/send-email', this.formData)
+  .then(response => {
+    console.log(response.data);
+  })
+  .catch(error => {
+    console.error(error);
+    // Handle error, show an error message, etc.
+  });
     },
   },
 }
