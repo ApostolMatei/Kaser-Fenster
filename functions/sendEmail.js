@@ -6,7 +6,7 @@ exports.handler = async function (event, context) {
     const clientId = process.env.CLIENT_ID;
     const clientSecret = process.env.CLIENT_SECRET;
     const redirectUri = process.env.REDIRECT_URI;
-    const accessToken = process.env.ACCESS_TOKEN;
+    
 
     const oAuth2Client = new google.auth.OAuth2(clientId, clientSecret, redirectUri);
     oAuth2Client.setCredentials({ refresh_token: accessToken });
@@ -14,7 +14,7 @@ exports.handler = async function (event, context) {
     console.log('CLIENT_ID:', process.env.CLIENT_ID);
     console.log('CLIENT_SECRET:', process.env.CLIENT_SECRET);
     console.log('REDIRECT_URI:', process.env.REDIRECT_URI);
-    console.log('REDIRECT_URI:', process.env.ACCESS_TOKEN);
+    
 
     const gmail = google.gmail({ version: 'v1', auth: oAuth2Client });
 

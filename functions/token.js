@@ -4,13 +4,13 @@ const path = require('path');
 const fs = require('fs');
 
 // Replace with the code you received from Google
-const code = '4/0AfJohXknUY2e2cY95XBn1ibRMHacuCFpBs95joM_UArg70hgNQL5hfhyT3IQH-hfNvwsUg';
+const code = '4/0AfJohXku1pKr6JJVC45UYtdPR9IinrI64P5OniZeChmszXP2cAy1PiYeBwRCDIKp2jFEWA';
 const clientId = process.env.CLIENT_ID;
 const clientSecret = process.env.CLIENT_SECRET;
-const redirectUri = process.env.ACCESS_TOKEN;
-console.log(clientId );
-console.log(clientSecret );
-console.log(redirectUri );
+const redirectUri = process.env.REDIRECT_URI;
+console.log(clientId,clientSecret)
+
+
 
 
 const oAuth2Client = new google.auth.OAuth2(clientId, clientSecret, redirectUri);
