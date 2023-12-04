@@ -9,6 +9,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
     "@vueuse/head": "^1.1.26",
     "axios": "^1.6.2",
     "body-parser": "^1.20.2",
