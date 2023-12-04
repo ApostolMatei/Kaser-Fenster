@@ -1,4 +1,4 @@
-
+<template>
   <div class="pager">
     <div class="pagerbox">
       <h3>Kontakt</h3>
