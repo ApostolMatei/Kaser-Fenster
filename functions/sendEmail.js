@@ -1,34 +1,21 @@
 // functions/sendEmail.js
 const { google } = require('googleapis');
 const MailComposer = require('nodemailer/lib/mail-composer');
-const fs = require('fs');
-const path = require('path');
 
 exports.handler = async function (event, context) {
   try {
-    const clientId = process.env.CLIENT_ID;
-    const clientSecret = process.env.CLIENT_SECRET;
-    const redirectUri = process.env.REDIRECT_URI;
+    const apiKey = process.env.GMAIL_API_KEY;
+    const gmail = google.gmail({ version: 'v1', auth: apiKey });
 
-    const oAuth2Client = new google.auth.OAuth2(clientId, clientSecret, redirectUri);
-
-    // Load the tokens from token.json
-    const tokenPath = path.join(__dirname, 'token.json');
-    const tokens = JSON.parse(fs.readFileSync(tokenPath, 'utf-8'));
-    oAuth2Client.setCredentials(tokens);
-
-    const gmail = google.gmail({ version: 'v1', auth: oAuth2Client });
-
-     
-    const toEmail = 'mateias109@gmail.com';
+    const toEmail = 'office@kaser-fenster.at'; // Use your desired recipient email address
 
     const options = {
       to: toEmail,
       cc: '',
       replyTo: toEmail,
-      subject: 'Test Email',
-      text: 'This is a test email.',
-      html: '<p>This is a test email.</p>',
+      subject: 'Contact Form Submission',
+      text: `Name: ${event.body.name}\nEmail: ${event.body.email}\n\nMessage: ${event.body.message}`,
+      html: `<p><b>Contact Form Submission</b></p><p><b>Name:</b> ${event.body.name}</p><p><b>Email:</b> ${event.body.email}</p><p><b>Message:</b> ${event.body.message}</p>`,
     };
 
     const mailComposer = new MailComposer(options);
@@ -41,7 +28,6 @@ exports.handler = async function (event, context) {
         raw: rawMessage,
       },
     });
-
 
     return {
       statusCode: 200,

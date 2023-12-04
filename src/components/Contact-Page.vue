@@ -1,5 +1,4 @@
-<!-- eslint-disable no-irregular-whitespace -->
-<template>
+
   <div class="pager">
     <div class="pagerbox">
       <h3>Kontakt</h3>
@@ -91,13 +90,14 @@ export default {
   methods: {
     submitForm() {
       axios.post('/.netlify/functions/sendEmail', this.formData)
-  .then(response => {
-    console.log(response.data);
-  })
-  .catch(error => {
-    console.error(error);
-    // Handle error, show an error message, etc.
-  });
+        .then(response => {
+          console.log(response.data);
+          // Handle success, update UI, show a success message, etc.
+        })
+        .catch(error => {
+          console.error(error);
+          // Handle error, show an error message, etc.
+        });
     },
   },
 }
