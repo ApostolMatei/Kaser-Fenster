@@ -88,18 +88,30 @@ export default {
   },
 
   methods: {
-    submitForm() {
-      axios.post('/.netlify/functions/sendEmail', this.formData)
-        .then(response => {
-          console.log(response.data);
-          // Handle success, update UI, show a success message, etc.
-        })
-        .catch(error => {
-          console.error(error);
-          // Handle error, show an error message, etc.
-        });
-    },
-  },
+    submitForm() {    
+       
+      const data = {
+        to: `${this.email}`,
+        subject: `${this.name}`,
+        text: `${this.message}`,
+      };
+
+      axios.post("https://eoi37j9zjhhta14.m.pipedream.net/", data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then(response => {
+        // Handle the response if needed
+        console.log(response.data);
+      })
+      .catch(error => {
+        // Handle errors
+        console.error("Error sending data:", error);
+      });
+    }
+    }
+  
 }
 </script>
 
