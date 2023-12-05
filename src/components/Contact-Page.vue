@@ -91,9 +91,9 @@ export default {
     submitForm() {    
        
       const data = {
-        to: `${this.email}`,
-        subject: `${this.name}`,
-        text: `${this.message}`,
+        to: this.formData.email,
+        subject:  this.formData.name,
+        text:  this.formData.message,
       };
 
       axios.post("https://eoi37j9zjhhta14.m.pipedream.net/", data, {
